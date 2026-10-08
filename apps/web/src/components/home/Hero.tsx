@@ -15,11 +15,11 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_70%_-10%,rgba(199,166,104,0.16),transparent_60%),radial-gradient(60%_50%_at_10%_10%,rgba(255,199,44,0.07),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(85%_65%_at_78%_-5%,rgba(18,55,133,0.38),transparent_62%),radial-gradient(55%_45%_at_8%_8%,rgba(206,29,23,0.20),transparent_70%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px rule-gold opacity-40"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px rule-brand opacity-50"
       />
 
       <Container className="relative">
@@ -30,7 +30,7 @@ export function Hero() {
             <h1 className="mt-5 text-5xl leading-[0.98] sm:text-6xl lg:text-7xl">
               The right vehicle,
               <br />
-              <span className="text-gold">priced honestly</span>
+              <span className="text-red-bright">priced honestly</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-lg text-muted">

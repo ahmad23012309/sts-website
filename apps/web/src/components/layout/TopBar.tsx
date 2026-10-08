@@ -10,18 +10,18 @@ export function TopBar() {
         <div className="flex h-10 items-center justify-between gap-6 font-ui text-xs text-muted">
           <div className="flex items-center gap-6">
             <span className="inline-flex items-center gap-2">
-              <MapPin className="h-3.5 w-3.5 text-gold" aria-hidden />
+              <MapPin className="h-3.5 w-3.5 text-red-bright" aria-hidden />
               {site.contact.city}, {site.contact.country}
             </span>
             <span className="inline-flex items-center gap-2">
-              <Clock className="h-3.5 w-3.5 text-gold" aria-hidden />
+              <Clock className="h-3.5 w-3.5 text-red-bright" aria-hidden />
               {site.contact.hours}
             </span>
             <a
               href={`mailto:${site.contact.email}`}
-              className="hidden items-center gap-2 transition-colors hover:text-gold lg:inline-flex"
+              className="hidden items-center gap-2 transition-colors hover:text-red-bright lg:inline-flex"
             >
-              <Mail className="h-3.5 w-3.5 text-gold" aria-hidden />
+              <Mail className="h-3.5 w-3.5 text-red-bright" aria-hidden />
               {site.contact.email}
             </a>
           </div>

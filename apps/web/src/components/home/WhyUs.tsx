@@ -49,8 +49,8 @@ export function WhyUs() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((reason, index) => (
             <Reveal key={reason.title} delay={(index % 3) * 70}>
-              <div className="h-full rounded-card border border-line bg-card p-7 transition-colors duration-300 hover:border-gold/35">
-                <span className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-gold">
+              <div className="h-full rounded-card border border-line bg-card p-7 transition-colors duration-300 hover:border-red/35">
+                <span className="grid h-11 w-11 place-items-center rounded-full border border-red/45 text-red-bright">
                   <reason.Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="mt-6 text-xl">{reason.title}</h3>

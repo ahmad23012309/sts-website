@@ -40,7 +40,7 @@ export function SocialLinks({
             rel="noopener noreferrer"
             aria-label={label}
             className={cn(
-              "grid place-items-center rounded-full text-muted transition-colors hover:text-gold",
+              "grid place-items-center rounded-full text-muted transition-colors hover:text-red-bright",
               size === "sm" ? "h-7 w-7" : "h-10 w-10 border border-line",
             )}
           >

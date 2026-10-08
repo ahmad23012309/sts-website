@@ -23,7 +23,7 @@ export async function FuelStrip() {
       <Container>
         <div className="flex flex-col gap-7 rounded-card border border-line bg-card p-7 lg:flex-row lg:items-center lg:justify-between lg:p-9">
           <div className="flex items-start gap-4">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-gold/40 text-gold">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-red/45 text-red-bright">
               <Fuel className="h-5 w-5" aria-hidden />
             </span>
             <div>
@@ -52,7 +52,7 @@ export async function FuelStrip() {
 
           <Link
             href="/fuel-prices"
-            className="inline-flex items-center gap-2 font-ui text-sm font-semibold tracking-wide text-gold uppercase transition-colors hover:text-yellow"
+            className="inline-flex items-center gap-2 font-ui text-sm font-semibold tracking-wide text-red-bright uppercase transition-colors hover:text-yellow"
           >
             Price history
             <ArrowRight className="h-4 w-4" aria-hidden />

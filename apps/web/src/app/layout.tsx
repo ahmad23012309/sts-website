@@ -37,6 +37,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-PK">
+      <head>
+        {/* Scroll reveals start hidden and are shown by an observer. Without
+            scripting that observer never runs, so the content is revealed
+            up front instead of staying invisible. */}
+        <noscript>
+          <style>{".reveal{opacity:1;transform:none}"}</style>
+        </noscript>
+      </head>
       <body>
         <a
           href="#main"

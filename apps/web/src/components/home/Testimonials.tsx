@@ -27,7 +27,7 @@ export async function Testimonials() {
               key={testimonial.id}
               className="flex h-full flex-col rounded-card border border-line bg-card p-7"
             >
-              <Quote className="h-6 w-6 text-gold" aria-hidden />
+              <Quote className="h-6 w-6 text-red-bright" aria-hidden />
               <blockquote className="mt-5 flex-1 text-[0.95rem] text-muted">
                 {testimonial.body}
               </blockquote>

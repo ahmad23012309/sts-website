@@ -58,32 +58,44 @@
 /* ---------------------------------------------------------------------------
    Design tokens.
 
-   Every colour the site uses is declared here and nowhere else. When the brand
-   logo arrives, changing these values updates the entire site.
+   Every colour the site uses is declared here and nowhere else.
 
-   Gold and yellow have separate jobs and are never substituted for each other:
-     gold    identity   rules, icon strokes, outlined buttons, the logo lockup
-     yellow  action     primary buttons, prices, active states
+   The palette is taken from the company mark: the red of the ring and the
+   lettering, and the navy of the inner crescent. Yellow is the third voice,
+   added for the actions that matter most.
+
+   Each colour has one job and is not borrowed for another:
+     red     identity and primary actions
+     navy    supporting surfaces, the corporate sections
+     yellow  prices, highlights and the single strongest action on a screen
 --------------------------------------------------------------------------- */
 
 @theme {
-  --color-ink: #121214;
-  --color-surface: #1a1a1d;
-  --color-card: #232227;
-  --color-elevated: #2b2a30;
-  --color-line: #333237;
-  --color-line-strong: #46444c;
+  --color-ink: #0d0e12;
+  --color-surface: #14161b;
+  --color-card: #1b1e25;
+  --color-elevated: #252933;
+  --color-line: #2c313b;
+  --color-line-strong: #3c4250;
 
-  --color-gold: #c7a668;
-  --color-gold-light: #d9bc84;
-  --color-gold-dark: #9c8049;
+  /* Sampled from the logo artwork. */
+  --color-red: #ce1d17;
+  --color-red-dark: #b5190f;
+  /* The logo red measures 3.5:1 on the page background, below the threshold for
+     body text, so small red type uses this lightened tint at 4.9:1. */
+  --color-red-bright: #e8463f;
+
+  --color-navy: #123785;
+  --color-navy-deep: #0c2559;
+  /* Same reasoning as red-bright: the logo navy is unreadable on a dark page. */
+  --color-blue: #4c7de0;
 
   --color-yellow: #ffc72c;
   --color-yellow-dark: #e5a800;
 
-  --color-text: #f5f3ef;
-  --color-muted: #a8a49c;
-  --color-faint: #6e6a64;
+  --color-text: #f4f5f7;
+  --color-muted: #a2a8b4;
+  --color-faint: #717886;
 
   --color-whatsapp: #25d366;
   --color-available: #2ecc71;
@@ -96,8 +108,8 @@
   --radius-card: 0.75rem;
   --radius-pill: 999px;
 
-  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
-  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -20px rgb(0 0 0 / 0.8);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.65);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -20px rgb(0 0 0 / 0.85);
 
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -202,16 +214,16 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-red-bright);
 }
 
-@utility rule-gold {
+/* Red running into navy, echoing the sweep inside the logo. */
+@utility rule-brand {
   background-image: linear-gradient(
     90deg,
-    transparent,
-    var(--color-gold) 20%,
-    var(--color-gold) 80%,
-    transparent
+    var(--color-red) 0%,
+    var(--color-red) 45%,
+    var(--color-navy) 100%
   );
 }
 

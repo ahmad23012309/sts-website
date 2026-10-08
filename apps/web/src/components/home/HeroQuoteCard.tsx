@@ -11,7 +11,7 @@ const categories = [
 ];
 
 const fieldClass =
-  "h-12 w-full rounded-[0.5rem] border border-line bg-ink px-4 font-ui text-sm text-text focus:border-gold focus:outline-none";
+  "h-12 w-full rounded-[0.5rem] border border-line bg-ink px-4 font-ui text-sm text-text focus:border-red focus:outline-none";
 
 const labelClass =
   "mb-1.5 block font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-muted uppercase";

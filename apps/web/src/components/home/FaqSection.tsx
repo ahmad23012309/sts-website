@@ -22,7 +22,7 @@ export async function FaqSection() {
                   {faq.question}
                   <span
                     aria-hidden
-                    className="relative grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-gold transition-colors group-open:border-gold"
+                    className="relative grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-red-bright transition-colors group-open:border-red"
                   >
                     <span className="absolute h-px w-3 bg-current" />
                     <span className="absolute h-3 w-px bg-current transition-transform duration-200 group-open:scale-y-0" />

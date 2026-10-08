@@ -27,7 +27,7 @@ export function SectionHeading({
       <Tag className="text-4xl sm:text-5xl lg:text-[3.25rem]">{title}</Tag>
       <div
         className={cn(
-          "rule-gold mt-5 h-px w-24",
+          "rule-brand mt-5 h-px w-24",
           align === "center" && "mx-auto",
         )}
       />

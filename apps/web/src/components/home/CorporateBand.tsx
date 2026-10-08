@@ -16,10 +16,10 @@ const credentials = [
  */
 export function CorporateBand() {
   return (
-    <section className="relative overflow-hidden border-y border-line bg-[linear-gradient(135deg,#1c1b20,#121214_60%)] py-20 lg:py-24">
+    <section className="relative overflow-hidden border-y border-line bg-[linear-gradient(135deg,#0c2559_0%,#101726_52%,#0d0e12_100%)] py-20 lg:py-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_85%_20%,rgba(199,166,104,0.14),transparent_65%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(65%_55%_at_88%_18%,rgba(206,29,23,0.22),transparent_65%)]"
       />
       <Container className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
@@ -39,7 +39,7 @@ export function CorporateBand() {
               {credentials.map((industry) => (
                 <li
                   key={industry}
-                  className="rounded-pill border border-line bg-card px-4 py-2 font-ui text-xs text-muted"
+                  className="rounded-pill border border-line-strong/70 bg-card/70 px-4 py-2 font-ui text-xs text-muted backdrop-blur"
                 >
                   {industry}
                 </li>
@@ -51,13 +51,13 @@ export function CorporateBand() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 rounded-card border border-gold/30 bg-card/80 p-8 backdrop-blur">
+          <div className="flex flex-col gap-3 rounded-card border border-red/40 bg-card/80 p-8 backdrop-blur">
             <p className="font-display text-2xl">Talk to the fleet desk</p>
             <p className="text-muted">
               Send your requirement and we will come back with a contract
               proposal and a rate schedule.
             </p>
-            <ButtonLink href="/corporate" size="lg" className="mt-4">
+            <ButtonLink href="/corporate" variant="accent" size="lg" className="mt-4">
               Request a call back
               <ArrowRight className="h-4 w-4" aria-hidden />
             </ButtonLink>

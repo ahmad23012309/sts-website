@@ -28,7 +28,7 @@ export function VehicleCard({
           priority={priority}
           className="transition-transform duration-700 group-hover:scale-[1.04]"
         />
-        <span className="absolute top-3 left-3 rounded-pill border border-gold/40 bg-ink/80 px-3 py-1 font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-gold uppercase backdrop-blur">
+        <span className="absolute top-3 left-3 rounded-pill border border-red/45 bg-ink/80 px-3 py-1 font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-red-bright uppercase backdrop-blur">
           {vehicle.category}
         </span>
       </Link>
@@ -39,7 +39,7 @@ export function VehicleCard({
             <h3 className="truncate text-2xl">
               <Link
                 href={`/fleet/${vehicle.slug}`}
-                className="transition-colors hover:text-gold"
+                className="transition-colors hover:text-red-bright"
               >
                 {name}
               </Link>
@@ -99,7 +99,7 @@ export function VehicleCard({
 function Spec({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
     <li className="flex flex-col items-center gap-1.5 text-center">
-      <span className="text-gold">{icon}</span>
+      <span className="text-red-bright">{icon}</span>
       <span className="font-ui text-[0.6875rem] text-muted">{label}</span>
     </li>
   );

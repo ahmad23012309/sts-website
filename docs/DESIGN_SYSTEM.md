@@ -5,31 +5,62 @@ nowhere else, so a brand change is a single-file edit.
 
 ## Colour
 
+The palette comes from the company mark: the red of the ring and the lettering,
+and the navy of the inner crescent. Yellow is the third voice, added for the
+actions that matter most.
+
 | Token | Hex | Role |
 |---|---|---|
-| `ink` | `#121214` | Page background |
-| `surface` | `#1A1A1D` | Alternating section background |
-| `card` | `#232227` | Cards, panels |
-| `elevated` | `#2B2A30` | Hover surfaces, menu rows |
-| `line` | `#333237` | Hairlines |
-| `line-strong` | `#46444C` | Emphasised borders, muted numerals |
-| `gold` | `#C7A668` | Identity accent |
-| `gold-light` | `#D9BC84` | Gold hover |
-| `yellow` | `#FFC72C` | Action colour |
+| `ink` | `#0D0E12` | Page background |
+| `surface` | `#14161B` | Alternating section background |
+| `card` | `#1B1E25` | Cards, panels |
+| `elevated` | `#252933` | Hover surfaces, menu rows |
+| `line` | `#2C313B` | Hairlines |
+| `line-strong` | `#3C4250` | Emphasised borders, outline buttons |
+| `red` | `#CE1D17` | Logo red. Primary buttons, icon outlines |
+| `red-dark` | `#B5190F` | Primary button hover |
+| `red-bright` | `#E8463F` | Red type and icons on dark backgrounds |
+| `navy` | `#123785` | Logo navy. Corporate surfaces, gradients |
+| `navy-deep` | `#0C2559` | Deep end of the corporate gradient |
+| `blue` | `#4C7DE0` | Blue type and icons on dark backgrounds |
+| `yellow` | `#FFC72C` | Prices, highlights, the strongest action on a screen |
 | `yellow-dark` | `#E5A800` | Yellow hover |
-| `text` | `#F5F3EF` | Primary text |
-| `muted` | `#A8A49C` | Secondary text |
-| `faint` | `#6E6A64` | Captions, disclaimers |
+| `text` | `#F4F5F7` | Primary text |
+| `muted` | `#A2A8B4` | Secondary text |
+| `faint` | `#717886` | Captions, disclaimers |
 | `whatsapp` | `#25D366` | WhatsApp controls only |
 | `available` / `booked` | `#2ECC71` / `#E5484D` | Calendar states |
 
-Gold and yellow are never interchanged. Gold carries identity: rules, icon
-outlines, the logo lockup, outlined buttons. Yellow means something is clickable
-and important: primary buttons, prices, active states. Two warm tones competing
-for the same job is how a dark gold theme turns muddy.
+### How the three brand colours divide the work
 
-`#FFC72C` on `#121214` measures 11.9:1, and `#121214` on `#FFC72C` 12.4:1. Both
-clear WCAG AAA for body text.
+Three accent colours is one more than most palettes can carry, so each has a
+single job and never takes another's:
+
+- **Red** is identity and the default action: primary buttons, eyebrows, icon
+  outlines, the rule under each heading.
+- **Navy** is support: the corporate band, the hero glow, deep gradients. It is
+  a surface colour, not a text colour.
+- **Yellow** is held back. It marks prices and the one highest-intent action on
+  a screen, which is why the hero estimate button and the corporate call-back
+  button are yellow while everything else is red.
+
+Section rules run red into navy, echoing the sweep inside the logo.
+
+### Contrast
+
+Two of the logo colours are too dark to serve as text on a dark page, so each
+has a lightened counterpart used only for type and icons:
+
+| Pair | Ratio | Verdict |
+|---|---|---|
+| White on `red` | 5.51:1 | AA for body text |
+| `red` as text on `ink` | 3.50:1 | Too low, so `red-bright` is used instead |
+| `red-bright` on `ink` | 4.94:1 | AA |
+| `navy` as text on `ink` | 1.76:1 | Surface only, never text |
+| `blue` on `ink` | 4.88:1 | AA |
+| `yellow` on `ink`, `ink` on `yellow` | 12.36:1 | AAA both ways |
+| `text` on `ink` | 17.68:1 | AAA |
+| `muted` on `ink` | 8.08:1 | AAA |
 
 ## Type
 

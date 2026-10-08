@@ -18,7 +18,7 @@ const categories = [
 type Status = "idle" | "submitting" | "success" | "error";
 
 const fieldClass =
-  "h-12 w-full rounded-[0.5rem] border border-line bg-ink px-4 font-ui text-sm text-text placeholder:text-faint focus:border-gold focus:outline-none";
+  "h-12 w-full rounded-[0.5rem] border border-line bg-ink px-4 font-ui text-sm text-text placeholder:text-faint focus:border-red focus:outline-none";
 
 export function QuickBookingForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -78,8 +78,8 @@ export function QuickBookingForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-card border border-gold/40 bg-card p-6">
-        <p className="font-display text-2xl text-gold">Request received</p>
+      <div className="rounded-card border border-red/45 bg-card p-6">
+        <p className="font-display text-2xl text-red-bright">Request received</p>
         <p className="mt-2 text-muted">{message}</p>
       </div>
     );

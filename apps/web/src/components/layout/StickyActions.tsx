@@ -28,7 +28,7 @@ export function StickyActions() {
     >
       <a
         href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-        className="grid h-13 w-13 place-items-center rounded-full border border-gold/50 bg-card text-gold shadow-lift transition-colors hover:border-gold hover:bg-elevated"
+        className="grid h-13 w-13 place-items-center rounded-full border border-red/50 bg-card text-red-bright shadow-lift transition-colors hover:border-red hover:bg-elevated"
         aria-label="Call us"
       >
         <Phone className="h-5 w-5" aria-hidden />

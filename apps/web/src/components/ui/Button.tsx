@@ -1,18 +1,22 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "outline" | "ghost" | "whatsapp";
+type Variant = "primary" | "accent" | "outline" | "ghost" | "whatsapp";
 type Size = "sm" | "md" | "lg";
 
 const base =
   "inline-flex items-center justify-center gap-2 font-ui font-semibold tracking-wide uppercase transition-[background-color,border-color,color,transform] duration-200 rounded-pill disabled:opacity-50 disabled:pointer-events-none active:translate-y-px";
 
 const variants: Record<Variant, string> = {
+  // The brand red carries the identity, so it is the default action colour.
   primary:
-    "bg-yellow text-ink hover:bg-yellow-dark shadow-[0_6px_20px_-8px_rgba(255,199,44,0.7)]",
+    "bg-red text-white hover:bg-red-dark shadow-[0_6px_20px_-10px_rgba(206,29,23,0.9)]",
+  // Yellow is held back for the single strongest action on a screen.
+  accent:
+    "bg-yellow text-ink hover:bg-yellow-dark shadow-[0_6px_20px_-10px_rgba(255,199,44,0.8)]",
   outline:
-    "border border-gold/60 text-gold hover:border-gold hover:bg-gold/10",
-  ghost: "text-text hover:text-yellow",
+    "border border-line-strong text-text hover:border-red hover:text-red-bright",
+  ghost: "text-text hover:text-red-bright",
   whatsapp: "bg-whatsapp text-ink hover:brightness-110",
 };
 

@@ -22,23 +22,23 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-                  className="inline-flex items-center gap-3 text-text transition-colors hover:text-gold"
+                  className="inline-flex items-center gap-3 text-text transition-colors hover:text-red-bright"
                 >
-                  <Phone className="h-4 w-4 text-gold" aria-hidden />
+                  <Phone className="h-4 w-4 text-red-bright" aria-hidden />
                   <span className="tabular">{site.contact.phone}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="inline-flex items-center gap-3 text-text transition-colors hover:text-gold"
+                  className="inline-flex items-center gap-3 text-text transition-colors hover:text-red-bright"
                 >
-                  <Mail className="h-4 w-4 text-gold" aria-hidden />
+                  <Mail className="h-4 w-4 text-red-bright" aria-hidden />
                   {site.contact.email}
                 </a>
               </li>
               <li className="inline-flex items-start gap-3 text-muted">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-red-bright" aria-hidden />
                 <span>
                   {site.contact.addressLine}, {site.contact.city}
                 </span>
@@ -88,7 +88,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="mb-5 font-ui text-[0.6875rem] font-semibold tracking-[0.18em] text-gold uppercase">
+      <h3 className="mb-5 font-ui text-[0.6875rem] font-semibold tracking-[0.18em] text-red-bright uppercase">
         {title}
       </h3>
       <ul className="space-y-2.5">

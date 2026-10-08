@@ -67,7 +67,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-              className="hidden items-center gap-2 font-ui text-sm text-muted transition-colors hover:text-gold xl:flex"
+              className="hidden items-center gap-2 font-ui text-sm text-muted transition-colors hover:text-red-bright xl:flex"
             >
               <Phone className="h-4 w-4" aria-hidden />
               <span className="tabular">{site.contact.phone}</span>
@@ -116,7 +116,7 @@ function NavEntry({
         href={item.href}
         className={cn(
           "flex items-center gap-1.5 rounded-pill px-4 py-2 font-ui text-sm font-medium transition-colors",
-          isActive ? "text-gold" : "text-text/85 hover:text-gold",
+          isActive ? "text-red-bright" : "text-text/85 hover:text-red-bright",
         )}
       >
         {item.label}
@@ -160,7 +160,7 @@ function NavEntry({
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="block rounded-[0.5rem] px-4 py-2.5 font-ui text-sm text-text/85 transition-colors hover:bg-elevated hover:text-gold"
+                  className="block rounded-[0.5rem] px-4 py-2.5 font-ui text-sm text-text/85 transition-colors hover:bg-elevated hover:text-red-bright"
                 >
                   {child.label}
                 </Link>

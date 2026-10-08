@@ -38,11 +38,11 @@ in Google's local results. Wrong values there are worse than none.
 
 ## Brand
 
-| Value | Current placeholder |
+| Value | Status |
 |---|---|
-| Logo | Text lockup in `src/components/brand/Logo.tsx` |
-| Palette | Derived from the supplied reference screenshots; tuned once the logo arrives |
-| Vehicle photography | Drawn placeholder in `VehicleMedia`, labelled "photography pending" |
+| Logo | Supplied. The scan was background-removed and is in use, but it is a raster image — a vector version (SVG, AI or EPS) is still wanted so the mark stays sharp at every size and in print |
+| Palette | Final. Sampled from the logo artwork |
+| Vehicle photography | Still outstanding. `VehicleMedia` draws a placeholder labelled "photography pending" |
 
 ## Deliberately empty, not placeholders
 
