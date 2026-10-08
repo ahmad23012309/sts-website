@@ -1,0 +1,141 @@
+/**
+ * Domain types.
+ *
+ * These mirror the WordPress data model described in docs/PROJECT_PLAN.md
+ * section 4. Every component reads these types rather than a CMS response
+ * shape, so replacing the fixture source with the live backend touches only
+ * the adapter in ./index.ts.
+ */
+
+export type VehicleCategory =
+  | "economy"
+  | "sedan"
+  | "suv"
+  | "luxury"
+  | "van"
+  | "coaster";
+
+export type Transmission = "manual" | "automatic";
+
+export type FuelType = "petrol" | "diesel" | "hybrid" | "electric";
+
+/** How closely the 3D asset matches the actual vehicle on the forecourt. */
+export type ModelAccuracy = "exact" | "representative" | "none";
+
+export interface VehicleColor {
+  name: string;
+  hex: string;
+}
+
+export interface VehicleRates {
+  withFuelDaily: number;
+  withoutFuelDaily: number;
+  outOfCityDaily: number;
+  perKm: number;
+  overtimePerHour: number;
+  driverAllowance: number;
+  nightStayCharge: number;
+  securityDeposit: number;
+}
+
+export interface VehicleSpecs {
+  engineCc: number;
+  seats: number;
+  doors: number;
+  luggage: number;
+  transmission: Transmission;
+  fuelType: FuelType;
+  mileageCityKmpl: number;
+  mileageHighwayKmpl: number;
+  airConditioning: boolean;
+}
+
+export interface VehicleImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+export interface Vehicle {
+  id: string;
+  slug: string;
+  make: string;
+  model: string;
+  variant: string;
+  year: number;
+  category: VehicleCategory;
+  specs: VehicleSpecs;
+  rates: VehicleRates;
+  colors: VehicleColor[];
+  images: VehicleImage[];
+  features: string[];
+  model3d: {
+    accuracy: ModelAccuracy;
+    glbUrl: string | null;
+    attribution: string | null;
+  };
+  availableForCorporate: boolean;
+  isFeatured: boolean;
+}
+
+export interface FuelRates {
+  petrol: number;
+  diesel: number;
+  hiOctane: number;
+  effectiveFrom: string;
+  note: string;
+}
+
+export interface PricingRules {
+  marginPercent: number;
+  withoutFuelAdjustPercent: number;
+  defaultDriverAllowance: number;
+  nightStayCharge: number;
+  /** Whether a one-way trip is billed fuel for the empty return leg. */
+  chargeReturnLegFuel: boolean;
+  includedKmPerDay: number;
+  roundToNearest: number;
+}
+
+export interface Route {
+  origin: string;
+  destination: string;
+  distanceKm: number;
+  estimatedHours: number;
+  tollCharges: number;
+}
+
+export interface Testimonial {
+  id: string;
+  authorName: string;
+  company: string | null;
+  rating: number;
+  body: string;
+  source: string;
+  date: string;
+  /** Only verified testimonials are eligible for Review structured data. */
+  verified: boolean;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  photo: VehicleImage | null;
+}
+
+export interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  icon: string;
+}
+
+export interface Faq {
+  id: string;
+  question: string;
+  answer: string;
+}

@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Fonts. Self-hosted so no third-party request is made at page load.
+   Anton          display headings
+   Crimson Text   body copy and long-form text
+   Inter          interface chrome: buttons, labels, tabular figures
+--------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/fonts/CrimsonText-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------------------
+   Design tokens.
+
+   Every colour the site uses is declared here and nowhere else. When the brand
+   logo arrives, changing these values updates the entire site.
+
+   Gold and yellow have separate jobs and are never substituted for each other:
+     gold    identity   rules, icon strokes, outlined buttons, the logo lockup
+     yellow  action     primary buttons, prices, active states
+--------------------------------------------------------------------------- */
+
+@theme {
+  --color-ink: #121214;
+  --color-surface: #1a1a1d;
+  --color-card: #232227;
+  --color-elevated: #2b2a30;
+  --color-line: #333237;
+  --color-line-strong: #46444c;
+
+  --color-gold: #c7a668;
+  --color-gold-light: #d9bc84;
+  --color-gold-dark: #9c8049;
+
+  --color-yellow: #ffc72c;
+  --color-yellow-dark: #e5a800;
+
+  --color-text: #f5f3ef;
+  --color-muted: #a8a49c;
+  --color-faint: #6e6a64;
+
+  --color-whatsapp: #25d366;
+  --color-available: #2ecc71;
+  --color-booked: #e5484d;
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Crimson Text", Georgia, serif;
+  --font-ui: "Inter", system-ui, sans-serif;
+
+  --radius-card: 0.75rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -20px rgb(0 0 0 / 0.8);
+
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
+  h5,
+  h6 {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Interface elements stay on the sans face: a serif loses definition at the
+     small sizes used by forms, rate tables and specification grids. */
+  button,
+  input,
+  select,
+  textarea,
+  label,
+  th,
+  td {
+    font-family: var(--font-ui);
+  }
+
+  ::selection {
+    background-color: var(--color-yellow);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-yellow);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+
+@utility tabular {
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+@utility eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+@utility rule-gold {
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold) 20%,
+    var(--color-gold) 80%,
+    transparent
+  );
+}
+
+/* Entrance animation driven by an IntersectionObserver, so nothing animates
+   until it is actually on screen. */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.7s var(--ease-out-soft),
+    transform 0.7s var(--ease-out-soft);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}
