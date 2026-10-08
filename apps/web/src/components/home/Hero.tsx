@@ -1,15 +1,28 @@
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { site } from "@/lib/site";
+import { getVehicles } from "@/lib/cms";
 import { HeroQuoteCard } from "@/components/home/HeroQuoteCard";
 
-const stats = [
-  { value: "6", label: "Vehicle classes" },
-  { value: String(site.cities.length), label: "Pick-up cities" },
-  { value: "24/7", label: "Support and dispatch" },
-];
+export async function Hero() {
+  const vehicles = await getVehicles();
 
-export function Hero() {
+  // Taken from the fleet register rather than written by hand, so the figures
+  // on the homepage cannot drift away from what is actually on the road.
+  const totalVehicles = vehicles.reduce(
+    (sum, vehicle) => sum + vehicle.unitsInFleet,
+    0,
+  );
+  const groupTransport = vehicles
+    .filter((vehicle) => ["coaster", "bus", "van"].includes(vehicle.category))
+    .reduce((sum, vehicle) => sum + vehicle.unitsInFleet, 0);
+
+  const stats = [
+    { value: String(totalVehicles), label: "Vehicles on the road" },
+    { value: String(groupTransport), label: "For group and staff transport" },
+    { value: "24/7", label: "Support and dispatch" },
+  ];
+
   return (
     <section className="relative overflow-hidden">
       <div
@@ -33,10 +46,10 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-xl text-lg text-fg-muted">
-              {site.name} rents to individuals and runs long-term fleets for
-              business. Every quote is built from the distance, the vehicle and
-              the day&rsquo;s fuel price, so you see the arithmetic before you
-              commit.
+              {site.name} runs coasters, vans and buses for companies moving
+              staff and groups, alongside cars and SUVs for everyday hire. Every
+              quote is built from the distance, the vehicle and the day&rsquo;s
+              fuel price, so you see the arithmetic before you commit.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">

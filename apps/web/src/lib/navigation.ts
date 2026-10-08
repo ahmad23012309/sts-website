@@ -19,34 +19,44 @@ export const primaryNav: NavItem[] = [
     mega: true,
     children: [
       {
-        label: "Economy",
-        href: "/fleet/category/economy",
-        description: "Alto, Cultus and similar, for city running",
-      },
-      {
-        label: "Sedans",
-        href: "/fleet/category/sedan",
-        description: "Yaris, City, Corolla",
-      },
-      {
-        label: "SUVs",
-        href: "/fleet/category/suv",
-        description: "Sportage, Tucson and the rest",
-      },
-      {
-        label: "Luxury",
-        href: "/fleet/category/luxury",
-        description: "Civic, Fortuner, executive travel",
+        label: "Coasters",
+        href: "/fleet/category/coaster",
+        description: "22-seat group travel, the largest part of our fleet",
       },
       {
         label: "Vans",
         href: "/fleet/category/van",
-        description: "Hiace and Grand Cabin, up to 13 seats",
+        description: "Hiace Grand Cabin and Karvaan Plus, 7 to 13 seats",
       },
       {
-        label: "Coasters",
-        href: "/fleet/category/coaster",
-        description: "Group travel, 22 seats",
+        label: "Buses",
+        href: "/fleet/category/bus",
+        description: "Daewoo intercity coaches for large groups",
+      },
+      {
+        label: "Sedans",
+        href: "/fleet/category/sedan",
+        description: "Yaris, Corolla Altis and Civic",
+      },
+      {
+        label: "SUVs",
+        href: "/fleet/category/suv",
+        description: "Sportage, Sorento, Fortuner and Haval H6",
+      },
+      {
+        label: "Luxury",
+        href: "/fleet/category/luxury",
+        description: "Prado and Land Cruiser for executive travel",
+      },
+      {
+        label: "Pickups",
+        href: "/fleet/category/pickup",
+        description: "Hilux Revo and JAC T9 for site and field work",
+      },
+      {
+        label: "Economy",
+        href: "/fleet/category/economy",
+        description: "Wagon R and XBEE for city running",
       },
     ],
   },
@@ -90,10 +100,11 @@ export const primaryNav: NavItem[] = [
 export const footerNav = {
   fleet: [
     { label: "All Vehicles", href: "/fleet" },
-    { label: "Economy", href: "/fleet/category/economy" },
-    { label: "Sedans", href: "/fleet/category/sedan" },
+    { label: "Coasters", href: "/fleet/category/coaster" },
+    { label: "Vans", href: "/fleet/category/van" },
+    { label: "Buses", href: "/fleet/category/bus" },
     { label: "SUVs", href: "/fleet/category/suv" },
-    { label: "Luxury", href: "/fleet/category/luxury" },
+    { label: "Sedans", href: "/fleet/category/sedan" },
     { label: "Compare Vehicles", href: "/compare" },
   ],
   services: [

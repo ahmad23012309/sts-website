@@ -13,7 +13,10 @@ export type VehicleCategory =
   | "suv"
   | "luxury"
   | "van"
-  | "coaster";
+  | "coaster"
+  | "bus"
+  | "pickup"
+  | "convertible";
 
 export type Transmission = "manual" | "automatic";
 
@@ -21,6 +24,23 @@ export type FuelType = "petrol" | "diesel" | "hybrid" | "electric";
 
 /** How closely the 3D asset matches the actual vehicle on the forecourt. */
 export type ModelAccuracy = "exact" | "representative" | "none";
+
+/**
+ * A third-party 3D model embedded from Sketchfab.
+ *
+ * Every published model carries licence terms, and most require the author to
+ * be credited wherever the model appears, so the credit travels with the model
+ * rather than being kept in a list somewhere else.
+ */
+export interface SketchfabModel {
+  uid: string;
+  title: string;
+  authorName: string;
+  authorUrl: string;
+  modelUrl: string;
+  license: string;
+  accuracy: ModelAccuracy;
+}
 
 export interface VehicleColor {
   name: string;
@@ -70,11 +90,9 @@ export interface Vehicle {
   colors: VehicleColor[];
   images: VehicleImage[];
   features: string[];
-  model3d: {
-    accuracy: ModelAccuracy;
-    glbUrl: string | null;
-    attribution: string | null;
-  };
+  model3d: SketchfabModel | null;
+  /** How many of this model are on the road, from the fleet register. */
+  unitsInFleet: number;
   availableForCorporate: boolean;
   isFeatured: boolean;
 }

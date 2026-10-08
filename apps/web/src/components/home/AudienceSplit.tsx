@@ -10,7 +10,7 @@ const audiences = [
     Icon: User,
     title: "For Individuals",
     summary:
-      "Daily and weekly rentals on economy cars and sedans, self-drive or with a driver, inside the city or on the motorway.",
+      "Cars, SUVs and vans by the day or the week, self-drive or with a driver, inside the city or on the motorway.",
     points: [
       "Transparent with-fuel and without-fuel rates",
       "Book online, on WhatsApp or by phone",
@@ -25,12 +25,12 @@ const audiences = [
     Icon: Building2,
     title: "For Corporate Clients",
     summary:
-      "Long-term contracts with vetted drivers, scheduled maintenance, replacement vehicles and a single monthly invoice.",
+      "Staff transport and contract fleets: coasters, vans and buses with vetted drivers, scheduled maintenance, replacement vehicles and a single monthly invoice.",
     points: [
-      "Contract fleets from one vehicle upwards",
+      "Daily staff pick and drop on fixed routes",
+      "Coasters, Hiace vans and intercity coaches",
       "Vetted and trained drivers",
-      "Replacement vehicle guarantee",
-      "Monthly invoicing and credit terms",
+      "Replacement vehicle guarantee and monthly invoicing",
     ],
     href: "/corporate",
     cta: "Corporate services",

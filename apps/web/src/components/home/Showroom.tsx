@@ -1,23 +1,25 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
-import { CarViewer, type PaintOption } from "@/components/three/CarViewer";
-import { cn } from "@/lib/utils";
+import { SketchfabViewer } from "@/components/vehicle/SketchfabViewer";
+import { hasModel } from "@/lib/cms/model3d";
+import { VehicleMedia } from "@/components/vehicle/VehicleMedia";
+import { getVehicles } from "@/lib/cms";
 
-const paints: PaintOption[] = [
-  { name: "Brand Red", hex: "#CE1D17" },
-  { name: "Pearl White", hex: "#EDEFF2" },
-  { name: "Graphite", hex: "#44484F" },
-  { name: "Midnight Navy", hex: "#16306B" },
-  { name: "Signal Yellow", hex: "#FFC72C" },
-  { name: "Attitude Black", hex: "#16171A" },
-];
+/**
+ * Showcases the first vehicle that has a 3D model attached.
+ *
+ * The section removes itself while no model has been chosen, rather than
+ * showing an empty frame. It appears the moment a Sketchfab model is recorded
+ * against any vehicle.
+ */
+export async function Showroom() {
+  const vehicles = await getVehicles();
+  const vehicle = vehicles.find((item) => hasModel(item.model3d));
+  if (!vehicle || !hasModel(vehicle.model3d)) return null;
 
-export function Showroom() {
-  const [paint, setPaint] = useState<PaintOption>(paints[0]!);
+  const withModels = vehicles.filter((item) => hasModel(item.model3d));
 
   return (
     <section className="overflow-hidden border-y border-edge bg-page-alt py-20 lg:py-28">
@@ -27,52 +29,45 @@ export function Showroom() {
             <SectionHeading
               eyebrow="3D showroom"
               title="Walk around it before you book"
-              description="Turn the car, change the paint, see the proportions. The same viewer sits on every vehicle page, so you know what is arriving at your door."
+              description="Turn the vehicle, look inside, judge the proportions for yourself. The same viewer sits on every vehicle page that has a model, so you know what is arriving at your door."
             />
 
-            <div className="mt-9">
-              <p className="font-ui text-[0.6875rem] font-semibold tracking-[0.14em] text-fg-muted uppercase">
-                Paint — {paint.name}
-              </p>
-              <ul className="mt-4 flex flex-wrap gap-3">
-                {paints.map((option) => {
-                  const active = option.hex === paint.hex;
-                  return (
-                    <li key={option.hex}>
-                      <button
-                        type="button"
-                        onClick={() => setPaint(option)}
-                        aria-pressed={active}
-                        title={option.name}
-                        className={cn(
-                          "h-10 w-10 rounded-full border-2 transition-transform duration-200 hover:scale-110",
-                          active
-                            ? "border-red scale-110"
-                            : "border-edge-strong",
-                        )}
-                        style={{ backgroundColor: option.hex }}
-                      >
-                        <span className="sr-only">{option.name}</span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+            <p className="mt-8 font-ui text-sm text-fg-muted">
+              Showing the {vehicle.make} {vehicle.model} {vehicle.variant}.{" "}
+              {withModels.length} of our vehicles have a 3D model so far.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink href={`/fleet/${vehicle.slug}`} size="lg">
+                View this vehicle
+              </ButtonLink>
+              <ButtonLink href="/fleet" variant="outline" size="lg">
+                Browse the fleet
+              </ButtonLink>
             </div>
 
             <p className="mt-7 text-fg-muted">
-              Drag to rotate. Colours shown are indicative of the finishes we
-              stock; the exact shade available is confirmed when you book.
+              Not every model in our fleet exists as a 3D asset. Where one is not
+              available, the vehicle&rsquo;s own photographs are shown instead.{" "}
+              <Link
+                href="/attributions"
+                className="text-accent underline decoration-red/40 decoration-2 underline-offset-[5px] hover:decoration-red"
+              >
+                Model credits
+              </Link>
+              .
             </p>
-
-            <ButtonLink href="/fleet" size="lg" className="mt-8">
-              Browse the fleet
-            </ButtonLink>
           </div>
 
-          <div className="relative aspect-[4/3] w-full rounded-card border border-edge bg-[radial-gradient(70%_60%_at_50%_15%,#ffffff_0%,#e9edf3_70%,#dde3ec_100%)] shadow-card lg:aspect-[16/11]">
-            <CarViewer paint={paint} className="absolute inset-0" />
-          </div>
+          <SketchfabViewer
+            model={vehicle.model3d}
+            className="relative"
+            poster={
+              <div className="aspect-[4/3] w-full lg:aspect-[16/11]">
+                <VehicleMedia vehicle={vehicle} sizes="(min-width: 1024px) 55vw, 100vw" />
+              </div>
+            }
+          />
         </div>
       </Container>
     </section>
