@@ -132,9 +132,34 @@ Cost control:
 Per-vehicle models on the fleet pages will use the same component, with a `.glb`
 per vehicle where one exists.
 
+## Header
+
+The logo sits in the centre with the menu split around it: Fleet, Fare
+Calculator and Corporate to the left, Services, Fuel Prices and Company to the
+right, then a divider and the call and Book Now controls. The outer grid is
+`1fr / auto / 1fr`, so the mark stays optically centred however wide either half
+of the menu grows. Below 1280px the split collapses, the logo moves to the left
+and the full menu moves into the drawer.
+
+The header, the bar above it and the drawer are all dark, against the light
+page.
+
+## Contact rail
+
+A single navy capsule pinned to the bottom right holds WhatsApp, call, email
+and request-a-call-back, with a separate return-to-top control beneath it that
+fades in past 600px of scroll. Labels slide out on hover; each control carries
+an `aria-label` for anyone not using a pointer. Email and call-back are hidden
+below 640px so the rail does not crowd a phone screen.
+
+Every control in the rail resolves today. A persistent element that leads
+somewhere unbuilt is worse than one control fewer, so nothing was added for
+pages that do not exist yet.
+
 ## Components built so far
 
 `Container`, `Button` / `ButtonLink`, `SectionHeading`, `Reveal`, `Logo`,
 `SocialLinks`, brand icons, `Header` with mega menu, `TopBar`, `Footer`,
 `StickyActions`, `PreviewDataNotice`, `VehicleCard`, `VehicleMedia`,
-`QuickBookingForm`, `HeroQuoteCard`, and ten homepage sections.
+`QuickBookingForm`, `HeroQuoteCard`, `SketchfabViewer`, `FloatingActions`, and
+the homepage sections.

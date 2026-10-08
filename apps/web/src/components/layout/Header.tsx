@@ -7,10 +7,16 @@ import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
-import { primaryNav, type NavItem } from "@/lib/navigation";
+import { navLeft, navRight, primaryNav, type NavItem } from "@/lib/navigation";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+/**
+ * The logo sits in the centre with the menu split around it.
+ *
+ * The outer grid is 1fr / auto / 1fr, so the mark stays optically centred no
+ * matter how wide either half of the menu grows.
+ */
 export function Header() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -46,12 +52,10 @@ export function Header() {
       onMouseLeave={() => setOpenMenu(null)}
     >
       <Container>
-        <div className="flex h-20 items-center justify-between gap-6">
-          <Logo />
-
-          <nav aria-label="Primary" className="hidden lg:block">
+        <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-6">
+          <nav aria-label="Primary" className="hidden justify-self-start xl:block">
             <ul className="flex items-center gap-1">
-              {primaryNav.map((item) => (
+              {navLeft.map((item) => (
                 <NavEntry
                   key={item.label}
                   item={item}
@@ -63,20 +67,47 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-3">
+          {/* On narrow screens the logo takes the left-hand slot. */}
+          <div className="justify-self-start xl:hidden">
+            <Logo />
+          </div>
+          <div className="hidden justify-self-center xl:block">
+            <Logo />
+          </div>
+
+          <div className="flex items-center justify-self-end gap-1 xl:gap-2">
+            <nav aria-label="Secondary" className="hidden xl:block">
+              <ul className="flex items-center gap-1">
+                {navRight.map((item) => (
+                  <NavEntry
+                    key={item.label}
+                    item={item}
+                    isOpen={openMenu === item.label}
+                    isActive={pathname.startsWith(item.href)}
+                    onOpen={() => setOpenMenu(item.children ? item.label : null)}
+                    alignRight
+                  />
+                ))}
+              </ul>
+            </nav>
+
+            <span aria-hidden className="mx-2 hidden h-6 w-px bg-edge xl:block" />
+
             <a
               href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-              className="hidden items-center gap-2 font-ui text-sm text-fg-muted transition-colors hover:text-accent xl:flex"
+              aria-label={`Call ${site.contact.phone}`}
+              className="hidden h-10 w-10 place-items-center rounded-full border border-edge text-fg-muted transition-colors hover:border-red hover:text-accent lg:grid"
             >
               <Phone className="h-4 w-4" aria-hidden />
-              <span className="tabular">{site.contact.phone}</span>
             </a>
+
             <ButtonLink href="/book" size="md" className="hidden sm:inline-flex">
               Book Now
             </ButtonLink>
+
             <button
               type="button"
-              className="grid h-11 w-11 place-items-center rounded-full border border-edge text-fg lg:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full border border-edge text-fg xl:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}
@@ -101,11 +132,13 @@ function NavEntry({
   isOpen,
   isActive,
   onOpen,
+  alignRight = false,
 }: {
   item: NavItem;
   isOpen: boolean;
   isActive: boolean;
   onOpen: () => void;
+  alignRight?: boolean;
 }) {
   const hasChildren = Boolean(item.children?.length);
 
@@ -114,7 +147,7 @@ function NavEntry({
       <Link
         href={item.href}
         className={cn(
-          "flex items-center gap-1.5 rounded-pill px-4 py-2 font-ui text-sm font-medium transition-colors",
+          "flex items-center gap-1.5 rounded-pill px-3.5 py-2 font-ui text-sm font-medium whitespace-nowrap transition-colors",
           isActive ? "text-accent" : "text-fg/85 hover:text-accent",
         )}
       >
@@ -132,13 +165,13 @@ function NavEntry({
 
       {hasChildren && isOpen ? (
         item.mega ? (
-          <div className="absolute left-1/2 top-full z-50 w-[46rem] -translate-x-1/2 pt-3">
-            <div className="grid grid-cols-3 gap-1 rounded-card border border-edge bg-panel/97 p-3 shadow-lift backdrop-blur-xl">
+          <div className="absolute top-full left-1/2 z-50 w-[48rem] -translate-x-1/2 pt-3">
+            <div className="grid grid-cols-4 gap-1 rounded-card border border-edge bg-panel/97 p-3 shadow-lift backdrop-blur-xl">
               {item.children?.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="rounded-[0.5rem] p-4 transition-colors hover:bg-panel-alt"
+                  className="rounded-[0.5rem] p-3.5 transition-colors hover:bg-panel-alt"
                 >
                   <span className="block font-ui text-sm font-semibold text-fg">
                     {child.label}
@@ -153,7 +186,12 @@ function NavEntry({
             </div>
           </div>
         ) : (
-          <div className="absolute left-0 top-full z-50 w-60 pt-3">
+          <div
+            className={cn(
+              "absolute top-full z-50 w-60 pt-3",
+              alignRight ? "right-0" : "left-0",
+            )}
+          >
             <div className="rounded-card border border-edge bg-panel/97 p-2 shadow-lift backdrop-blur-xl">
               {item.children?.map((child) => (
                 <Link
@@ -174,7 +212,10 @@ function NavEntry({
 
 function MobileNav() {
   return (
-    <div data-surface="dark" className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-edge bg-page text-fg lg:hidden">
+    <div
+      data-surface="dark"
+      className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-edge bg-page text-fg xl:hidden"
+    >
       <Container className="py-6">
         <ul className="space-y-1">
           {primaryNav.map((item) => (

@@ -48,7 +48,10 @@ export function Footer() {
             <SocialLinks className="mt-8" />
           </div>
 
-          <div className="rounded-card border border-edge bg-panel p-6 sm:p-8">
+          <div
+            id="quick-booking"
+            className="scroll-mt-28 rounded-card border border-edge bg-panel p-6 sm:p-8"
+          >
             <p className="eyebrow mb-2">Quick booking</p>
             <h2 className="text-3xl">Tell us what you need</h2>
             <p className="mt-3 mb-6 text-fg-muted">

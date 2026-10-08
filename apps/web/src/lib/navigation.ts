@@ -12,6 +12,10 @@ export interface NavItem {
   mega?: boolean;
 }
 
+/**
+ * The header carries the logo in the centre with the menu split around it, so
+ * the navigation is declared as two halves rather than one list.
+ */
 export const primaryNav: NavItem[] = [
   {
     label: "Fleet",
@@ -96,6 +100,16 @@ export const primaryNav: NavItem[] = [
     ],
   },
 ];
+
+/** Items shown to the left of the centred logo. */
+export const navLeft = primaryNav.filter((item) =>
+  ["Fleet", "Fare Calculator", "Corporate"].includes(item.label),
+);
+
+/** Items shown to the right of it. */
+export const navRight = primaryNav.filter((item) =>
+  ["Services", "Fuel Prices", "Company"].includes(item.label),
+);
 
 export const footerNav = {
   fleet: [

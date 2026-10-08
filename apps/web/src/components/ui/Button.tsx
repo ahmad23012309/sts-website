@@ -5,7 +5,7 @@ type Variant = "primary" | "accent" | "outline" | "ghost" | "whatsapp";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-ui font-semibold tracking-wide uppercase transition-[background-color,border-color,color,transform] duration-200 rounded-pill disabled:opacity-50 disabled:pointer-events-none active:translate-y-px";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-ui font-semibold tracking-wide uppercase transition-[background-color,border-color,color,transform] duration-200 rounded-pill disabled:opacity-50 disabled:pointer-events-none active:translate-y-px";
 
 const variants: Record<Variant, string> = {
   // The brand red carries the identity, so it is the default action colour.

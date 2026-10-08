@@ -37,7 +37,7 @@ export async function Hero() {
       <Container className="relative">
         <div className="grid items-center gap-14 py-20 lg:grid-cols-[1.15fr_1fr] lg:py-28">
           <div>
-            <p className="eyebrow">Car rental across Pakistan</p>
+            <p className="eyebrow">Staff transport and car rental across Pakistan</p>
 
             <h1 className="mt-5 text-5xl leading-[0.98] sm:text-6xl lg:text-7xl">
               The right vehicle,

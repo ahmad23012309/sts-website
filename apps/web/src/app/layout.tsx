@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { TopBar } from "@/components/layout/TopBar";
-import { StickyActions } from "@/components/layout/StickyActions";
+import { FloatingActions } from "@/components/layout/FloatingActions";
 import { PreviewDataNotice } from "@/components/layout/PreviewDataNotice";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -58,7 +58,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <StickyActions />
+        <FloatingActions />
 
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />

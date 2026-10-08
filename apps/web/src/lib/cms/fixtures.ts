@@ -932,11 +932,13 @@ export const vehicles: Vehicle[] = [
 ];
 
 export const fuelRates: FuelRates = {
-  petrol: 264.61,
-  diesel: 272.77,
-  hiOctane: 289.5,
-  effectiveFrom: "2026-10-01",
-  note: "Preview values. Replace with the current notified rates before launch.",
+  petrol: 396.65,
+  diesel: 395.85,
+  // Hi-octane is still a placeholder; the others are the published rates for
+  // the date below.
+  hiOctane: 425.0,
+  effectiveFrom: "2026-10-08",
+  note: "Seed values. The office updates these from the admin whenever the notified rates change.",
 };
 
 export const pricingRules: PricingRules = {
