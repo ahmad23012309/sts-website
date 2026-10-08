@@ -140,7 +140,14 @@ CDN request — it is a third-party round trip and a privacy liability.
 
 ### 3.3 Visual direction
 
-Taken from the reference screenshots:
+**Reference material is reference only.** The supplied screenshots and any further
+examples uploaded to `assets/` are used to understand layout decisions, information
+hierarchy and component placement. Nothing is copied: the site gets its own
+composition, spacing, motion and component design. Copying a competitor's layout
+produces a site that looks derivative and carries copyright exposure on the design
+work itself.
+
+What is taken from the references is the structural thinking:
 
 - Dark, cinematic surface with full-bleed vehicle photography
 - Sticky translucent header with blurred backdrop

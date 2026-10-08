@@ -1,0 +1,2 @@
+make,model,variant,year,category,transmission,fuel_type,engine_cc,seats,doors,luggage,colors,mileage_city_kmpl,mileage_highway_kmpl,rate_with_fuel_daily,rate_without_fuel_daily,rate_out_of_city_daily,rate_per_km,overtime_per_hour,driver_allowance,night_stay_charge,security_deposit,available_for_corporate,quantity_owned
+Toyota,Yaris,ATIV X 1.5,2023,Sedan,Automatic,Petrol,1496,5,4,2,"White,Silver,Black",12,16,,,,,,,,,yes,
