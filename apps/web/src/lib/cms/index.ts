@@ -1,4 +1,5 @@
 import * as fixtures from "./fixtures";
+import { models3d } from "./models3d";
 import type {
   Faq,
   FuelRates,
@@ -22,7 +23,12 @@ export const dataSource = process.env.NEXT_PUBLIC_DATA_SOURCE ?? "fixtures";
 export const isPreviewData = dataSource !== "cms";
 
 export async function getVehicles(): Promise<Vehicle[]> {
-  return fixtures.vehicles;
+  // The 3D models live in their own map, so attaching one to a vehicle never
+  // means editing the fleet data.
+  return fixtures.vehicles.map((vehicle) => ({
+    ...vehicle,
+    model3d: models3d[vehicle.slug] ?? null,
+  }));
 }
 
 export async function getFeaturedVehicles(): Promise<Vehicle[]> {

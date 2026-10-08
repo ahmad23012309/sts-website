@@ -1,0 +1,9 @@
+{
+  "_readme": "Map a vehicle slug to the Sketchfab model chosen for it. Paste the full model URL; the id is taken from it. Set accuracy to 'exact' when the model really is that variant, or 'representative' when it is only the right body style, which makes the site say so under the viewer. Then run: npm run sketchfab:apply",
+  "_example": {
+    "toyota-coaster": {
+      "url": "https://sketchfab.com/3d-models/example-name-0123456789abcdef0123456789abcdef",
+      "accuracy": "representative"
+    }
+  }
+}
