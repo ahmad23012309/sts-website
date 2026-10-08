@@ -58,48 +58,53 @@
 /* ---------------------------------------------------------------------------
    Design tokens.
 
-   Every colour the site uses is declared here and nowhere else.
+   Brand colours are taken from the company mark: the red of the ring and the
+   lettering, the navy of the inner crescent. Yellow is the third voice.
 
-   The palette is taken from the company mark: the red of the ring and the
-   lettering, and the navy of the inner crescent. Yellow is the third voice,
-   added for the actions that matter most.
-
-   Each colour has one job and is not borrowed for another:
-     red     identity and primary actions
-     navy    supporting surfaces, the corporate sections
-     yellow  prices, highlights and the single strongest action on a screen
+   Surfaces are semantic rather than literal. The page is light, the way the
+   logo sits on white; the header, footer and the corporate band are dark. Any
+   element inside a [data-surface="dark"] wrapper picks up the dark values of
+   the same tokens, so one component works correctly on either background
+   without being told which it is on.
 --------------------------------------------------------------------------- */
 
 @theme {
-  --color-ink: #0d0e12;
-  --color-surface: #14161b;
-  --color-card: #1b1e25;
-  --color-elevated: #252933;
-  --color-line: #2c313b;
-  --color-line-strong: #3c4250;
-
-  /* Sampled from the logo artwork. */
+  /* Brand — fixed in both contexts. */
   --color-red: #ce1d17;
   --color-red-dark: #b5190f;
-  /* The logo red measures 3.5:1 on the page background, below the threshold for
-     body text, so small red type uses this lightened tint at 4.9:1. */
   --color-red-bright: #e8463f;
 
   --color-navy: #123785;
   --color-navy-deep: #0c2559;
-  /* Same reasoning as red-bright: the logo navy is unreadable on a dark page. */
   --color-blue: #4c7de0;
 
   --color-yellow: #ffc72c;
   --color-yellow-dark: #e5a800;
 
-  --color-text: #f4f5f7;
-  --color-muted: #a2a8b4;
-  --color-faint: #717886;
+  /* A fixed near-black, for type set on yellow or on a photograph. */
+  --color-ink: #0d0e12;
 
   --color-whatsapp: #25d366;
-  --color-available: #2ecc71;
-  --color-booked: #e5484d;
+  --color-available: #1a9e51;
+  --color-booked: #cf1124;
+
+  /* Semantic surfaces — light by default. */
+  --color-page: #ffffff;
+  --color-page-alt: #f4f6f9;
+  --color-panel: #ffffff;
+  --color-panel-alt: #eef1f6;
+  --color-edge: #e3e7ed;
+  --color-edge-strong: #cbd2dc;
+
+  --color-fg: #15171c;
+  --color-fg-muted: #5a616e;
+  --color-fg-faint: #858c99;
+
+  /* Brand colours that have to stay readable as type. The logo red measures
+     5.5:1 on white but only 3.5:1 on the dark surfaces, so the dark context
+     swaps in the lightened tint. */
+  --color-accent: #ce1d17;
+  --color-price: #123785;
 
   --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-body: "Crimson Text", Georgia, serif;
@@ -108,10 +113,32 @@
   --radius-card: 0.75rem;
   --radius-pill: 999px;
 
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.05), 0 12px 28px -16px rgb(16 24 40 / 0.22);
+  --shadow-lift: 0 2px 6px rgb(16 24 40 / 0.07), 0 28px 56px -24px rgb(16 24 40 / 0.34);
+
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark surfaces: the header, the footer and any band that opts in. */
+[data-surface="dark"] {
+  --color-page: #0d0e12;
+  --color-page-alt: #14161b;
+  --color-panel: #1b1e25;
+  --color-panel-alt: #252933;
+  --color-edge: #2c313b;
+  --color-edge-strong: #3c4250;
+
+  --color-fg: #f4f5f7;
+  --color-fg-muted: #a2a8b4;
+  --color-fg-faint: #717886;
+
+  --color-accent: #e8463f;
+  --color-price: #ffc72c;
+
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.65);
   --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.4), 0 24px 48px -20px rgb(0 0 0 / 0.85);
 
-  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: dark;
 }
 
 /* ---------------------------------------------------------------------------
@@ -119,12 +146,8 @@
 --------------------------------------------------------------------------- */
 
 @layer base {
-  :root {
-    color-scheme: dark;
-  }
-
   * {
-    border-color: var(--color-line);
+    border-color: var(--color-edge);
   }
 
   html {
@@ -133,8 +156,8 @@
   }
 
   body {
-    background-color: var(--color-ink);
-    color: var(--color-text);
+    background-color: var(--color-page);
+    color: var(--color-fg);
     font-family: var(--font-body);
     font-size: 1.0625rem;
     line-height: 1.65;
@@ -178,9 +201,13 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-yellow);
+    outline: 2px solid var(--color-red);
     outline-offset: 2px;
     border-radius: 2px;
+  }
+
+  [data-surface="dark"] :focus-visible {
+    outline-color: var(--color-yellow);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -214,7 +241,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-red-bright);
+  color: var(--color-accent);
 }
 
 /* Red running into navy, echoing the sweep inside the logo. */

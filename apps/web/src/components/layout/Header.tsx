@@ -38,11 +38,10 @@ export function Header() {
 
   return (
     <header
+      data-surface="dark"
       className={cn(
-        "sticky top-0 z-50 border-b transition-colors duration-300",
-        scrolled
-          ? "border-line bg-ink/92 backdrop-blur-xl"
-          : "border-transparent bg-transparent",
+        "sticky top-0 z-50 border-b border-edge bg-page text-fg transition-shadow duration-300",
+        scrolled && "shadow-[0_10px_30px_-18px_rgba(13,14,18,0.9)]",
       )}
       onMouseLeave={() => setOpenMenu(null)}
     >
@@ -67,7 +66,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-              className="hidden items-center gap-2 font-ui text-sm text-muted transition-colors hover:text-red-bright xl:flex"
+              className="hidden items-center gap-2 font-ui text-sm text-fg-muted transition-colors hover:text-accent xl:flex"
             >
               <Phone className="h-4 w-4" aria-hidden />
               <span className="tabular">{site.contact.phone}</span>
@@ -77,7 +76,7 @@ export function Header() {
             </ButtonLink>
             <button
               type="button"
-              className="grid h-11 w-11 place-items-center rounded-full border border-line text-text lg:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full border border-edge text-fg lg:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}
@@ -116,7 +115,7 @@ function NavEntry({
         href={item.href}
         className={cn(
           "flex items-center gap-1.5 rounded-pill px-4 py-2 font-ui text-sm font-medium transition-colors",
-          isActive ? "text-red-bright" : "text-text/85 hover:text-red-bright",
+          isActive ? "text-accent" : "text-fg/85 hover:text-accent",
         )}
       >
         {item.label}
@@ -134,18 +133,18 @@ function NavEntry({
       {hasChildren && isOpen ? (
         item.mega ? (
           <div className="absolute left-1/2 top-full z-50 w-[46rem] -translate-x-1/2 pt-3">
-            <div className="grid grid-cols-3 gap-1 rounded-card border border-line bg-card/97 p-3 shadow-lift backdrop-blur-xl">
+            <div className="grid grid-cols-3 gap-1 rounded-card border border-edge bg-panel/97 p-3 shadow-lift backdrop-blur-xl">
               {item.children?.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="rounded-[0.5rem] p-4 transition-colors hover:bg-elevated"
+                  className="rounded-[0.5rem] p-4 transition-colors hover:bg-panel-alt"
                 >
-                  <span className="block font-ui text-sm font-semibold text-text">
+                  <span className="block font-ui text-sm font-semibold text-fg">
                     {child.label}
                   </span>
                   {child.description ? (
-                    <span className="mt-1 block text-sm leading-snug text-muted">
+                    <span className="mt-1 block text-sm leading-snug text-fg-muted">
                       {child.description}
                     </span>
                   ) : null}
@@ -155,12 +154,12 @@ function NavEntry({
           </div>
         ) : (
           <div className="absolute left-0 top-full z-50 w-60 pt-3">
-            <div className="rounded-card border border-line bg-card/97 p-2 shadow-lift backdrop-blur-xl">
+            <div className="rounded-card border border-edge bg-panel/97 p-2 shadow-lift backdrop-blur-xl">
               {item.children?.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="block rounded-[0.5rem] px-4 py-2.5 font-ui text-sm text-text/85 transition-colors hover:bg-elevated hover:text-red-bright"
+                  className="block rounded-[0.5rem] px-4 py-2.5 font-ui text-sm text-fg/85 transition-colors hover:bg-panel-alt hover:text-accent"
                 >
                   {child.label}
                 </Link>
@@ -175,24 +174,24 @@ function NavEntry({
 
 function MobileNav() {
   return (
-    <div className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-line bg-ink lg:hidden">
+    <div data-surface="dark" className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-edge bg-page text-fg lg:hidden">
       <Container className="py-6">
         <ul className="space-y-1">
           {primaryNav.map((item) => (
             <li key={item.label}>
               <Link
                 href={item.href}
-                className="block py-3 font-display text-2xl text-text"
+                className="block py-3 font-display text-2xl text-fg"
               >
                 {item.label}
               </Link>
               {item.children?.length ? (
-                <ul className="mb-3 ml-1 space-y-1 border-l border-line pl-4">
+                <ul className="mb-3 ml-1 space-y-1 border-l border-edge pl-4">
                   {item.children.map((child) => (
                     <li key={child.href}>
                       <Link
                         href={child.href}
-                        className="block py-1.5 font-ui text-sm text-muted"
+                        className="block py-1.5 font-ui text-sm text-fg-muted"
                       >
                         {child.label}
                       </Link>

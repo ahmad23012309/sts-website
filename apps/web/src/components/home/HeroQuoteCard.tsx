@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { site } from "@/lib/site";
 
 const categories = [
@@ -11,10 +10,10 @@ const categories = [
 ];
 
 const fieldClass =
-  "h-12 w-full rounded-[0.5rem] border border-line bg-ink px-4 font-ui text-sm text-text focus:border-red focus:outline-none";
+  "h-12 w-full rounded-[0.5rem] border border-edge bg-page px-4 font-ui text-sm text-fg focus:border-red focus:outline-none";
 
 const labelClass =
-  "mb-1.5 block font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-muted uppercase";
+  "mb-1.5 block font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-fg-muted uppercase";
 
 /**
  * Opens the fare calculator with the visitor's answers already filled in.
@@ -24,10 +23,10 @@ const labelClass =
  */
 export function HeroQuoteCard() {
   return (
-    <div className="rounded-card border border-line bg-card/85 p-7 shadow-lift backdrop-blur-xl sm:p-8">
+    <div className="rounded-card border border-edge bg-panel/85 p-7 shadow-lift backdrop-blur-xl sm:p-8">
       <p className="eyebrow">Estimate a fare</p>
       <h2 className="mt-3 text-3xl">Know the price first</h2>
-      <p className="mt-2.5 text-[0.95rem] text-muted">
+      <p className="mt-2.5 text-[0.95rem] text-fg-muted">
         Three answers and you get an itemised estimate at today&rsquo;s fuel
         rate.
       </p>
@@ -71,11 +70,10 @@ export function HeroQuoteCard() {
           className="inline-flex h-13 w-full items-center justify-center gap-2 rounded-pill bg-yellow font-ui text-sm font-semibold tracking-wide text-ink uppercase transition-colors hover:bg-yellow-dark"
         >
           Get an estimate
-          <ArrowRight className="h-4 w-4" aria-hidden />
         </button>
       </form>
 
-      <p className="mt-4 text-center font-ui text-[0.6875rem] text-faint">
+      <p className="mt-4 text-center font-ui text-[0.6875rem] text-fg-faint">
         No payment details. No account needed.
       </p>
     </div>

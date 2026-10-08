@@ -32,7 +32,7 @@ export function SectionHeading({
         )}
       />
       {description ? (
-        <p className="mt-5 text-lg text-muted">{description}</p>
+        <p className="mt-5 text-lg text-fg-muted">{description}</p>
       ) : null}
     </div>
   );

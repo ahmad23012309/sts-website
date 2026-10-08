@@ -3,64 +3,84 @@
 Implemented in `apps/web/src/app/globals.css`. Every token is declared there and
 nowhere else, so a brand change is a single-file edit.
 
-## Colour
+## Surfaces
 
-The palette comes from the company mark: the red of the ring and the lettering,
-and the navy of the inner crescent. Yellow is the third voice, added for the
-actions that matter most.
+The page is light, the way the logo sits on white. The header, the footer, the
+fuel-price band and the corporate band are dark.
+
+Surface colours are therefore semantic rather than literal. A component asks for
+`bg-panel`, `text-fg` or `border-edge` and never for a specific shade; any
+element inside a `[data-surface="dark"]` wrapper picks up the dark values of the
+same tokens. One card component works correctly on either background without
+being told which it is on, and a section can be flipped by adding a single
+attribute.
+
+| Token | Light | Dark |
+|---|---|---|
+| `page` | `#FFFFFF` | `#0D0E12` |
+| `page-alt` | `#F4F6F9` | `#14161B` |
+| `panel` | `#FFFFFF` | `#1B1E25` |
+| `panel-alt` | `#EEF1F6` | `#252933` |
+| `edge` | `#E3E7ED` | `#2C313B` |
+| `edge-strong` | `#CBD2DC` | `#3C4250` |
+| `fg` | `#15171C` | `#F4F5F7` |
+| `fg-muted` | `#5A616E` | `#A2A8B4` |
+| `fg-faint` | `#858C99` | `#717886` |
+| `accent` | `#CE1D17` | `#E8463F` |
+| `price` | `#123785` | `#FFC72C` |
+
+`accent` and `price` flip for the same reason: the logo red measures 5.5:1 on
+white but only 3.5:1 on the dark surfaces, and yellow is unreadable as type on
+white at 1.6:1 while it is the clearest choice on dark at 12.4:1.
+
+## Brand colour
 
 | Token | Hex | Role |
 |---|---|---|
-| `ink` | `#0D0E12` | Page background |
-| `surface` | `#14161B` | Alternating section background |
-| `card` | `#1B1E25` | Cards, panels |
-| `elevated` | `#252933` | Hover surfaces, menu rows |
-| `line` | `#2C313B` | Hairlines |
-| `line-strong` | `#3C4250` | Emphasised borders, outline buttons |
-| `red` | `#CE1D17` | Logo red. Primary buttons, icon outlines |
+| `red` | `#CE1D17` | Logo red. Primary buttons, eyebrows, icon outlines |
 | `red-dark` | `#B5190F` | Primary button hover |
-| `red-bright` | `#E8463F` | Red type and icons on dark backgrounds |
-| `navy` | `#123785` | Logo navy. Corporate surfaces, gradients |
-| `navy-deep` | `#0C2559` | Deep end of the corporate gradient |
-| `blue` | `#4C7DE0` | Blue type and icons on dark backgrounds |
-| `yellow` | `#FFC72C` | Prices, highlights, the strongest action on a screen |
-| `yellow-dark` | `#E5A800` | Yellow hover |
-| `text` | `#F4F5F7` | Primary text |
-| `muted` | `#A2A8B4` | Secondary text |
-| `faint` | `#717886` | Captions, disclaimers |
-| `whatsapp` | `#25D366` | WhatsApp controls only |
-| `available` / `booked` | `#2ECC71` / `#E5484D` | Calendar states |
+| `red-bright` | `#E8463F` | Red type on dark surfaces |
+| `navy` | `#123785` | Logo navy. Prices on light, corporate gradients |
+| `navy-deep` | `#0C2559` | Deep end of the dark bands |
+| `blue` | `#4C7DE0` | Blue type on dark surfaces |
+| `yellow` | `#FFC72C` | The strongest action on a screen, and prices on dark |
+| `ink` | `#0D0E12` | Fixed near-black, for type set on yellow |
 
-### How the three brand colours divide the work
+Three accent colours only work if each keeps to one job:
 
-Three accent colours is one more than most palettes can carry, so each has a
-single job and never takes another's:
-
-- **Red** is identity and the default action: primary buttons, eyebrows, icon
-  outlines, the rule under each heading.
-- **Navy** is support: the corporate band, the hero glow, deep gradients. It is
-  a surface colour, not a text colour.
-- **Yellow** is held back. It marks prices and the one highest-intent action on
-  a screen, which is why the hero estimate button and the corporate call-back
-  button are yellow while everything else is red.
+- **Red** is identity and the default action.
+- **Navy** carries prices on light surfaces and backs the dark bands.
+- **Yellow** is held back for one button per screen, and for figures on dark.
 
 Section rules run red into navy, echoing the sweep inside the logo.
 
-### Contrast
+### Measured contrast
 
-Two of the logo colours are too dark to serve as text on a dark page, so each
-has a lightened counterpart used only for type and icons:
+| Pair | Ratio |
+|---|---|
+| `fg` on white | 17.93:1 |
+| `navy` on white | 10.99:1 |
+| `red` on white | 5.51:1 |
+| `fg-muted` on white | 6.23:1 |
+| White on `red` | 5.51:1 |
+| `ink` on `yellow` | 11.49:1 |
+| `yellow` as type on white | 1.56:1 — never used |
+| `accent` on dark `page` | 4.94:1 |
+| `yellow` on dark `page` | 12.36:1 |
 
-| Pair | Ratio | Verdict |
-|---|---|---|
-| White on `red` | 5.51:1 | AA for body text |
-| `red` as text on `ink` | 3.50:1 | Too low, so `red-bright` is used instead |
-| `red-bright` on `ink` | 4.94:1 | AA |
-| `navy` as text on `ink` | 1.76:1 | Surface only, never text |
-| `blue` on `ink` | 4.88:1 | AA |
-| `yellow` on `ink`, `ink` on `yellow` | 12.36:1 | AAA both ways |
-| `text` on `ink` | 17.68:1 | AAA |
-| `muted` on `ink` | 8.08:1 | AAA |
+## Buttons
+
+No arrow glyphs. A button reads as a button from its shape and colour, and the
+arrow added nothing but visual noise at six repeats per screen. Inline text
+links carry a brand-red underline instead.
+
+| Variant | Appearance |
+|---|---|
+| `primary` | Brand red, white label |
+| `accent` | Yellow, near-black label. One per screen |
+| `outline` | Bordered, foreground label, red on hover |
+| `ghost` | Text only |
+| `whatsapp` | WhatsApp green |
 
 ## Type
 
@@ -81,7 +101,36 @@ request at page load.
 ## Motion
 
 One `Reveal` component backed by an IntersectionObserver. No animation library.
-Everything respects `prefers-reduced-motion`.
+Everything respects `prefers-reduced-motion`, and the reveals show up front when
+scripting is unavailable, so no content can be trapped at zero opacity.
+
+## The 3D showroom
+
+`components/three/` holds a turntable viewer: a stylised saloon that rotates
+slowly, responds to dragging, and repaints to any of six finishes.
+
+The car is **built in code** rather than downloaded. The freely licensed car
+models available run to around twelve megabytes or carry attribution and
+trademark conditions, and neither is an acceptable trade on a homepage that has
+a performance budget to keep. `buildCar.ts` extrudes a side profile into a solid,
+cuts the wheel arches as arcs in that profile, pushes a second extrusion through
+the cabin to form the glazing, and adds wheels and lamps. It is a few kilobytes
+of code, it renders instantly, it recolours on demand, and it carries no licence
+conditions.
+
+Cost control:
+
+- Three.js is behind a dynamic import, so it is absent from the initial payload
+- The scene is only created once the section is within 300px of the viewport, so
+  a visitor who never scrolls that far never downloads the library
+- The render loop pauses when the canvas is off screen or the tab is hidden
+- Reflections come from a procedural room environment, so there is no HDR file
+  to download
+- Auto-rotation is disabled under `prefers-reduced-motion`
+- Everything is disposed on unmount
+
+Per-vehicle models on the fleet pages will use the same component, with a `.glb`
+per vehicle where one exists.
 
 ## Components built so far
 

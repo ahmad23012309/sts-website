@@ -16,7 +16,7 @@ export function VehicleCard({
   const name = `${vehicle.make} ${vehicle.model}`;
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-card border border-line bg-card shadow-card transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-lift">
+    <article className="group flex flex-col overflow-hidden rounded-card border border-edge bg-panel shadow-card transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:border-edge-strong hover:shadow-lift">
       <Link
         href={`/fleet/${vehicle.slug}`}
         className="relative block aspect-[16/10] overflow-hidden"
@@ -28,7 +28,7 @@ export function VehicleCard({
           priority={priority}
           className="transition-transform duration-700 group-hover:scale-[1.04]"
         />
-        <span className="absolute top-3 left-3 rounded-pill border border-red/45 bg-ink/80 px-3 py-1 font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-red-bright uppercase backdrop-blur">
+        <span className="absolute top-3 left-3 rounded-pill border border-red/45 bg-page/80 px-3 py-1 font-ui text-[0.625rem] font-semibold tracking-[0.14em] text-accent uppercase backdrop-blur">
           {vehicle.category}
         </span>
       </Link>
@@ -39,26 +39,26 @@ export function VehicleCard({
             <h3 className="truncate text-2xl">
               <Link
                 href={`/fleet/${vehicle.slug}`}
-                className="transition-colors hover:text-red-bright"
+                className="transition-colors hover:text-accent"
               >
                 {name}
               </Link>
             </h3>
-            <p className="mt-1 font-ui text-xs text-muted">
+            <p className="mt-1 font-ui text-xs text-fg-muted">
               {vehicle.variant} &middot; {vehicle.year}
             </p>
           </div>
           <div className="shrink-0 text-right">
-            <p className="tabular text-xl font-semibold text-yellow">
+            <p className="tabular text-xl font-semibold text-price">
               {formatPkr(vehicle.rates.withFuelDaily)}
             </p>
-            <p className="font-ui text-[0.625rem] tracking-[0.1em] text-faint uppercase">
+            <p className="font-ui text-[0.625rem] tracking-[0.1em] text-fg-faint uppercase">
               per day
             </p>
           </div>
         </div>
 
-        <ul className="mt-5 grid grid-cols-3 gap-2 border-y border-line py-4">
+        <ul className="mt-5 grid grid-cols-3 gap-2 border-y border-edge py-4">
           <Spec icon={<Users className="h-4 w-4" aria-hidden />} label={`${vehicle.specs.seats} seats`} />
           <Spec
             icon={<Gauge className="h-4 w-4" aria-hidden />}
@@ -99,8 +99,8 @@ export function VehicleCard({
 function Spec({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
     <li className="flex flex-col items-center gap-1.5 text-center">
-      <span className="text-red-bright">{icon}</span>
-      <span className="font-ui text-[0.6875rem] text-muted">{label}</span>
+      <span className="text-accent">{icon}</span>
+      <span className="font-ui text-[0.6875rem] text-fg-muted">{label}</span>
     </li>
   );
 }

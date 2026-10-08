@@ -25,10 +25,10 @@ export async function Testimonials() {
           {testimonials.slice(0, 6).map((testimonial) => (
             <figure
               key={testimonial.id}
-              className="flex h-full flex-col rounded-card border border-line bg-card p-7"
+              className="flex h-full flex-col rounded-card border border-edge bg-panel p-7"
             >
-              <Quote className="h-6 w-6 text-red-bright" aria-hidden />
-              <blockquote className="mt-5 flex-1 text-[0.95rem] text-muted">
+              <Quote className="h-6 w-6 text-accent" aria-hidden />
+              <blockquote className="mt-5 flex-1 text-[0.95rem] text-fg-muted">
                 {testimonial.body}
               </blockquote>
               <div
@@ -42,17 +42,17 @@ export async function Testimonials() {
                     className={
                       index < testimonial.rating
                         ? "h-4 w-4 fill-yellow text-yellow"
-                        : "h-4 w-4 text-line-strong"
+                        : "h-4 w-4 text-edge-strong"
                     }
                   />
                 ))}
               </div>
-              <figcaption className="mt-4 border-t border-line pt-4">
-                <span className="block font-ui text-sm font-semibold text-text">
+              <figcaption className="mt-4 border-t border-edge pt-4">
+                <span className="block font-ui text-sm font-semibold text-fg">
                   {testimonial.authorName}
                 </span>
                 {testimonial.company ? (
-                  <span className="mt-0.5 block font-ui text-xs text-faint">
+                  <span className="mt-0.5 block font-ui text-xs text-fg-faint">
                     {testimonial.company}
                   </span>
                 ) : null}

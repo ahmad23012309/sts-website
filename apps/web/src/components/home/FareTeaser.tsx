@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
@@ -46,53 +45,52 @@ export async function FareTeaser() {
               title="No guessing, no haggling"
               description="Pick a route, a vehicle and the dates. The estimate is built from the distance, the vehicle's consumption and the fuel price in force today, and it is shown as a breakdown rather than a single number."
             />
-            <ul className="mt-9 space-y-3 text-muted">
+            <ul className="mt-9 space-y-3 text-fg-muted">
               <li>Distances taken from our own route table, not a guess.</li>
               <li>With-fuel and without-fuel compared side by side.</li>
               <li>The quote converts straight into a booking or a WhatsApp message.</li>
             </ul>
             <ButtonLink href="/fare-calculator" size="lg" className="mt-10">
               Open the calculator
-              <ArrowRight className="h-4 w-4" aria-hidden />
             </ButtonLink>
           </div>
 
-          <div className="rounded-card border border-line bg-card p-7 shadow-card sm:p-9">
+          <div className="rounded-card border border-edge bg-panel p-7 shadow-card sm:p-9">
             <p className="eyebrow">Worked example</p>
             <h3 className="mt-3 text-2xl">
               {route.origin} to {route.destination}
             </h3>
-            <p className="mt-1.5 font-ui text-xs text-muted">
+            <p className="mt-1.5 font-ui text-xs text-fg-muted">
               {vehicle.make} {vehicle.model} {vehicle.variant} &middot; 2 days
               &middot; with fuel &middot; {route.distanceKm} km each way
             </p>
 
-            <dl className="mt-7 space-y-3.5 border-t border-line pt-7">
+            <dl className="mt-7 space-y-3.5 border-t border-edge pt-7">
               {fare.lines.map((line) => (
                 <div key={line.label} className="flex items-baseline justify-between gap-6">
                   <dt>
-                    <span className="font-ui text-sm text-text">{line.label}</span>
-                    <span className="mt-0.5 block font-ui text-[0.6875rem] text-faint">
+                    <span className="font-ui text-sm text-fg">{line.label}</span>
+                    <span className="mt-0.5 block font-ui text-[0.6875rem] text-fg-faint">
                       {line.detail}
                     </span>
                   </dt>
-                  <dd className="tabular shrink-0 text-sm text-muted">
+                  <dd className="tabular shrink-0 text-sm text-fg-muted">
                     {formatPkr(line.amount)}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            <div className="mt-7 flex items-baseline justify-between gap-6 border-t border-line pt-6">
-              <span className="font-ui text-xs tracking-[0.14em] text-muted uppercase">
+            <div className="mt-7 flex items-baseline justify-between gap-6 border-t border-edge pt-6">
+              <span className="font-ui text-xs tracking-[0.14em] text-fg-muted uppercase">
                 Estimated total
               </span>
-              <span className="tabular text-3xl font-semibold text-yellow">
+              <span className="tabular text-3xl font-semibold text-price">
                 {formatPkr(fare.total)}
               </span>
             </div>
 
-            <p className="mt-5 font-ui text-[0.6875rem] leading-relaxed text-faint">
+            <p className="mt-5 font-ui text-[0.6875rem] leading-relaxed text-fg-faint">
               Includes a {rules.marginPercent}% service charge. Calculated at
               PKR {fare.fuelRatePerLitre.toFixed(2)} per litre, effective{" "}
               {fare.fuelRateEffectiveFrom}. Confirmed at the time of booking.

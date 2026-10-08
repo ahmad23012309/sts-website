@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
@@ -10,7 +9,7 @@ export async function FleetPreview() {
   const vehicles = (await getFeaturedVehicles()).slice(0, 6);
 
   return (
-    <section className="border-y border-line bg-surface py-20 lg:py-28">
+    <section className="border-y border-edge bg-page-alt py-20 lg:py-28">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
@@ -20,7 +19,6 @@ export async function FleetPreview() {
           />
           <ButtonLink href="/fleet" variant="outline" size="md">
             All vehicles
-            <ArrowRight className="h-4 w-4" aria-hidden />
           </ButtonLink>
         </div>
 

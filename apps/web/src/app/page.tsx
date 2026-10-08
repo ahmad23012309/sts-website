@@ -1,6 +1,7 @@
 import { Hero } from "@/components/home/Hero";
 import { AudienceSplit } from "@/components/home/AudienceSplit";
 import { FleetPreview } from "@/components/home/FleetPreview";
+import { Showroom } from "@/components/home/Showroom";
 import { FuelStrip } from "@/components/home/FuelStrip";
 import { FareTeaser } from "@/components/home/FareTeaser";
 import { WhyUs } from "@/components/home/WhyUs";
@@ -26,6 +27,7 @@ export default async function HomePage() {
       <Hero />
       <AudienceSplit />
       <FleetPreview />
+      <Showroom />
       <FuelStrip />
       <FareTeaser />
       <WhyUs />

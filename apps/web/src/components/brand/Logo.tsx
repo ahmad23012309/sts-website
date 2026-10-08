@@ -33,10 +33,10 @@ export function Logo({
       />
       {!compact ? (
         <span className="flex flex-col leading-none">
-          <span className="font-display text-lg tracking-[0.06em] text-text">
+          <span className="font-display text-lg tracking-[0.06em] text-fg">
             Sidhu Travel
           </span>
-          <span className="mt-1 font-ui text-[0.5625rem] font-semibold tracking-[0.34em] text-red-bright">
+          <span className="mt-1 font-ui text-[0.5625rem] font-semibold tracking-[0.34em] text-accent">
             SERVICES
           </span>
         </span>

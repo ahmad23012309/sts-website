@@ -37,12 +37,12 @@ export function VehicleMedia({
   return (
     <div
       className={cn(
-        "relative grid h-full w-full place-items-center overflow-hidden bg-[radial-gradient(120%_90%_at_50%_0%,#2d2c33_0%,#1a1a1d_60%,#141417_100%)]",
+        "relative grid h-full w-full place-items-center overflow-hidden bg-page-alt",
         className,
       )}
     >
-      <CarSilhouette className="w-3/5 max-w-56 text-line-strong" />
-      <span className="absolute bottom-3 left-1/2 -translate-x-1/2 font-ui text-[0.625rem] font-semibold tracking-[0.18em] text-faint uppercase">
+      <CarSilhouette className="w-3/5 max-w-56 text-edge-strong" />
+      <span className="absolute bottom-3 left-1/2 -translate-x-1/2 font-ui text-[0.625rem] font-semibold tracking-[0.18em] text-fg-faint uppercase">
         Photography pending
       </span>
     </div>

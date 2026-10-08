@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, User } from "lucide-react";
+import { Building2, User } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -50,13 +50,13 @@ export function AudienceSplit() {
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {audiences.map((audience, index) => (
             <Reveal key={audience.key} delay={index * 80}>
-              <article className="group relative h-full overflow-hidden rounded-card border border-line bg-card p-8 transition-colors duration-300 hover:border-red/40 sm:p-10">
-                <span className="grid h-12 w-12 place-items-center rounded-full border border-red/45 text-red-bright">
+              <article className="group relative h-full overflow-hidden rounded-card border border-edge bg-panel p-8 transition-colors duration-300 hover:border-red/40 sm:p-10">
+                <span className="grid h-12 w-12 place-items-center rounded-full border border-red/45 text-accent">
                   <audience.Icon className="h-5 w-5" aria-hidden />
                 </span>
 
                 <h3 className="mt-7 text-3xl">{audience.title}</h3>
-                <p className="mt-4 text-muted">{audience.summary}</p>
+                <p className="mt-4 text-fg-muted">{audience.summary}</p>
 
                 <ul className="mt-7 space-y-3">
                   {audience.points.map((point) => (
@@ -65,20 +65,16 @@ export function AudienceSplit() {
                         aria-hidden
                         className="mt-2.5 h-px w-4 shrink-0 bg-red"
                       />
-                      <span className="text-muted">{point}</span>
+                      <span className="text-fg-muted">{point}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Link
                   href={audience.href}
-                  className="mt-9 inline-flex items-center gap-2 font-ui text-sm font-semibold tracking-wide text-red-bright uppercase transition-colors hover:text-yellow"
+                  className="mt-9 inline-flex items-center font-ui text-sm font-semibold tracking-wide text-accent uppercase underline decoration-red/40 decoration-2 underline-offset-[6px] transition-colors hover:decoration-red"
                 >
                   {audience.cta}
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                    aria-hidden
-                  />
                 </Link>
               </article>
             </Reveal>

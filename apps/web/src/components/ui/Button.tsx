@@ -15,8 +15,8 @@ const variants: Record<Variant, string> = {
   accent:
     "bg-yellow text-ink hover:bg-yellow-dark shadow-[0_6px_20px_-10px_rgba(255,199,44,0.8)]",
   outline:
-    "border border-line-strong text-text hover:border-red hover:text-red-bright",
-  ghost: "text-text hover:text-red-bright",
+    "border border-edge-strong text-fg hover:border-red hover:text-accent",
+  ghost: "text-fg hover:text-accent",
   whatsapp: "bg-whatsapp text-ink hover:brightness-110",
 };
 

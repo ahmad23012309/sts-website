@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { site } from "@/lib/site";
@@ -15,7 +14,7 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(85%_65%_at_78%_-5%,rgba(18,55,133,0.38),transparent_62%),radial-gradient(55%_45%_at_8%_8%,rgba(206,29,23,0.20),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_82%_-10%,rgba(18,55,133,0.10),transparent_60%),radial-gradient(50%_45%_at_2%_0%,rgba(206,29,23,0.07),transparent_68%)]"
       />
       <div
         aria-hidden
@@ -30,10 +29,10 @@ export function Hero() {
             <h1 className="mt-5 text-5xl leading-[0.98] sm:text-6xl lg:text-7xl">
               The right vehicle,
               <br />
-              <span className="text-red-bright">priced honestly</span>
+              <span className="text-accent">priced honestly</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg text-muted">
+            <p className="mt-7 max-w-xl text-lg text-fg-muted">
               {site.name} rents to individuals and runs long-term fleets for
               business. Every quote is built from the distance, the vehicle and
               the day&rsquo;s fuel price, so you see the arithmetic before you
@@ -43,22 +42,21 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <ButtonLink href="/fleet" size="lg">
                 Browse the fleet
-                <ArrowRight className="h-4 w-4" aria-hidden />
               </ButtonLink>
               <ButtonLink href="/fare-calculator" variant="outline" size="lg">
                 Calculate a fare
               </ButtonLink>
             </div>
 
-            <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-line pt-8">
+            <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-edge pt-8">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="sr-only">{stat.label}</dt>
                   <dd>
-                    <span className="block font-display text-4xl text-text">
+                    <span className="block font-display text-4xl text-fg">
                       {stat.value}
                     </span>
-                    <span className="mt-1.5 block font-ui text-[0.6875rem] tracking-[0.1em] text-muted uppercase">
+                    <span className="mt-1.5 block font-ui text-[0.6875rem] tracking-[0.1em] text-fg-muted uppercase">
                       {stat.label}
                     </span>
                   </dd>

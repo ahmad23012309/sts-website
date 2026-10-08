@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { quickBookingSchema } from "@/lib/validation/forms";
 import { site } from "@/lib/site";
@@ -18,7 +17,7 @@ const categories = [
 type Status = "idle" | "submitting" | "success" | "error";
 
 const fieldClass =
-  "h-12 w-full rounded-[0.5rem] border border-line bg-ink px-4 font-ui text-sm text-text placeholder:text-faint focus:border-red focus:outline-none";
+  "h-12 w-full rounded-[0.5rem] border border-edge bg-page px-4 font-ui text-sm text-fg placeholder:text-fg-faint focus:border-red focus:outline-none";
 
 export function QuickBookingForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -78,9 +77,9 @@ export function QuickBookingForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-card border border-red/45 bg-card p-6">
-        <p className="font-display text-2xl text-red-bright">Request received</p>
-        <p className="mt-2 text-muted">{message}</p>
+      <div className="rounded-card border border-red/45 bg-panel p-6">
+        <p className="font-display text-2xl text-accent">Request received</p>
+        <p className="mt-2 text-fg-muted">{message}</p>
       </div>
     );
   }
@@ -134,7 +133,6 @@ export function QuickBookingForm() {
 
       <Button type="submit" size="lg" className="w-full" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending" : "Request a call back"}
-        <ArrowRight className="h-4 w-4" aria-hidden />
       </Button>
 
       {status === "error" && message ? (
@@ -159,7 +157,7 @@ function Field({
 }) {
   return (
     <label className={className}>
-      <span className="mb-1.5 block font-ui text-[0.6875rem] font-semibold tracking-[0.12em] text-muted uppercase">
+      <span className="mb-1.5 block font-ui text-[0.6875rem] font-semibold tracking-[0.12em] text-fg-muted uppercase">
         {label}
       </span>
       {children}

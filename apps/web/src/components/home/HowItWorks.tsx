@@ -26,13 +26,13 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <li
               key={step.title}
-              className="relative rounded-card border border-line bg-card p-8"
+              className="relative rounded-card border border-edge bg-panel p-8"
             >
-              <span className="font-display text-5xl text-line-strong">
+              <span className="font-display text-5xl text-edge-strong">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-5 text-2xl">{step.title}</h3>
-              <p className="mt-3 text-muted">{step.body}</p>
+              <p className="mt-3 text-fg-muted">{step.body}</p>
             </li>
           ))}
         </ol>
