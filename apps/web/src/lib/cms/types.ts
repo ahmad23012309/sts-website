@@ -171,6 +171,12 @@ export interface Service {
   title: string;
   summary: string;
   icon: string;
+  /** Who the service is for, in one line. */
+  audience: string;
+  body: string[];
+  points: string[];
+  /** Fleet categories this service draws on. */
+  relatedCategories: VehicleCategory[];
 }
 
 export interface AvailabilityBlock {

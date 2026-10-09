@@ -86,7 +86,7 @@ export function Footer() {
           <FooterColumn title="Fleet" links={footerNav.fleet} />
           <FooterColumn title="Services" links={footerNav.services} />
           <FooterColumn title="Company" links={footerNav.company} />
-          <FooterColumn title="Legal" links={footerNav.legal} />
+          <FooterColumn title="Tools" links={footerNav.legal} />
         </div>
 
         <div className="flex flex-col gap-3 border-t border-edge py-7 font-ui text-xs text-fg-faint sm:flex-row sm:items-center sm:justify-between">

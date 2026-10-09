@@ -985,51 +985,124 @@ export const routes: Route[] = [
 
 export const services: Service[] = [
   {
-    id: "s-daily",
-    slug: "daily-rental",
-    title: "Daily Rental",
+    id: "s-staff",
+    slug: "staff-transport",
+    title: "Staff Transport",
     summary:
-      "Any vehicle in the fleet by the day, with or without a driver, inside the city or on the road.",
-    icon: "calendar",
+      "Daily pick and drop on fixed routes, billed monthly against one invoice.",
+    icon: "users",
+    audience: "For employers moving people to work every day",
+    body: [
+      "A staff route is judged on the mornings it would have failed. Ours are built around that: drivers assigned to the route rather than sourced on the day, servicing planned against each registration, and a replacement vehicle when one is off the road.",
+      "Routes, pick-up points and timings are agreed once and held to. Changes go through a named contact, not a call centre, and the whole month arrives as a single itemised invoice.",
+    ],
+    points: [
+      "Coasters, Hiace vans and intercity coaches",
+      "The same drivers on the same route",
+      "Replacement vehicle guarantee",
+      "One monthly invoice against your purchase order",
+    ],
+    relatedCategories: ["coaster", "van", "bus"],
   },
   {
     id: "s-corporate",
     slug: "corporate-fleet",
     title: "Corporate Fleet Leasing",
     summary:
-      "Long-term contracts with vetted drivers, scheduled maintenance and a replacement vehicle guarantee.",
+      "Vehicles on contract for your executives and teams, maintained by us.",
     icon: "briefcase",
+    audience: "For companies that need vehicles without owning them",
+    body: [
+      "Take the vehicles you need on contract and leave the registration, servicing, repairs and replacement to us. Contracts start at a single vehicle and run from a month upwards.",
+      "You get a fixed monthly cost instead of an unpredictable one, and your people get a car that works rather than one that is overdue a service.",
+    ],
+    points: [
+      "From one vehicle upwards",
+      "Scheduled maintenance included",
+      "With or without a driver",
+      "Credit terms agreed up front",
+    ],
+    relatedCategories: ["sedan", "suv", "luxury"],
+  },
+  {
+    id: "s-daily",
+    slug: "daily-rental",
+    title: "Daily Rental",
+    summary:
+      "Any vehicle in the fleet by the day, with or without a driver.",
+    icon: "calendar",
+    audience: "For anyone who needs a vehicle for a day or a week",
+    body: [
+      "Pick the vehicle, tell us the dates, and we deliver it or you collect it. Self-drive is available on most of the fleet against documents and a deposit; some vehicles are chauffeur-driven only.",
+      "Rates are published on every vehicle page, with fuel and without, so you can work out the cost before you call.",
+    ],
+    points: [
+      "Published rates, with and without fuel",
+      "Self-drive or with a driver",
+      "Delivery to your address",
+      "Discounts from seven days",
+    ],
+    relatedCategories: ["economy", "sedan", "suv"],
   },
   {
     id: "s-airport",
     slug: "airport-transfer",
     title: "Airport Transfer",
     summary:
-      "Fixed-price pick-up and drop-off with flight tracking, so a delayed landing costs nothing extra.",
+      "Fixed-price pick-up and drop-off, with the driver waiting on arrival.",
     icon: "plane",
+    audience: "For arrivals, departures and guests you are meeting",
+    body: [
+      "The price is agreed before the journey, so a delayed landing or a slow queue at immigration costs nothing extra. The driver waits inside with a name board.",
+      "For groups, a coaster or a Hiace meets the whole party at once rather than splitting people across taxis.",
+    ],
+    points: [
+      "Price fixed before the journey",
+      "Driver waits on arrival",
+      "Group vehicles for larger parties",
+      "Return transfers arranged together",
+    ],
+    relatedCategories: ["sedan", "suv", "van"],
   },
   {
     id: "s-intercity",
     slug: "intercity-travel",
     title: "Intercity Travel",
     summary:
-      "Point-to-point journeys priced on distance and the day's fuel rate, quoted before you commit.",
+      "Point-to-point journeys priced on distance and the day's fuel rate.",
     icon: "route",
+    audience: "For travel between cities, one way or returning",
+    body: [
+      "Journeys between cities are quoted from the distance, the vehicle's own consumption and the fuel price in force that day, then shown to you as a breakdown rather than a single figure.",
+      "A one-way drop and a return trip are priced differently, because on a one-way the vehicle still has to come back. The calculator shows which is which.",
+    ],
+    points: [
+      "Quoted before you commit",
+      "One-way drops and return journeys",
+      "Driver allowance and night stay shown separately",
+      "Tolls included where we hold the route",
+    ],
+    relatedCategories: ["sedan", "suv", "coaster"],
   },
   {
     id: "s-events",
-    slug: "wedding-and-events",
-    title: "Wedding and Events",
-    summary: "Presentation-ready vehicles with experienced drivers for events.",
-    icon: "sparkles",
-  },
-  {
-    id: "s-staff",
-    slug: "staff-transport",
-    title: "Staff Transport",
+    slug: "weddings-and-events",
+    title: "Weddings and Events",
     summary:
-      "Scheduled pick and drop for teams, billed monthly against a single invoice.",
-    icon: "users",
+      "Presentation vehicles and group transport for the whole occasion.",
+    icon: "sparkles",
+    audience: "For weddings, functions and corporate events",
+    body: [
+      "An event needs two things from transport: a vehicle that looks right in the photographs, and enough seats to move everyone else. We cover both from the same fleet, on the same booking.",
+      "Timings are planned with you beforehand, because an event is the one job where arriving late cannot be fixed afterwards.",
+    ],
+    points: [
+      "Executive and presentation vehicles",
+      "Coasters and vans for guests",
+      "Timings planned in advance",
+      "Multiple vehicles on one booking",
+    ],
+    relatedCategories: ["luxury", "convertible", "coaster"],
   },
 ];
 

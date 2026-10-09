@@ -92,7 +92,16 @@ exists:
 - **Corporate client logos** — industry labels are shown instead of names, until
   written permission is on file for each client.
 
-## Content still to be written
+## Pages not built, and why
 
-`/about`, `/team`, `/terms`, `/privacy-policy`, `/cancellation-policy`,
-`/payment-plans` — all pending the data intake form.
+`/team` and `/reviews` are **removed from the menu** rather than built empty. A
+menu entry leading to a blank page costs more trust than the missing page does.
+Both appear the moment there is content: team names and photographs for one,
+genuine reviews for the other.
+
+`/terms`, `/privacy-policy`, `/cancellation-policy` and `/payment-plans` are
+**not built**, and will not be invented. These pages are the company's legal
+protection and a wrong clause is worse than no page. They need the real
+policies from the data intake form: minimum driver age, documents required,
+deposit handling, late return charge, fuel policy, cancellation terms, damage
+liability, mileage limits and accepted payment methods.
