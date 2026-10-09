@@ -1,4 +1,5 @@
 import type {
+  City,
   Faq,
   FuelRateRecord,
   FuelRates,
@@ -981,6 +982,97 @@ export const routes: Route[] = [
   { origin: "Islamabad", destination: "Peshawar", distanceKm: 185, estimatedHours: 2, tollCharges: 500 },
   { origin: "Islamabad", destination: "Naran", distanceKm: 270, estimatedHours: 7, tollCharges: 400 },
   { origin: "Karachi", destination: "Hyderabad", distanceKm: 165, estimatedHours: 2, tollCharges: 400 },
+];
+
+/**
+ * Cities we operate from. Lahore is where the business is based; the others
+ * are served from it, which the copy says rather than implying a depot in
+ * every one.
+ */
+export const cities: City[] = [
+  {
+    slug: "lahore",
+    name: "Lahore",
+    isBase: true,
+    intro:
+      "Lahore is where we are based and where most of our fleet sits. Coasters and vans run staff routes across the city every morning, and cars and SUVs go out on daily hire from the same yard.",
+    uses: [
+      "Daily staff pick and drop across the city",
+      "Airport collection and drop-off",
+      "Wedding and event transport",
+      "Trips north to Murree and the hill stations",
+      "Business travel to Islamabad and back in a day",
+    ],
+    areas: [
+      "DHA, all phases",
+      "Gulberg",
+      "Johar Town",
+      "Model Town",
+      "Bahria Town",
+      "Lahore Garrison",
+      "Thokar Niaz Baig",
+      "Saddar",
+      "Mall Road",
+    ],
+    airport: "Allama Iqbal International Airport",
+  },
+  {
+    slug: "islamabad",
+    name: "Islamabad",
+    isBase: false,
+    intro:
+      "We run vehicles into Islamabad daily, which is why the Lahore to Islamabad corridor is our most travelled route. Collection in the capital is arranged in advance rather than from a counter.",
+    uses: [
+      "Meetings and corporate visits in the capital",
+      "Airport transfers",
+      "Onward travel to Murree, Naran and the north",
+      "One-way drops from Lahore",
+    ],
+    areas: [],
+    airport: "Islamabad International Airport",
+  },
+  {
+    slug: "rawalpindi",
+    name: "Rawalpindi",
+    isBase: false,
+    intro:
+      "Rawalpindi is served alongside Islamabad. The same vehicles, drivers and rates apply across the twin cities, and a booking in one covers collection in the other.",
+    uses: [
+      "Twin-city travel and daily commuting",
+      "Group movements to Islamabad",
+      "Trips to Murree and the Galiyat",
+    ],
+    areas: [],
+    airport: "Islamabad International Airport",
+  },
+  {
+    slug: "karachi",
+    name: "Karachi",
+    isBase: false,
+    intro:
+      "Karachi work is arranged on notice, usually for corporate movements and long intercity runs. Tell us the dates early and we position a vehicle for them.",
+    uses: [
+      "Corporate visits and site movements",
+      "Long-distance runs from Punjab",
+      "Group transport for events",
+    ],
+    areas: [],
+    airport: "Jinnah International Airport",
+  },
+  {
+    slug: "multan",
+    name: "Multan",
+    isBase: false,
+    intro:
+      "Multan sits on one of our regular Punjab routes, so vehicles pass through often. Collection and one-way drops are both straightforward here.",
+    uses: [
+      "One-way drops from Lahore",
+      "Business travel across south Punjab",
+      "Family trips and events",
+    ],
+    areas: [],
+    airport: "Multan International Airport",
+  },
 ];
 
 export const services: Service[] = [

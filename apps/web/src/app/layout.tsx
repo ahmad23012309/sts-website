@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { TopBar } from "@/components/layout/TopBar";
 import { FloatingActions } from "@/components/layout/FloatingActions";
+import { ExitOffer } from "@/components/layout/ExitOffer";
 import { PreviewDataNotice } from "@/components/layout/PreviewDataNotice";
 import { AnnouncementTicker } from "@/components/layout/AnnouncementTicker";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
@@ -61,6 +62,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <FloatingActions />
+        <ExitOffer />
 
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />

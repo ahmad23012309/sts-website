@@ -64,6 +64,22 @@ export function Footer() {
 
         <div className="border-t border-edge py-10">
           <h2 className="font-ui text-[0.6875rem] font-semibold tracking-[0.18em] text-accent uppercase">
+            Cities we serve
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {footerNav.cities.map((city) => (
+              <li key={city.href}>
+                <Link
+                  href={city.href}
+                  className="inline-block rounded-pill border border-edge px-3.5 py-1.5 font-ui text-xs text-fg-muted transition-colors hover:border-red hover:text-accent"
+                >
+                  {city.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mt-8 font-ui text-[0.6875rem] font-semibold tracking-[0.18em] text-accent uppercase">
             Collection and delivery in Lahore
           </h2>
           <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-2">
@@ -82,11 +98,12 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="grid gap-10 border-t border-edge py-14 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 border-t border-edge py-14 sm:grid-cols-2 lg:grid-cols-5">
           <FooterColumn title="Fleet" links={footerNav.fleet} />
           <FooterColumn title="Services" links={footerNav.services} />
           <FooterColumn title="Company" links={footerNav.company} />
-          <FooterColumn title="Tools" links={footerNav.legal} />
+          <FooterColumn title="Tools" links={footerNav.tools} />
+          <FooterColumn title="Legal" links={footerNav.legal} />
         </div>
 
         <div className="flex flex-col gap-3 border-t border-edge py-7 font-ui text-xs text-fg-faint sm:flex-row sm:items-center sm:justify-between">

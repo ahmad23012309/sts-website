@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getServices, getVehicles } from "@/lib/cms";
+import { getCities, getServices, getVehicles } from "@/lib/cms";
 import { orderedCategories } from "@/lib/vehicleDisplay";
 import { site } from "@/lib/site";
 
@@ -11,9 +11,10 @@ import { site } from "@/lib/site";
  * not built yet teaches search engines to distrust it.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [vehicles, services] = await Promise.all([
+  const [vehicles, services, cities] = await Promise.all([
     getVehicles(),
     getServices(),
+    getCities(),
   ]);
   const now = new Date();
 
@@ -36,12 +37,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${site.url}/about`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${site.url}/contact`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${site.url}/faq`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${site.url}/compare`, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${site.url}/terms`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${site.url}/privacy-policy`, changeFrequency: "yearly", priority: 0.3 },
+    {
+      url: `${site.url}/cancellation-policy`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    { url: `${site.url}/payment-plans`, changeFrequency: "yearly", priority: 0.4 },
     {
       url: `${site.url}/attributions`,
       changeFrequency: "monthly",
       priority: 0.2,
     },
   ];
+
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${site.url}/rent-a-car/${city.slug}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
   const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
     url: `${site.url}/services/${service.slug}`,
@@ -65,8 +81,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...fixed, ...servicePages, ...categories, ...vehiclePages].map((entry) => ({
-    ...entry,
-    lastModified: now,
-  }));
+  return [...fixed, ...cityPages, ...servicePages, ...categories, ...vehiclePages].map(
+    (entry) => ({
+      ...entry,
+      lastModified: now,
+    }),
+  );
 }

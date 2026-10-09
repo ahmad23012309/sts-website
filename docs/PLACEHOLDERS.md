@@ -70,6 +70,7 @@ These are published as fact and a customer may test any of them.
 | 20+ years in service | Announcement ticker |
 | 8,200+ clients served | Announcement ticker |
 | 99.8% on-time record | Announcement ticker |
+| 10% off first booking, code FIRST10 | Exit-intent offer |
 | What a rental includes and excludes | Every vehicle page |
 | Long-stay discounts: 10% from 7 days, 15% from 14, 20% from 30 | Fare calculator |
 
@@ -92,16 +93,55 @@ exists:
 - **Corporate client logos** — industry labels are shown instead of names, until
   written permission is on file for each client.
 
+## Legal pages — drafted, not approved
+
+`/terms`, `/privacy-policy`, `/cancellation-policy` and `/payment-plans` are
+written and live. They are **drafts**, and the pages say so: while
+`site.legal.reviewed` is false each one carries a notice that it is under
+review and that the signed rental agreement governs where the two differ.
+
+What they are built from:
+
+- **Terms, cancellation and payment** — common practice in the Pakistani
+  rental market. A minimum driver age of 21 with a surcharge under 25, licence
+  plus CNIC or passport, an International Driving Permit for a foreign licence
+  not in the Roman alphabet, and a deposit held and returned on check-in are
+  the market norms the drafts follow. Every number lives in `site.legal` or the
+  pricing rules.
+- **Privacy** — written from what this website actually does, which is the one
+  policy that can be accurate without asking anyone. It describes the real
+  legal position: Pakistan has no enacted data protection statute, the Personal
+  Data Protection Bill is still a draft, privacy is protected under Article 14
+  of the Constitution, and PECA 2016 as amended applies. It claims adherence to
+  the draft bill's principles rather than compliance with a law that does not
+  exist.
+
+**Before launch:** the owner confirms every figure, a lawyer reads all four,
+then `site.legal.reviewed` is set to true and the notices disappear.
+
+| Value to confirm | Draft |
+|---|---|
+| Minimum driver age | 21 |
+| Young driver surcharge under | 25 |
+| Licence held for | 12 months |
+| Grace period on return | 60 minutes |
+| Advance to confirm a booking | 50% |
+| Corporate credit terms | 30 days |
+| Cancellation bands | Free over 48h, 25% at 24–48h, 50% under 24h, none after start |
+| Payment methods | Cash, bank transfer, JazzCash, EasyPaisa, company cheque |
+| Included and excluded in the rate | See `site.rentalTerms` |
+
+## Cities
+
+`/rent-a-car/lahore`, `islamabad`, `rawalpindi`, `karachi`, `multan`. Lahore is
+confirmed as the base. **The other four need confirming** — the pages say they
+are served from Lahore rather than implying a depot in each, but if we do not
+serve one of them it should come out of `site.cities` and its page goes with
+it.
+
 ## Pages not built, and why
 
 `/team` and `/reviews` are **removed from the menu** rather than built empty. A
 menu entry leading to a blank page costs more trust than the missing page does.
 Both appear the moment there is content: team names and photographs for one,
 genuine reviews for the other.
-
-`/terms`, `/privacy-policy`, `/cancellation-policy` and `/payment-plans` are
-**not built**, and will not be invented. These pages are the company's legal
-protection and a wrong clause is worse than no page. They need the real
-policies from the data intake form: minimum driver age, documents required,
-deposit handling, late return charge, fuel policy, cancellation terms, damage
-liability, mileage limits and accepted payment methods.

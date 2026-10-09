@@ -92,6 +92,54 @@ export const site = {
   },
 
   /**
+   * The offer shown on exit intent.
+   *
+   * Whatever is published here is a promise, so it is honoured. Setting
+   * `enabled` to false removes it everywhere.
+   */
+  offer: {
+    enabled: true,
+    headline: "10% off your first booking",
+    body: "New customers get 10% off the vehicle rate on a first confirmed booking. Quote the code when you send your request and we apply it to the quote.",
+    code: "FIRST10",
+    terms:
+      "One use per customer, on the vehicle rate only, and not combined with a long-stay discount. Subject to availability.",
+    /** Days before the same visitor is shown it again. */
+    repeatAfterDays: 30,
+  },
+
+  /**
+   * Policy values quoted on the legal pages.
+   *
+   * PLACEHOLDER — these are drafted from common practice in the Pakistani
+   * rental market, not from the company's own rulebook. Every figure must be
+   * confirmed by the owner, and the pages reviewed by a lawyer, before launch.
+   * While `reviewed` is false the legal pages carry a notice saying so.
+   */
+  legal: {
+    reviewed: false,
+    lastUpdated: "2026-10-09",
+    minimumDriverAge: 21,
+    youngDriverSurchargeUnder: 25,
+    licenceHeldMonths: 12,
+    graceMinutesOnReturn: 60,
+    advancePercent: 50,
+    corporateCreditDays: 30,
+    cancellation: [
+      { window: "More than 48 hours before pick-up", charge: "No charge" },
+      { window: "24 to 48 hours before pick-up", charge: "25% of the booking" },
+      { window: "Less than 24 hours before pick-up", charge: "50% of the booking" },
+      { window: "After the rental has started, or no-show", charge: "No refund" },
+    ],
+    paymentMethods: [
+      "Cash at handover",
+      "Bank transfer",
+      "JazzCash and EasyPaisa",
+      "Company cheque, for corporate accounts",
+    ],
+  },
+
+  /**
    * Headline claims, supplied by the business. Editable in one place because
    * a visitor who doubts one of these numbers doubts the rest of the page.
    */

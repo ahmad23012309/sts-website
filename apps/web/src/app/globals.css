@@ -274,6 +274,74 @@
 }
 
 /* ---------------------------------------------------------------------------
+   Long-form policy text
+--------------------------------------------------------------------------- */
+
+@layer components {
+  .legal-body h2 {
+    margin-top: 2.75rem;
+    font-size: 1.5rem;
+  }
+
+  .legal-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-body h3 {
+    margin-top: 1.75rem;
+    font-size: 1.125rem;
+  }
+
+  .legal-body p,
+  .legal-body ul,
+  .legal-body ol {
+    margin-top: 1rem;
+    color: var(--color-fg-muted);
+  }
+
+  .legal-body ul,
+  .legal-body ol {
+    padding-left: 1.25rem;
+  }
+
+  .legal-body ul {
+    list-style: disc;
+  }
+
+  .legal-body ol {
+    list-style: decimal;
+  }
+
+  .legal-body li {
+    margin-top: 0.5rem;
+  }
+
+  .legal-body table {
+    margin-top: 1.25rem;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .legal-body th,
+  .legal-body td {
+    border-bottom: 1px solid var(--color-edge);
+    padding: 0.75rem 1rem 0.75rem 0;
+    font-size: 0.875rem;
+  }
+
+  .legal-body th {
+    color: var(--color-fg-muted);
+    font-weight: 500;
+  }
+
+  .legal-body strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Announcement ticker
 
    The track holds the items twice, so when the first copy has scrolled exactly

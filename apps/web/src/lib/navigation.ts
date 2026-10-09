@@ -127,6 +127,13 @@ export const footerNav = {
     { label: "Intercity Travel", href: "/services/intercity-travel" },
     { label: "Weddings and Events", href: "/services/weddings-and-events" },
   ],
+  cities: [
+    { label: "Rent a Car in Lahore", href: "/rent-a-car/lahore" },
+    { label: "Rent a Car in Islamabad", href: "/rent-a-car/islamabad" },
+    { label: "Rent a Car in Rawalpindi", href: "/rent-a-car/rawalpindi" },
+    { label: "Rent a Car in Karachi", href: "/rent-a-car/karachi" },
+    { label: "Rent a Car in Multan", href: "/rent-a-car/multan" },
+  ],
   company: [
     { label: "About Us", href: "/about" },
     { label: "Services", href: "/services" },
@@ -134,9 +141,17 @@ export const footerNav = {
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
-  legal: [
+  tools: [
     { label: "Fare Calculator", href: "/fare-calculator" },
     { label: "Fuel Prices", href: "/fuel-prices" },
+    { label: "Compare Vehicles", href: "/compare" },
+    { label: "Book a Vehicle", href: "/book" },
+  ],
+  legal: [
+    { label: "Terms and Conditions", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Cancellation Policy", href: "/cancellation-policy" },
+    { label: "Payment Terms", href: "/payment-plans" },
     { label: "Attributions", href: "/attributions" },
   ],
 };

@@ -2,6 +2,7 @@ import * as fixtures from "./fixtures";
 import { models3d } from "./models3d";
 import type {
   AvailabilityResult,
+  City,
   Faq,
   FuelRateRecord,
   FuelRates,
@@ -69,6 +70,14 @@ export async function getPricingRules(): Promise<PricingRules> {
 
 export async function getRoutes(): Promise<Route[]> {
   return fixtures.routes;
+}
+
+export async function getCities(): Promise<City[]> {
+  return fixtures.cities;
+}
+
+export async function getCity(slug: string): Promise<City | null> {
+  return fixtures.cities.find((city) => city.slug === slug) ?? null;
 }
 
 export async function getServices(): Promise<Service[]> {

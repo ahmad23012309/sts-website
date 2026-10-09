@@ -198,6 +198,19 @@ export interface AvailabilityResult {
   blocks: AvailabilityBlock[];
 }
 
+export interface City {
+  slug: string;
+  name: string;
+  /** True for the city we are based in. */
+  isBase: boolean;
+  intro: string;
+  /** Why people hire here, in this city specifically. */
+  uses: string[];
+  /** Named neighbourhoods, where we have them. */
+  areas: string[];
+  airport: string | null;
+}
+
 export interface Faq {
   id: string;
   question: string;
