@@ -37,8 +37,6 @@ export function VehicleMedia({
     );
   }
 
-  const Outline = outlineFor(vehicle.category);
-
   return (
     <div
       className={cn(
@@ -46,7 +44,7 @@ export function VehicleMedia({
         className,
       )}
     >
-      <Outline className="w-3/5 max-w-56 text-edge-strong" />
+      {renderOutline(vehicle.category, "w-3/5 max-w-56 text-edge-strong")}
       <span className="absolute bottom-3 left-1/2 -translate-x-1/2 font-ui text-[0.625rem] font-semibold tracking-[0.18em] text-fg-faint uppercase">
         Photography pending
       </span>
@@ -54,17 +52,17 @@ export function VehicleMedia({
   );
 }
 
-function outlineFor(category: VehicleCategory) {
+function renderOutline(category: VehicleCategory, className: string) {
   switch (category) {
     case "coaster":
     case "bus":
-      return BusOutline;
+      return <BusOutline className={className} />;
     case "van":
-      return VanOutline;
+      return <VanOutline className={className} />;
     case "pickup":
-      return PickupOutline;
+      return <PickupOutline className={className} />;
     default:
-      return CarOutline;
+      return <CarOutline className={className} />;
   }
 }
 

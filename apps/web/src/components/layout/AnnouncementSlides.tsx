@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/hooks/browser";
 
 export interface Announcement {
   key: string;
@@ -19,15 +20,7 @@ export interface Announcement {
 export function AnnouncementSlides({ items }: { items: Announcement[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [staticList, setStaticList] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setStaticList(query.matches);
-    const onChange = () => setStaticList(query.matches);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, []);
+  const staticList = usePrefersReducedMotion();
 
   useEffect(() => {
     if (paused || staticList || items.length < 2) return;

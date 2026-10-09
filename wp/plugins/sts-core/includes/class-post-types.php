@@ -14,6 +14,20 @@ defined( 'ABSPATH' ) || exit;
 
 class STS_Post_Types {
 
+	/** Every post type this plugin owns. */
+	public static function slugs(): array {
+		return array(
+			'sts_vehicle',
+			'sts_service',
+			'sts_city',
+			'sts_client',
+			'sts_testimonial',
+			'sts_team',
+			'sts_route',
+			'sts_faq',
+		);
+	}
+
 	public static function init(): void {
 		add_action( 'init', array( __CLASS__, 'register' ) );
 	}

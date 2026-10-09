@@ -88,96 +88,11 @@ export function CompareTool({
     update(next);
   }
 
-  const fuelPriceFor = (vehicle: Vehicle) =>
-    vehicle.specs.fuelType === "diesel" ? fuelRates.diesel : fuelRates.petrol;
-
-  const rows: Row[] = useMemo(() => {
-    if (effective.length === 0) return [];
-    const perKm = effective.map(
-      (v) => fuelPriceFor(v) / v.specs.mileageHighwayKmpl,
-    );
-
-    return [
-      { label: "Variant", values: effective.map((v) => v.variant) },
-      { label: "Year", values: effective.map((v) => String(v.year)) },
-      {
-        label: "In our fleet",
-        values: effective.map((v) => String(v.unitsInFleet)),
-        numbers: effective.map((v) => v.unitsInFleet),
-        best: "high",
-      },
-      {
-        label: "Seats",
-        values: effective.map((v) => String(v.specs.seats)),
-        numbers: effective.map((v) => v.specs.seats),
-        best: "high",
-      },
-      {
-        label: "Luggage",
-        values: effective.map((v) => `${v.specs.luggage} bags`),
-        numbers: effective.map((v) => v.specs.luggage),
-        best: "high",
-      },
-      {
-        label: "Transmission",
-        values: effective.map((v) => transmissionLabels[v.specs.transmission]),
-      },
-      { label: "Fuel", values: effective.map((v) => fuelLabels[v.specs.fuelType]) },
-      {
-        label: "Engine",
-        values: effective.map((v) => `${v.specs.engineCc} cc`),
-        numbers: effective.map((v) => v.specs.engineCc),
-      },
-      {
-        label: "Consumption, city",
-        values: effective.map((v) => `${v.specs.mileageCityKmpl} km/l`),
-        numbers: effective.map((v) => v.specs.mileageCityKmpl),
-        best: "high",
-      },
-      {
-        label: "Consumption, highway",
-        values: effective.map((v) => `${v.specs.mileageHighwayKmpl} km/l`),
-        numbers: effective.map((v) => v.specs.mileageHighwayKmpl),
-        best: "high",
-      },
-      {
-        label: "Fuel cost per km",
-        values: perKm.map((value) => formatPkrPrecise(value)),
-        numbers: perKm,
-        best: "low",
-      },
-      {
-        label: "With fuel, per day",
-        values: effective.map((v) => formatPkr(v.rates.withFuelDaily)),
-        numbers: effective.map((v) => v.rates.withFuelDaily),
-        best: "low",
-      },
-      {
-        label: "Without fuel, per day",
-        values: effective.map((v) => formatPkr(v.rates.withoutFuelDaily)),
-        numbers: effective.map((v) => v.rates.withoutFuelDaily),
-        best: "low",
-      },
-      {
-        label: "Out of station, per day",
-        values: effective.map((v) => formatPkr(v.rates.outOfCityDaily)),
-        numbers: effective.map((v) => v.rates.outOfCityDaily),
-        best: "low",
-      },
-      {
-        label: "Per kilometre",
-        values: effective.map((v) => formatPkr(v.rates.perKm)),
-        numbers: effective.map((v) => v.rates.perKm),
-        best: "low",
-      },
-      {
-        label: "Security deposit",
-        values: effective.map((v) => formatPkr(v.rates.securityDeposit)),
-        numbers: effective.map((v) => v.rates.securityDeposit),
-        best: "low",
-      },
-    ];
-  }, [effective, fuelRates]);
+  /**
+   * Not wrapped in useMemo: `effective` is derived during render, so a manual
+   * dependency on it never held. The compiler memoizes this on its own.
+   */
+  const rows: Row[] = buildRows(effective, fuelRates);
 
   return (
     <div>
@@ -327,4 +242,98 @@ export function CompareTool({
       )}
     </div>
   );
+}
+
+/** Every row of the comparison table, in the order it is displayed. */
+function buildRows(effective: Vehicle[], fuelRates: FuelRates): Row[] {
+  if (effective.length === 0) return [];
+  const perKm = effective.map(
+    (v) => fuelPriceFor(v, fuelRates) / v.specs.mileageHighwayKmpl,
+  );
+
+  return [
+    { label: "Variant", values: effective.map((v) => v.variant) },
+    { label: "Year", values: effective.map((v) => String(v.year)) },
+    {
+      label: "In our fleet",
+      values: effective.map((v) => String(v.unitsInFleet)),
+      numbers: effective.map((v) => v.unitsInFleet),
+      best: "high",
+    },
+    {
+      label: "Seats",
+      values: effective.map((v) => String(v.specs.seats)),
+      numbers: effective.map((v) => v.specs.seats),
+      best: "high",
+    },
+    {
+      label: "Luggage",
+      values: effective.map((v) => `${v.specs.luggage} bags`),
+      numbers: effective.map((v) => v.specs.luggage),
+      best: "high",
+    },
+    {
+      label: "Transmission",
+      values: effective.map((v) => transmissionLabels[v.specs.transmission]),
+    },
+    { label: "Fuel", values: effective.map((v) => fuelLabels[v.specs.fuelType]) },
+    {
+      label: "Engine",
+      values: effective.map((v) => `${v.specs.engineCc} cc`),
+      numbers: effective.map((v) => v.specs.engineCc),
+    },
+    {
+      label: "Consumption, city",
+      values: effective.map((v) => `${v.specs.mileageCityKmpl} km/l`),
+      numbers: effective.map((v) => v.specs.mileageCityKmpl),
+      best: "high",
+    },
+    {
+      label: "Consumption, highway",
+      values: effective.map((v) => `${v.specs.mileageHighwayKmpl} km/l`),
+      numbers: effective.map((v) => v.specs.mileageHighwayKmpl),
+      best: "high",
+    },
+    {
+      label: "Fuel cost per km",
+      values: perKm.map((value) => formatPkrPrecise(value)),
+      numbers: perKm,
+      best: "low",
+    },
+    {
+      label: "With fuel, per day",
+      values: effective.map((v) => formatPkr(v.rates.withFuelDaily)),
+      numbers: effective.map((v) => v.rates.withFuelDaily),
+      best: "low",
+    },
+    {
+      label: "Without fuel, per day",
+      values: effective.map((v) => formatPkr(v.rates.withoutFuelDaily)),
+      numbers: effective.map((v) => v.rates.withoutFuelDaily),
+      best: "low",
+    },
+    {
+      label: "Out of station, per day",
+      values: effective.map((v) => formatPkr(v.rates.outOfCityDaily)),
+      numbers: effective.map((v) => v.rates.outOfCityDaily),
+      best: "low",
+    },
+    {
+      label: "Per kilometre",
+      values: effective.map((v) => formatPkr(v.rates.perKm)),
+      numbers: effective.map((v) => v.rates.perKm),
+      best: "low",
+    },
+    {
+      label: "Security deposit",
+      values: effective.map((v) => formatPkr(v.rates.securityDeposit)),
+      numbers: effective.map((v) => v.rates.securityDeposit),
+      best: "low",
+    },
+  ];
+}
+
+/** The pump price that applies to a vehicle, by what it burns. */
+function fuelPriceFor(vehicle: Vehicle, rates: FuelRates): number {
+  return vehicle.specs.fuelType === "diesel" ? rates.diesel : rates.petrol;
 }

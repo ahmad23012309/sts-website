@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLacksIntersectionObserver } from "@/lib/hooks/browser";
 import { cn } from "@/lib/utils";
 
 /**
@@ -18,22 +19,19 @@ export function Reveal({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
+  const [seen, setSeen] = useState(false);
+  const cannotObserve = useLacksIntersectionObserver();
+  const shown = seen || cannotObserve;
 
   useEffect(() => {
     const node = ref.current;
-    if (!node) return;
-
-    if (typeof IntersectionObserver === "undefined") {
-      setShown(true);
-      return;
-    }
+    if (!node || typeof IntersectionObserver === "undefined") return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setShown(true);
+            setSeen(true);
             observer.disconnect();
           }
         }

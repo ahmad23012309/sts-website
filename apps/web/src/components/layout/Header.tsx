@@ -8,6 +8,7 @@ import { Logo } from "@/components/brand/Logo";
 import { WhatsappIcon } from "@/components/icons/BrandIcons";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
+import { useScrolledPast } from "@/lib/hooks/browser";
 import { navLeft, navRight, primaryNav, type NavItem } from "@/lib/navigation";
 import { site } from "@/lib/site";
 import { cn, whatsappLink } from "@/lib/utils";
@@ -24,19 +25,18 @@ export function Header() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useScrolledPast(8);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
+  /**
+   * Navigating closes both menus. Compared during render rather than in an
+   * effect so the new page never paints with the old page's menu still open.
+   */
+  const [renderedPath, setRenderedPath] = useState(pathname);
+  if (renderedPath !== pathname) {
+    setRenderedPath(pathname);
     setMobileOpen(false);
     setOpenMenu(null);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";

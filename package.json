@@ -11,7 +11,9 @@
     "lint": "npm run lint --workspace=apps/web",
     "typecheck": "npm run typecheck --workspace=apps/web",
     "sketchfab:search": "node scripts/sketchfab-search.mjs",
-    "sketchfab:apply": "node scripts/sketchfab-apply.mjs"
+    "sketchfab:apply": "node scripts/sketchfab-apply.mjs",
+    "sync:settings": "node scripts/sync-settings.mjs",
+    "prebuild": "node scripts/sync-settings.mjs"
   },
   "engines": {
     "node": ">=20.9.0"

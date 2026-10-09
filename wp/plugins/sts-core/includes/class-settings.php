@@ -142,6 +142,8 @@ class STS_Settings {
 					'webhook_secret'   => array( 'label' => 'Signing secret', 'type' => 'password' ),
 					'notify_emails'    => array( 'label' => 'Email a new booking to, one per line', 'type' => 'textarea' ),
 					'notify_whatsapp'  => array( 'label' => 'WhatsApp number for alerts', 'type' => 'text' ),
+					'revalidate_url'   => array( 'label' => 'Website cache-clear address, ending /api/revalidate', 'type' => 'url' ),
+					'revalidate_secret'=> array( 'label' => 'Cache-clear secret, the same value as REVALIDATE_SECRET on the website', 'type' => 'password' ),
 				),
 			),
 		);
@@ -205,6 +207,8 @@ class STS_Settings {
 		if ( 'fuel' === $group ) {
 			STS_Settings::append_fuel_history( $clean );
 		}
+
+		do_action( 'sts_settings_saved', $group, $clean, $previous );
 
 		return $clean;
 	}

@@ -11,7 +11,10 @@
  * instead, and this file becomes the fallback.
  */
 
-export const site = {
+import { applyCmsSettings } from "./cms/applySettings";
+import { cmsSettings } from "./cms/settings.generated";
+
+const defaults = {
   name: "Sidhu Travel Services",
   shortName: "STS",
   // PLACEHOLDER
@@ -42,6 +45,8 @@ export const site = {
     mapQuery: "Sidhu Travel Services, Lahore, Pakistan",
     /** PLACEHOLDER — the Google Business Profile link, for reviews and directions. */
     googleBusinessUrl: "",
+    /** PLACEHOLDER — where the "leave a review" links point. */
+    googleReviewsUrl: "",
     // PLACEHOLDER
     city: "Lahore",
     country: "Pakistan",
@@ -157,6 +162,16 @@ export const site = {
     clientsServed: "8,200+",
     onTimeRate: "99.8%",
   },
-} as const;
+};
 
-export type SiteConfig = typeof site;
+export type SiteConfig = typeof defaults;
+
+/**
+ * The live configuration.
+ *
+ * Whatever the backend has been given overrides the defaults above; anything it
+ * has not been given keeps them. The merge happens at module load so every
+ * component -- server-rendered or client-rendered -- reads the same values
+ * synchronously.
+ */
+export const site: SiteConfig = applyCmsSettings(defaults, cmsSettings);

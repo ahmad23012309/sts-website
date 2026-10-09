@@ -39,13 +39,24 @@ export function FleetBrowser({ vehicles }: { vehicles: Vehicle[] }) {
   const pathname = usePathname();
   const params = useSearchParams();
 
-  const selected = {
-    category: params.getAll("category"),
-    seats: params.getAll("seats"),
-    transmission: params.getAll("transmission"),
-    fuel: params.getAll("fuel"),
-    sort: (params.get("sort") as SortKey | null) ?? "price-asc",
-  };
+  /**
+   * The filter state lives in the URL so a filtered view can be shared and
+   * indexed. Reading it through the query string rather than the hook's object
+   * keeps a stable value to key the filtering below on: the hook returns a new
+   * object on every render, which would re-sort the whole fleet each time.
+   */
+  const query = params.toString();
+
+  const selected = useMemo(() => {
+    const current = new URLSearchParams(query);
+    return {
+      category: current.getAll("category"),
+      seats: current.getAll("seats"),
+      transmission: current.getAll("transmission"),
+      fuel: current.getAll("fuel"),
+      sort: (current.get("sort") as SortKey | null) ?? "price-asc",
+    };
+  }, [query]);
 
   const activeCount =
     selected.category.length +
@@ -129,7 +140,7 @@ export function FleetBrowser({ vehicles }: { vehicles: Vehicle[] }) {
         sorted.sort((a, b) => a.rates.withFuelDaily - b.rates.withFuelDaily);
     }
     return sorted;
-  }, [vehicles, params.toString()]);
+  }, [vehicles, selected]);
 
   const totalUnits = results.reduce(
     (sum, vehicle) => sum + vehicle.unitsInFleet,
