@@ -163,10 +163,13 @@ export default async function VehiclePage({
             {hasModel(vehicle.model3d) ? (
               <SketchfabViewer
                 model={vehicle.model3d}
+                frameClassName="aspect-[16/10]"
                 poster={
-                  <div className="aspect-[16/10] w-full">
-                    <VehicleMedia vehicle={vehicle} sizes="(min-width: 1024px) 60vw, 100vw" priority />
-                  </div>
+                  <VehicleMedia
+                    vehicle={vehicle}
+                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    priority
+                  />
                 }
               />
             ) : (

@@ -4,6 +4,39 @@ Every vehicle page can carry an interactive 3D model embedded from Sketchfab.
 The viewer, the credit line and the `/attributions` page are built and working.
 What is missing is the models themselves.
 
+## What is in place now
+
+Eleven vehicles carry a model, chosen by the client:
+
+| Vehicle | Model |
+|---|---|
+| Toyota Hiace | Toyota Hiace Passenger Van L2H3 GLX 2020 |
+| Toyota Prado TXL and TX | Toyota Land Crusier Prado 2021 |
+| Toyota Fortuner G | Toyota Fortuner 2021 |
+| Toyota Land Cruiser AXG | 2022 Toyota Land Cruiser 300 VX.R |
+| Kia Sportage | Kia Sportage Interior 2019 |
+| Toyota Corolla Altis | Toyota Corolla Altis 2018 |
+| Honda Civic Oriel | 2016 Honda Civic Sedan |
+| Daihatsu Copen Robe | 2020 Daihatsu Copen GR Sport |
+| Kia Sorento AWD | Kia Sorento 2021 |
+| GWM Haval H6 HEV | Haval H6 |
+
+All are marked `representative`: the right body style, not the exact
+Pakistani-market trim, and the viewer says so beneath each one.
+
+**Authors and licences are not recorded.** This environment cannot reach
+Sketchfab, and a model id can be read from its URL while an author's name
+cannot. Because nearly every model on Sketchfab requires its author to be
+credited, the viewer leaves Sketchfab's own information bar switched on, so
+the player names the model and its author itself. Running
+`npm run sketchfab:apply` from a machine that can reach Sketchfab fills in the
+names and licences, and the credit becomes ours rather than the player's.
+
+Toyota Coaster, Daewoo BUS-116, Changan Karvaan Plus, Suzuki Wagon R, Suzuki
+XBEE, Jaecoo J5, JAC T9 and Toyota Hilux have no model yet. The Hilux link
+supplied was a search page rather than a model, so nothing could be taken from
+it.
+
 ## How a model reaches the site
 
 1. Choose a model on Sketchfab and copy its page URL.

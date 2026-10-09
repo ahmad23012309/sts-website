@@ -1,47 +1,82 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Rotate3d } from "lucide-react";
 import type { SketchfabModel } from "@/lib/cms/types";
 
 /**
  * Embeds a Sketchfab model.
  *
- * The player is only mounted after the visitor asks for it. Sketchfab's viewer
- * pulls several megabytes of script, textures and geometry, and loading that on
- * sight would undo the performance work everywhere else on the page. Until then
- * the vehicle photograph stands in, which is what most visitors want anyway.
+ * By default the player is only mounted after the visitor asks for it, because
+ * Sketchfab's viewer pulls several megabytes of script, textures and geometry
+ * and loading that on sight would undo the performance work elsewhere. Pass
+ * `autoLoad` on the one place where the moving model is the point, and it
+ * mounts when the section scrolls into view instead.
  *
- * The credit line is not decoration: nearly every model on Sketchfab is
- * published under a licence that requires the author to be named wherever the
- * model is shown, so it is rendered from the same record as the model itself
- * and cannot be forgotten.
+ * Attribution is not optional. Nearly every model on Sketchfab is published
+ * under a licence requiring the author to be named wherever it appears, so
+ * when we do not hold the author's name the player's own information bar is
+ * left switched on and Sketchfab credits them for us.
  */
 export function SketchfabViewer({
   model,
   poster,
   className,
+  frameClassName = "aspect-[4/3] lg:aspect-[16/11]",
+  autoLoad = false,
 }: {
   model: SketchfabModel;
   poster: React.ReactNode;
   className?: string;
+  /**
+   * The frame carries its own proportions rather than inheriting them from the
+   * poster, which disappears the moment the player mounts.
+   */
+  frameClassName?: string;
+  autoLoad?: boolean;
 }) {
   const [active, setActive] = useState(false);
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!autoLoad || active) return;
+    const node = frameRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      setActive(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(true);
+            observer.disconnect();
+          }
+        }
+      },
+      { rootMargin: "250px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [autoLoad, active]);
 
   const params = new URLSearchParams({
     autostart: "1",
     autospin: "0.3",
     preload: "0",
-    ui_infos: "0",
-    ui_watermark: "0",
+    // Left on so the player names the model and its author.
+    ui_infos: "1",
     ui_hint: "0",
     ui_theme: "dark",
-    transparent: "0",
   });
 
   return (
     <div className={className}>
-      <div className="relative h-full w-full overflow-hidden rounded-card border border-edge bg-page-alt">
+      <div
+        ref={frameRef}
+        className={`relative w-full overflow-hidden rounded-card border border-edge bg-page-alt ${frameClassName}`}
+      >
         {active ? (
           <iframe
             title={`${model.title} — interactive 3D model`}
@@ -53,7 +88,7 @@ export function SketchfabViewer({
           />
         ) : (
           <>
-            {poster}
+            <div className="absolute inset-0">{poster}</div>
             <button
               type="button"
               onClick={() => setActive(true)}
@@ -77,17 +112,22 @@ export function SketchfabViewer({
           className="underline underline-offset-2 hover:text-fg-muted"
         >
           {model.title}
-        </a>{" "}
-        by{" "}
-        <a
-          href={model.authorUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-fg-muted"
-        >
-          {model.authorName}
         </a>
-        , licensed under {model.license}, via Sketchfab.
+        {model.authorName ? (
+          <>
+            {" "}by{" "}
+            <a
+              href={model.authorUrl ?? model.modelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-fg-muted"
+            >
+              {model.authorName}
+            </a>
+          </>
+        ) : null}
+        {model.license ? <>, licensed under {model.license}</> : null}, via
+        Sketchfab. The author is credited in the viewer.
         {model.accuracy === "representative" ? (
           <>
             {" "}

@@ -49,7 +49,8 @@ export async function Hero() {
               {site.name} runs coasters, vans and buses for companies moving
               staff and groups, alongside cars and SUVs for everyday hire. Every
               quote is built from the distance, the vehicle and the day&rsquo;s
-              fuel price, so you see the arithmetic before you commit.
+              fuel price, so you see the arithmetic before you commit. Walk
+              around the vehicle in 3D first.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">

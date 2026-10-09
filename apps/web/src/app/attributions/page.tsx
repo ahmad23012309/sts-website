@@ -49,17 +49,24 @@ export default async function AttributionsPage() {
                         className="text-accent underline decoration-red/40 decoration-2 underline-offset-[5px] hover:decoration-red"
                       >
                         {model.title}
-                      </a>{" "}
-                      by{" "}
-                      <a
-                        href={model.authorUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-accent underline decoration-red/40 decoration-2 underline-offset-[5px] hover:decoration-red"
-                      >
-                        {model.authorName}
                       </a>
-                      , licensed under {model.license}, via Sketchfab.
+                      {model.authorName ? (
+                        <>
+                          {" "}
+                          by{" "}
+                          <a
+                            href={model.authorUrl ?? model.modelUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-accent underline decoration-red/40 decoration-2 underline-offset-[5px] hover:decoration-red"
+                          >
+                            {model.authorName}
+                          </a>
+                        </>
+                      ) : null}
+                      {model.license ? <>, licensed under {model.license}</> : null}
+                      , via Sketchfab. The author is named on the model page and
+                      in the viewer.
                     </p>
                   </li>
                 );

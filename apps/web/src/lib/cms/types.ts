@@ -35,10 +35,15 @@ export type ModelAccuracy = "exact" | "representative" | "none";
 export interface SketchfabModel {
   uid: string;
   title: string;
-  authorName: string;
-  authorUrl: string;
   modelUrl: string;
-  license: string;
+  /**
+   * Null until we have fetched it. When the author is unknown the viewer
+   * leaves Sketchfab's own information bar switched on, so the player credits
+   * the author even though we cannot print the name ourselves.
+   */
+  authorName: string | null;
+  authorUrl: string | null;
+  license: string | null;
   accuracy: ModelAccuracy;
 }
 

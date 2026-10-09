@@ -29,7 +29,7 @@ export async function Showroom() {
             <SectionHeading
               eyebrow="3D showroom"
               title="Walk around it before you book"
-              description="Turn the vehicle, look inside, judge the proportions for yourself. The same viewer sits on every vehicle page that has a model, so you know what is arriving at your door."
+              description="It turns on its own, and you can take hold of it. Look inside, judge the proportions, decide before you call. The same viewer sits on every vehicle page that has a model."
             />
 
             <p className="mt-8 font-ui text-sm text-fg-muted">
@@ -61,11 +61,13 @@ export async function Showroom() {
 
           <SketchfabViewer
             model={vehicle.model3d}
+            autoLoad
             className="relative"
             poster={
-              <div className="aspect-[4/3] w-full lg:aspect-[16/11]">
-                <VehicleMedia vehicle={vehicle} sizes="(min-width: 1024px) 55vw, 100vw" />
-              </div>
+              <VehicleMedia
+                vehicle={vehicle}
+                sizes="(min-width: 1024px) 55vw, 100vw"
+              />
             }
           />
         </div>

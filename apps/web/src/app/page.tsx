@@ -25,9 +25,9 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <Showroom />
       <AudienceSplit />
       <FleetPreview />
-      <Showroom />
       <FuelStrip />
       <FareTeaser />
       <WhyUs />
