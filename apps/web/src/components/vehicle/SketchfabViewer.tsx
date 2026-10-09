@@ -77,6 +77,11 @@ export function SketchfabViewer({
         ref={frameRef}
         className={`relative w-full overflow-hidden rounded-card border border-edge bg-page-alt ${frameClassName}`}
       >
+        {/* The poster stays behind the player. Sketchfab can be slow, and on a
+            network that blocks it the frame would otherwise be an empty box
+            with nothing to say why. */}
+        <div className="absolute inset-0">{poster}</div>
+
         {active ? (
           <iframe
             title={`${model.title} — interactive 3D model`}
@@ -84,11 +89,10 @@ export function SketchfabViewer({
             allow="autoplay; fullscreen; xr-spatial-tracking"
             allowFullScreen
             loading="lazy"
-            className="h-full w-full border-0"
+            className="absolute inset-0 h-full w-full border-0"
           />
         ) : (
           <>
-            <div className="absolute inset-0">{poster}</div>
             <button
               type="button"
               onClick={() => setActive(true)}

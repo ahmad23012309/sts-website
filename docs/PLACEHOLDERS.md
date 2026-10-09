@@ -145,3 +145,27 @@ it.
 menu entry leading to a blank page costs more trust than the missing page does.
 Both appear the moment there is content: team names and photographs for one,
 genuine reviews for the other.
+
+## Fleet photography
+
+Four vehicles now carry a picture: the Coaster, the Hiace, the Corolla Altis
+and the Land Cruiser AXG. These are **manufacturer press renders** of the exact
+models on the register, cut out of their white studio backgrounds, supplied so
+the layout could be reviewed with real vehicles in it.
+
+They must be replaced with the company's own photographs before launch:
+
+- A render shows a trim level, a colour and a condition the customer may not
+  get. A photograph of the actual coaster is both honest and more persuasive.
+- The renders belong to Toyota. Publishing them on a commercial site is the
+  manufacturer's call, not ours.
+
+What to shoot, for each vehicle on the register: a three-quarter front on a
+plain light background, an interior looking down the aisle or at the rear seat,
+and the luggage space. Landscape, as wide as the camera allows. Dropping them in
+needs nothing but the file and four lines in `fixtures.ts`, or an upload in
+WordPress once the backend is connected.
+
+The remaining sixteen models still show the drawn placeholder, which is
+deliberate: an empty frame would look broken, and a borrowed photograph of the
+wrong vehicle would be worse.

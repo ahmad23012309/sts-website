@@ -24,6 +24,14 @@ import type {
  * leaves a hole in the page.
  */
 
+/**
+ * The pictures in `images` are manufacturer press renders of the exact models
+ * on the register, cut out of their studio backgrounds. They stand in until the
+ * company photographs its own vehicles, which is what should be published: a
+ * render shows a trim level and a colour the customer may not get, and the
+ * images themselves belong to the manufacturers. Replace them before launch and
+ * the rest of the page needs no changes.
+ */
 export const vehicles: Vehicle[] = [
   {
     id: "v-toyota-coaster",
@@ -58,7 +66,14 @@ export const vehicles: Vehicle[] = [
     colors: [
       { name: "Super White", hex: "#F3F4F5" },
     ],
-    images: [],
+    images: [
+      {
+        src: "/fleet/toyota-coaster.webp",
+        alt: "Toyota Coaster 22-seater, the coach we run on staff and group routes",
+        width: 777,
+        height: 408,
+      },
+    ],
     features: [
       "22 reclining seats",
       "Dual air conditioning",
@@ -103,7 +118,14 @@ export const vehicles: Vehicle[] = [
       { name: "Super White", hex: "#F3F4F5" },
       { name: "Silver Metallic", hex: "#B9BCC0" },
     ],
-    images: [],
+    images: [
+      {
+        src: "/fleet/toyota-hiace.webp",
+        alt: "Toyota Hiace van, used for smaller staff runs and airport transfers",
+        width: 769,
+        height: 370,
+      },
+    ],
     features: [
       "13 reclining seats",
       "Dual air conditioning",
@@ -239,7 +261,14 @@ export const vehicles: Vehicle[] = [
       { name: "Silver Metallic", hex: "#B9BCC0" },
       { name: "Phantom Brown", hex: "#5A4A42" },
     ],
-    images: [],
+    images: [
+      {
+        src: "/fleet/toyota-corolla-altis.webp",
+        alt: "Toyota Corolla Altis saloon, our everyday business and city rental",
+        width: 685,
+        height: 328,
+      },
+    ],
     features: [
       "Cruise control",
       "Dual zone climate",
@@ -330,7 +359,14 @@ export const vehicles: Vehicle[] = [
       { name: "Pearl White", hex: "#F2F3F4" },
       { name: "Black", hex: "#141518" },
     ],
-    images: [],
+    images: [
+      {
+        src: "/fleet/toyota-land-cruiser-axg.webp",
+        alt: "Toyota Land Cruiser AXG, run on executive and protocol work",
+        width: 751,
+        height: 383,
+      },
+    ],
     features: [
       "4x4",
       "Leather interior",

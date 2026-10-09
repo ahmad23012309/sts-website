@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { AudienceSplit } from "@/components/home/AudienceSplit";
 import { ClientLogos } from "@/components/home/ClientLogos";
 import { FleetPreview } from "@/components/home/FleetPreview";
+import { FleetSpread } from "@/components/home/FleetSpread";
 import { Showroom } from "@/components/home/Showroom";
 import { FuelStrip } from "@/components/home/FuelStrip";
 import { FareTeaser } from "@/components/home/FareTeaser";
@@ -26,6 +27,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <FleetSpread />
       <Showroom />
       <AudienceSplit />
       <ClientLogos intro="From schools and universities to manufacturers, hospitals and multinationals, these are organisations whose people we move." />

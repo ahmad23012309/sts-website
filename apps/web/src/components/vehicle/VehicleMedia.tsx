@@ -9,6 +9,10 @@ import { cn } from "@/lib/utils";
  *
  * The outline matches the body style. A saloon drawn on a 22-seat coaster is a
  * small lie that a visitor notices immediately.
+ *
+ * Vehicles are cut out against a light studio background, so the image is
+ * contained inside a tinted panel rather than cropped to fill one. Cropping a
+ * cut-out takes the wheels off.
  */
 export function VehicleMedia({
   vehicle,
@@ -25,15 +29,22 @@ export function VehicleMedia({
 
   if (image) {
     return (
-      <Image
-        src={image.src}
-        alt={image.alt}
-        width={image.width}
-        height={image.height}
-        sizes={sizes}
-        priority={priority}
-        className={cn("h-full w-full object-cover", className)}
-      />
+      <div
+        className={cn(
+          "grid h-full w-full place-items-center bg-[linear-gradient(170deg,#ffffff_0%,#eef1f6_100%)] p-3",
+          className,
+        )}
+      >
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          sizes={sizes}
+          priority={priority}
+          className="h-full w-full object-contain"
+        />
+      </div>
     );
   }
 
