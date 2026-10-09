@@ -22,7 +22,12 @@ const defaults = {
   // PLACEHOLDER
   description:
     "Car rental and corporate fleet services across Pakistan. Self-drive and chauffeur-driven vehicles, transparent fuel-based pricing and long-term contracts for business.",
-  url: "https://sidhutravelservices.com",
+  /**
+   * The site's own address, used for canonical URLs, the sitemap and the
+   * structured data. Set NEXT_PUBLIC_SITE_URL on the host so a preview
+   * deployment describes itself rather than claiming to be the live domain.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sidhutravelservices.com",
   locale: "en_PK",
 
   contact: {
