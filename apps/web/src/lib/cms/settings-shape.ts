@@ -18,6 +18,7 @@ export interface CmsSettings {
     map_query?: string;
     google_business_url?: string;
     google_reviews_url?: string;
+    public_site_url?: string;
   };
   hours?: {
     always_open?: boolean | string;

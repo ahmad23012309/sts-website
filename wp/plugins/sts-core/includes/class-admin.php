@@ -50,6 +50,7 @@ class STS_Admin {
 			);
 		}
 
+		add_submenu_page( 'sts-core', __( 'Starter data', 'sts-core' ), __( 'Starter data', 'sts-core' ), self::CAP, 'sts-starter', array( 'STS_Seed', 'render_screen' ) );
 		add_submenu_page( 'sts-core', __( 'API keys', 'sts-core' ), __( 'API keys', 'sts-core' ), self::CAP, 'sts-api-keys', array( __CLASS__, 'render_keys' ) );
 		add_submenu_page( 'sts-core', __( 'Delivery queue', 'sts-core' ), __( 'Delivery queue', 'sts-core' ), self::CAP, 'sts-queue', array( __CLASS__, 'render_queue' ) );
 		add_submenu_page( 'sts-core', __( 'Rate changes', 'sts-core' ), __( 'Rate changes', 'sts-core' ), self::CAP, 'sts-rate-log', array( __CLASS__, 'render_rate_log' ) );

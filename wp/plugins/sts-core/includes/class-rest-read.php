@@ -44,7 +44,9 @@ class STS_REST_Read {
 			array(
 				'contact' => STS_Settings::get( 'contact' ),
 				'hours'   => STS_Settings::get( 'hours' ),
-				'social'  => array_filter( STS_Settings::get( 'social' ) ),
+				// Cast to an object: an all-empty group filters down to an empty
+				// PHP array, which json_encode writes as [] instead of {}.
+				'social'  => (object) array_filter( STS_Settings::get( 'social' ) ),
 				'offer'   => STS_Settings::get( 'offer' ),
 				'claims'  => STS_Settings::get( 'claims' ),
 				'terms'   => array(

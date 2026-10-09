@@ -82,3 +82,38 @@ are wrong on purpose so they are easy to spot: the street address, the map
 location, the Google Business link, the second phone number, the corporate
 WhatsApp number, and the insurance line. `docs/PLACEHOLDERS.md` is the full
 list.
+
+## Starter data
+
+Activating the plugin fills WordPress with what the website was built from: the
+twenty vehicles on the register with their specifications and rates, the six
+services, the five cities, the nine routes, the questions, the client list, and
+the contact, fuel, pricing, payment and offer settings. It runs by itself on the
+first admin page load after activation, and can be run again from **Sidhu
+Travel → Starter data**.
+
+Re-running it only adds what is missing. A vehicle that already exists is left
+alone and a setting that already has a value is not touched, so it can never
+undo an afternoon's editing.
+
+The file it reads, `data/starter.json`, is generated from the website's own
+fixtures by `npm run export:starter`. Change a rate in the fixtures and the
+starter data follows; the two cannot drift apart.
+
+Two things are deliberately left switched off:
+
+- **Client logos.** Every client is imported with its logo hidden and
+  "written permission held" unticked. Publishing a company's mark without
+  permission is the company's risk to take, not ours, so it is a tick per
+  client in their own screen.
+- **Testimonials.** None are imported. The endpoint only returns ones marked
+  verified, because invented review markup risks a manual action against the
+  whole domain.
+
+## If the backend looks empty
+
+The website asks for `/wp-json/sts/v1/...` first and falls back to
+`/?rest_route=/sts/v1/...` when that returns 404. The pretty form only exists
+once WordPress is using pretty permalinks, which a fresh install is not; the
+fallback means the site works either way. Setting **Settings → Permalinks** to
+**Post name** once is still worth doing, since the pretty form is cached better.

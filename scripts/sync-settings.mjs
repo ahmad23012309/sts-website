@@ -123,7 +123,11 @@ async function main() {
   const settings = {};
   for (const group of GROUPS) {
     const value = payload?.[group];
-    if (value && typeof value === "object") settings[group] = value;
+    // An array here means the backend had nothing in the group; keeping it
+    // would write a [] into a file typed as an object.
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      settings[group] = value;
+    }
   }
 
   if (Object.keys(settings).length === 0) {

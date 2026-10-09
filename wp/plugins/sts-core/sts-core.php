@@ -29,6 +29,7 @@ require_once STS_CORE_DIR . 'includes/class-submissions.php';
 require_once STS_CORE_DIR . 'includes/class-webhooks.php';
 require_once STS_CORE_DIR . 'includes/class-rest-read.php';
 require_once STS_CORE_DIR . 'includes/class-rest-write.php';
+require_once STS_CORE_DIR . 'includes/class-seed.php';
 require_once STS_CORE_DIR . 'includes/class-admin.php';
 require_once STS_CORE_DIR . 'includes/class-frontend-cache.php';
 require_once STS_CORE_DIR . 'includes/class-security.php';
@@ -48,6 +49,7 @@ function sts_core_boot(): void {
 	STS_Webhooks::init();
 	STS_REST_Read::init();
 	STS_REST_Write::init();
+	STS_Seed::init();
 	STS_Admin::init();
 	STS_Frontend_Cache::init();
 	STS_Security::init();

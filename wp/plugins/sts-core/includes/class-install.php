@@ -20,6 +20,9 @@ class STS_Install {
 	const DB_VERSION        = 3;
 
 	public static function activate(): void {
+		// Queued rather than run here: the post types are registered on init,
+		// which has not fired during activation.
+		STS_Seed::schedule();
 		self::create_tables();
 		update_option( self::DB_VERSION_OPTION, self::DB_VERSION );
 

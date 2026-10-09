@@ -1,0 +1,1414 @@
+{
+ "generatedAt": "2026-10-09",
+ "settings": {
+  "contact": {
+   "phone": "+92 306 4441944",
+   "phone_alt": "",
+   "whatsapp": "+92 306 4441944",
+   "whatsapp_corporate": "",
+   "email": "sidhutravel44@gmail.com",
+   "email_corporate": "sidhupvtltd44@gmail.com",
+   "address_line": "Office address to be confirmed",
+   "city": "Lahore",
+   "map_query": "Sidhu Travel Services, Lahore, Pakistan",
+   "google_business_url": "",
+   "google_reviews_url": "",
+   "public_site_url": "https://sidhutravelservices.com"
+  },
+  "hours": {
+   "always_open": 1,
+   "weekdays": "",
+   "saturday": "",
+   "sunday": "",
+   "holidays": ""
+  },
+  "social": {
+   "facebook": "",
+   "instagram": "",
+   "youtube": "",
+   "tiktok": "",
+   "linkedin": ""
+  },
+  "fuel": {
+   "petrol": 396.65,
+   "diesel": 395.85,
+   "hi_octane": 425,
+   "effective_from": "2026-10-08",
+   "note": ""
+  },
+  "pricing": {
+   "margin_percent": 10,
+   "included_km_per_day": 100,
+   "round_to_nearest": 100,
+   "charge_return_leg_fuel": 1,
+   "without_fuel_adjust": 0,
+   "discount_7": 10,
+   "discount_14": 15,
+   "discount_30": 20
+  },
+  "payments": {
+   "advance_percent": 50,
+   "corporate_credit_days": 30,
+   "methods": "Cash at handover\nBank transfer\nJazzCash and EasyPaisa\nCompany cheque, for corporate accounts",
+   "bank_details": "",
+   "tax_note": ""
+  },
+  "terms": {
+   "included": "A vehicle serviced and cleaned before handover\nAir conditioning and a full pre-trip check\nA direct line to us for the whole rental\nRoadside assistance if the vehicle lets you down",
+   "excluded": "Fuel, on a without-fuel rental\nTolls, motorway charges and parking\nThe driver's meals and accommodation on overnight trips\nDamage beyond fair wear, charged against the security deposit",
+   "insurance": "",
+   "legal_reviewed": 0
+  },
+  "offer": {
+   "enabled": 1,
+   "headline": "10% off your first booking",
+   "body": "New customers get 10% off the vehicle rate on a first confirmed booking. Quote the code when you send your request and we apply it to the quote.",
+   "code": "FIRST10",
+   "terms": "One use per customer, on the vehicle rate only, and not combined with a long-stay discount. Subject to availability.",
+   "repeat_after_days": 30
+  },
+  "claims": {
+   "years_in_service": "20+",
+   "clients_served": "8,200+",
+   "on_time_rate": "99.8%"
+  }
+ },
+ "posts": {
+  "sts_vehicle": [
+   {
+    "slug": "toyota-coaster",
+    "title": "Toyota Coaster",
+    "content": "",
+    "class": "coaster",
+    "meta": {
+     "make": "Toyota",
+     "model": "Coaster",
+     "variant": "22 Seater",
+     "year": 2025,
+     "units_in_fleet": 22,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 4164,
+     "seats": 22,
+     "doors": 2,
+     "luggage": 10,
+     "transmission": "manual",
+     "fuel_type": "diesel",
+     "mileage_city": 5,
+     "mileage_highway": 8,
+     "air_conditioning": 1,
+     "rate_with_fuel": 35000,
+     "rate_without_fuel": 26000,
+     "rate_out_of_city": 42000,
+     "rate_per_km": 130,
+     "overtime_per_hour": 1800,
+     "driver_allowance": 3000,
+     "night_stay_charge": 3000,
+     "security_deposit": 75000,
+     "features": "22 reclining seats\nDual air conditioning\nPublic address system\nOverhead luggage racks",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-hiace",
+    "title": "Toyota Hiace",
+    "content": "",
+    "class": "van",
+    "meta": {
+     "make": "Toyota",
+     "model": "Hiace",
+     "variant": "Grand Cabin",
+     "year": 2025,
+     "units_in_fleet": 21,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 2694,
+     "seats": 13,
+     "doors": 4,
+     "luggage": 6,
+     "transmission": "manual",
+     "fuel_type": "petrol",
+     "mileage_city": 7,
+     "mileage_highway": 10,
+     "air_conditioning": 1,
+     "rate_with_fuel": 22000,
+     "rate_without_fuel": 16000,
+     "rate_out_of_city": 26000,
+     "rate_per_km": 85,
+     "overtime_per_hour": 1200,
+     "driver_allowance": 2500,
+     "night_stay_charge": 2500,
+     "security_deposit": 50000,
+     "features": "13 reclining seats\nDual air conditioning\nTinted glass\nLuggage space",
+     "sketchfab_uid": "ec15323d57f04ba4976f0e758298b25c",
+     "sketchfab_title": "Toyota Hiace Passenger Van L2H3 GLX 2020",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "daewoo-bus-116",
+    "title": "Daewoo BUS-116",
+    "content": "",
+    "class": "bus",
+    "meta": {
+     "make": "Daewoo",
+     "model": "BUS-116",
+     "variant": "Intercity Coach",
+     "year": 2022,
+     "units_in_fleet": 5,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 8000,
+     "seats": 45,
+     "doors": 2,
+     "luggage": 20,
+     "transmission": "manual",
+     "fuel_type": "diesel",
+     "mileage_city": 3,
+     "mileage_highway": 5,
+     "air_conditioning": 1,
+     "rate_with_fuel": 55000,
+     "rate_without_fuel": 42000,
+     "rate_out_of_city": 65000,
+     "rate_per_km": 190,
+     "overtime_per_hour": 2500,
+     "driver_allowance": 3500,
+     "night_stay_charge": 3500,
+     "security_deposit": 120000,
+     "features": "45 seats\nAir conditioning\nReclining seats\nLarge luggage hold",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "changan-karvaan-plus",
+    "title": "Changan Karvaan Plus",
+    "content": "",
+    "class": "van",
+    "meta": {
+     "make": "Changan",
+     "model": "Karvaan Plus",
+     "variant": "7 Seater",
+     "year": 2025,
+     "units_in_fleet": 4,
+     "available_for_corporate": 1,
+     "is_featured": 0,
+     "engine_cc": 1000,
+     "seats": 7,
+     "doors": 5,
+     "luggage": 3,
+     "transmission": "manual",
+     "fuel_type": "petrol",
+     "mileage_city": 11,
+     "mileage_highway": 14,
+     "air_conditioning": 1,
+     "rate_with_fuel": 10000,
+     "rate_without_fuel": 7500,
+     "rate_out_of_city": 12500,
+     "rate_per_km": 38,
+     "overtime_per_hour": 600,
+     "driver_allowance": 1500,
+     "night_stay_charge": 1500,
+     "security_deposit": 25000,
+     "features": "7 seats\nAir conditioning\nFlexible seating\nEconomical running",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-corolla-altis",
+    "title": "Toyota Corolla",
+    "content": "",
+    "class": "sedan",
+    "meta": {
+     "make": "Toyota",
+     "model": "Corolla",
+     "variant": "Altis 1.6",
+     "year": 2026,
+     "units_in_fleet": 4,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 1598,
+     "seats": 5,
+     "doors": 4,
+     "luggage": 3,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 11,
+     "mileage_highway": 15,
+     "air_conditioning": 1,
+     "rate_with_fuel": 12000,
+     "rate_without_fuel": 9000,
+     "rate_out_of_city": 15000,
+     "rate_per_km": 42,
+     "overtime_per_hour": 700,
+     "driver_allowance": 1800,
+     "night_stay_charge": 1800,
+     "security_deposit": 40000,
+     "features": "Cruise control\nDual zone climate\nRear camera\nPush start",
+     "sketchfab_uid": "11fa3ac64ef64cc0a6208e54d792f2d3",
+     "sketchfab_title": "Toyota Corolla Altis 2018",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-prado-txl",
+    "title": "Toyota Prado",
+    "content": "",
+    "class": "luxury",
+    "meta": {
+     "make": "Toyota",
+     "model": "Prado",
+     "variant": "TXL",
+     "year": 2021,
+     "units_in_fleet": 3,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 2982,
+     "seats": 7,
+     "doors": 5,
+     "luggage": 5,
+     "transmission": "automatic",
+     "fuel_type": "diesel",
+     "mileage_city": 7,
+     "mileage_highway": 10,
+     "air_conditioning": 1,
+     "rate_with_fuel": 33000,
+     "rate_without_fuel": 26000,
+     "rate_out_of_city": 38000,
+     "rate_per_km": 105,
+     "overtime_per_hour": 1600,
+     "driver_allowance": 2500,
+     "night_stay_charge": 2500,
+     "security_deposit": 100000,
+     "features": "4x4\nLeather interior\nSunroof\nSeven seats",
+     "sketchfab_uid": "b7df62bb069c44a18cebdeaec1d41a03",
+     "sketchfab_title": "Toyota Land Crusier Prado 2021",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-land-cruiser-axg",
+    "title": "Toyota Land Cruiser",
+    "content": "",
+    "class": "luxury",
+    "meta": {
+     "make": "Toyota",
+     "model": "Land Cruiser",
+     "variant": "AXG",
+     "year": 2012,
+     "units_in_fleet": 3,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 4608,
+     "seats": 7,
+     "doors": 5,
+     "luggage": 6,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 5,
+     "mileage_highway": 8,
+     "air_conditioning": 1,
+     "rate_with_fuel": 40000,
+     "rate_without_fuel": 32000,
+     "rate_out_of_city": 46000,
+     "rate_per_km": 135,
+     "overtime_per_hour": 2000,
+     "driver_allowance": 3000,
+     "night_stay_charge": 3000,
+     "security_deposit": 150000,
+     "features": "4x4\nLeather interior\nRear entertainment\nSeven seats",
+     "sketchfab_uid": "3dfcd7904cdb4e52afa3ce59fa59e1a5",
+     "sketchfab_title": "2022 Toyota Land Cruiser 300 VX.R",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "gwm-haval-h6-hev",
+    "title": "GWM Haval H6",
+    "content": "",
+    "class": "suv",
+    "meta": {
+     "make": "GWM Haval",
+     "model": "H6",
+     "variant": "HEV",
+     "year": 2026,
+     "units_in_fleet": 2,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 1497,
+     "seats": 5,
+     "doors": 5,
+     "luggage": 4,
+     "transmission": "automatic",
+     "fuel_type": "hybrid",
+     "mileage_city": 14,
+     "mileage_highway": 17,
+     "air_conditioning": 1,
+     "rate_with_fuel": 20000,
+     "rate_without_fuel": 15000,
+     "rate_out_of_city": 24000,
+     "rate_per_km": 66,
+     "overtime_per_hour": 1100,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 70000,
+     "features": "Hybrid drivetrain\nPanoramic roof\n360 camera\nVentilated seats",
+     "sketchfab_uid": "f7752aeb48ed4c8e861db51ffbae1bc1",
+     "sketchfab_title": "Haval H6",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "honda-civic-oriel",
+    "title": "Honda Civic",
+    "content": "",
+    "class": "sedan",
+    "meta": {
+     "make": "Honda",
+     "model": "Civic",
+     "variant": "Oriel",
+     "year": 2022,
+     "units_in_fleet": 2,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 1498,
+     "seats": 5,
+     "doors": 4,
+     "luggage": 3,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 10,
+     "mileage_highway": 14,
+     "air_conditioning": 1,
+     "rate_with_fuel": 15000,
+     "rate_without_fuel": 11000,
+     "rate_out_of_city": 18000,
+     "rate_per_km": 48,
+     "overtime_per_hour": 800,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 50000,
+     "features": "Sunroof\nLeather seats\nHonda Sensing\nWireless charging",
+     "sketchfab_uid": "1c8146e84c7a43068eed475db016ef5e",
+     "sketchfab_title": "2016 Honda Civic Sedan",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-fortuner-g",
+    "title": "Toyota Fortuner",
+    "content": "",
+    "class": "suv",
+    "meta": {
+     "make": "Toyota",
+     "model": "Fortuner",
+     "variant": "G",
+     "year": 2024,
+     "units_in_fleet": 2,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 2694,
+     "seats": 7,
+     "doors": 5,
+     "luggage": 4,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 8,
+     "mileage_highway": 12,
+     "air_conditioning": 1,
+     "rate_with_fuel": 28000,
+     "rate_without_fuel": 22000,
+     "rate_out_of_city": 33000,
+     "rate_per_km": 95,
+     "overtime_per_hour": 1500,
+     "driver_allowance": 2500,
+     "night_stay_charge": 2500,
+     "security_deposit": 100000,
+     "features": "Seven seats\nLeather interior\nPower tailgate\nReverse camera",
+     "sketchfab_uid": "7c6a3dc9a04f45658d1289cfd20accd7",
+     "sketchfab_title": "Toyota Fortuner 2021",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-yaris-ativ-x",
+    "title": "Toyota Yaris",
+    "content": "",
+    "class": "sedan",
+    "meta": {
+     "make": "Toyota",
+     "model": "Yaris",
+     "variant": "ATIV X 1.5",
+     "year": 2024,
+     "units_in_fleet": 3,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 1496,
+     "seats": 5,
+     "doors": 4,
+     "luggage": 2,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 12,
+     "mileage_highway": 16,
+     "air_conditioning": 1,
+     "rate_with_fuel": 9500,
+     "rate_without_fuel": 7000,
+     "rate_out_of_city": 11500,
+     "rate_per_km": 36,
+     "overtime_per_hour": 500,
+     "driver_allowance": 1500,
+     "night_stay_charge": 1500,
+     "security_deposit": 25000,
+     "features": "Cruise control\nPush start\nRear camera\nAutomatic climate control",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-prado-tx",
+    "title": "Toyota Prado",
+    "content": "",
+    "class": "luxury",
+    "meta": {
+     "make": "Toyota",
+     "model": "Prado",
+     "variant": "TX",
+     "year": 2013,
+     "units_in_fleet": 1,
+     "available_for_corporate": 1,
+     "is_featured": 0,
+     "engine_cc": 2982,
+     "seats": 7,
+     "doors": 5,
+     "luggage": 5,
+     "transmission": "automatic",
+     "fuel_type": "diesel",
+     "mileage_city": 7,
+     "mileage_highway": 10,
+     "air_conditioning": 1,
+     "rate_with_fuel": 30000,
+     "rate_without_fuel": 24000,
+     "rate_out_of_city": 35000,
+     "rate_per_km": 98,
+     "overtime_per_hour": 1500,
+     "driver_allowance": 2500,
+     "night_stay_charge": 2500,
+     "security_deposit": 90000,
+     "features": "4x4\nSeven seats\nClimate control",
+     "sketchfab_uid": "b7df62bb069c44a18cebdeaec1d41a03",
+     "sketchfab_title": "Toyota Land Crusier Prado 2021",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "kia-sportage-awd",
+    "title": "Kia Sportage",
+    "content": "",
+    "class": "suv",
+    "meta": {
+     "make": "Kia",
+     "model": "Sportage",
+     "variant": "AWD",
+     "year": 2025,
+     "units_in_fleet": 2,
+     "available_for_corporate": 1,
+     "is_featured": 1,
+     "engine_cc": 1999,
+     "seats": 5,
+     "doors": 5,
+     "luggage": 4,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 9,
+     "mileage_highway": 13,
+     "air_conditioning": 1,
+     "rate_with_fuel": 18000,
+     "rate_without_fuel": 13500,
+     "rate_out_of_city": 22000,
+     "rate_per_km": 60,
+     "overtime_per_hour": 1000,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 60000,
+     "features": "All wheel drive\nPanoramic roof\nVentilated seats\n360 camera",
+     "sketchfab_uid": "c55735b0036d4c2d998bb8f9414a50c6",
+     "sketchfab_title": "Kia Sportage Interior 2019",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "kia-sorento-awd",
+    "title": "Kia Sorento",
+    "content": "",
+    "class": "suv",
+    "meta": {
+     "make": "Kia",
+     "model": "Sorento",
+     "variant": "AWD",
+     "year": 2021,
+     "units_in_fleet": 1,
+     "available_for_corporate": 1,
+     "is_featured": 0,
+     "engine_cc": 2359,
+     "seats": 7,
+     "doors": 5,
+     "luggage": 5,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 8,
+     "mileage_highway": 12,
+     "air_conditioning": 1,
+     "rate_with_fuel": 22000,
+     "rate_without_fuel": 17000,
+     "rate_out_of_city": 26000,
+     "rate_per_km": 74,
+     "overtime_per_hour": 1200,
+     "driver_allowance": 2200,
+     "night_stay_charge": 2200,
+     "security_deposit": 80000,
+     "features": "Seven seats\nAll wheel drive\nLeather interior\nPower tailgate",
+     "sketchfab_uid": "3f3c0aab11124020ae0cf045361f241c",
+     "sketchfab_title": "Kia Sorento 2021",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "jaecoo-j5-comfort",
+    "title": "Jaecoo J5",
+    "content": "",
+    "class": "suv",
+    "meta": {
+     "make": "Jaecoo",
+     "model": "J5",
+     "variant": "Comfort",
+     "year": 2026,
+     "units_in_fleet": 1,
+     "available_for_corporate": 1,
+     "is_featured": 0,
+     "engine_cc": 1498,
+     "seats": 5,
+     "doors": 5,
+     "luggage": 4,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 10,
+     "mileage_highway": 14,
+     "air_conditioning": 1,
+     "rate_with_fuel": 18000,
+     "rate_without_fuel": 13500,
+     "rate_out_of_city": 22000,
+     "rate_per_km": 60,
+     "overtime_per_hour": 1000,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 60000,
+     "features": "Panoramic roof\nLarge touchscreen\n360 camera\nAutomatic climate control",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "jac-t9-hunter-4x4",
+    "title": "JAC Motors T9 Hunter",
+    "content": "",
+    "class": "pickup",
+    "meta": {
+     "make": "JAC Motors",
+     "model": "T9 Hunter",
+     "variant": "4x4",
+     "year": 2026,
+     "units_in_fleet": 1,
+     "available_for_corporate": 1,
+     "is_featured": 0,
+     "engine_cc": 1996,
+     "seats": 5,
+     "doors": 4,
+     "luggage": 5,
+     "transmission": "automatic",
+     "fuel_type": "diesel",
+     "mileage_city": 9,
+     "mileage_highway": 12,
+     "air_conditioning": 1,
+     "rate_with_fuel": 18000,
+     "rate_without_fuel": 14000,
+     "rate_out_of_city": 22000,
+     "rate_per_km": 62,
+     "overtime_per_hour": 1000,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 70000,
+     "features": "4x4\nDouble cab\nLoad bed\nReverse camera",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "toyota-hilux-revo-g",
+    "title": "Toyota Hilux",
+    "content": "",
+    "class": "pickup",
+    "meta": {
+     "make": "Toyota",
+     "model": "Hilux",
+     "variant": "Revo G",
+     "year": 2017,
+     "units_in_fleet": 1,
+     "available_for_corporate": 1,
+     "is_featured": 0,
+     "engine_cc": 2755,
+     "seats": 5,
+     "doors": 4,
+     "luggage": 5,
+     "transmission": "manual",
+     "fuel_type": "diesel",
+     "mileage_city": 9,
+     "mileage_highway": 12,
+     "air_conditioning": 1,
+     "rate_with_fuel": 18000,
+     "rate_without_fuel": 14000,
+     "rate_out_of_city": 22000,
+     "rate_per_km": 62,
+     "overtime_per_hour": 1000,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 60000,
+     "features": "4x4\nDouble cab\nLoad bed\nHigh ground clearance",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "suzuki-wagon-r",
+    "title": "Suzuki Wagon R",
+    "content": "",
+    "class": "economy",
+    "meta": {
+     "make": "Suzuki",
+     "model": "Wagon R",
+     "variant": "VXL",
+     "year": 2021,
+     "units_in_fleet": 1,
+     "available_for_corporate": 0,
+     "is_featured": 0,
+     "engine_cc": 998,
+     "seats": 5,
+     "doors": 4,
+     "luggage": 2,
+     "transmission": "manual",
+     "fuel_type": "petrol",
+     "mileage_city": 14,
+     "mileage_highway": 18,
+     "air_conditioning": 1,
+     "rate_with_fuel": 7000,
+     "rate_without_fuel": 5000,
+     "rate_out_of_city": 8500,
+     "rate_per_km": 28,
+     "overtime_per_hour": 400,
+     "driver_allowance": 1500,
+     "night_stay_charge": 1500,
+     "security_deposit": 20000,
+     "features": "Air conditioning\nPower steering\nAirbags\nTall cabin",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "suzuki-xbee",
+    "title": "Suzuki XBEE",
+    "content": "",
+    "class": "economy",
+    "meta": {
+     "make": "Suzuki",
+     "model": "XBEE",
+     "variant": "Hybrid MZ",
+     "year": 2018,
+     "units_in_fleet": 1,
+     "available_for_corporate": 0,
+     "is_featured": 0,
+     "engine_cc": 996,
+     "seats": 5,
+     "doors": 5,
+     "luggage": 2,
+     "transmission": "automatic",
+     "fuel_type": "hybrid",
+     "mileage_city": 15,
+     "mileage_highway": 19,
+     "air_conditioning": 1,
+     "rate_with_fuel": 8000,
+     "rate_without_fuel": 6000,
+     "rate_out_of_city": 10000,
+     "rate_per_km": 32,
+     "overtime_per_hour": 450,
+     "driver_allowance": 1500,
+     "night_stay_charge": 1500,
+     "security_deposit": 25000,
+     "features": "Mild hybrid\nAutomatic climate control\nRear camera\nCompact footprint",
+     "sketchfab_uid": "",
+     "sketchfab_title": "",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   },
+   {
+    "slug": "daihatsu-copen-robe",
+    "title": "Daihatsu Copen",
+    "content": "",
+    "class": "convertible",
+    "meta": {
+     "make": "Daihatsu",
+     "model": "Copen",
+     "variant": "Robe",
+     "year": 2014,
+     "units_in_fleet": 1,
+     "available_for_corporate": 0,
+     "is_featured": 0,
+     "engine_cc": 658,
+     "seats": 2,
+     "doors": 2,
+     "luggage": 1,
+     "transmission": "automatic",
+     "fuel_type": "petrol",
+     "mileage_city": 16,
+     "mileage_highway": 20,
+     "air_conditioning": 1,
+     "rate_with_fuel": 25000,
+     "rate_without_fuel": 20000,
+     "rate_out_of_city": 28000,
+     "rate_per_km": 80,
+     "overtime_per_hour": 1500,
+     "driver_allowance": 2000,
+     "night_stay_charge": 2000,
+     "security_deposit": 80000,
+     "features": "Retractable hard top\nTwo seats\nEvent and photography use\nAutomatic",
+     "sketchfab_uid": "2552efba1add4dfdab4378edc128d768",
+     "sketchfab_title": "2020 Daihatsu Copen GR Sport",
+     "sketchfab_author": "",
+     "sketchfab_license": "",
+     "model_accuracy": "representative"
+    }
+   }
+  ],
+  "sts_service": [
+   {
+    "slug": "staff-transport",
+    "title": "Staff Transport",
+    "content": "A staff route is judged on the mornings it would have failed. Ours are built around that: drivers assigned to the route rather than sourced on the day, servicing planned against each registration, and a replacement vehicle when one is off the road.\n\nRoutes, pick-up points and timings are agreed once and held to. Changes go through a named contact, not a call centre, and the whole month arrives as a single itemised invoice.",
+    "meta": {
+     "audience": "For employers moving people to work every day",
+     "summary": "Daily pick and drop on fixed routes, billed monthly against one invoice.",
+     "points": "Coasters, Hiace vans and intercity coaches\nThe same drivers on the same route\nReplacement vehicle guarantee\nOne monthly invoice against your purchase order",
+     "related_classes": "coaster, van, bus"
+    }
+   },
+   {
+    "slug": "corporate-fleet",
+    "title": "Corporate Fleet Leasing",
+    "content": "Take the vehicles you need on contract and leave the registration, servicing, repairs and replacement to us. Contracts start at a single vehicle and run from a month upwards.\n\nYou get a fixed monthly cost instead of an unpredictable one, and your people get a car that works rather than one that is overdue a service.",
+    "meta": {
+     "audience": "For companies that need vehicles without owning them",
+     "summary": "Vehicles on contract for your executives and teams, maintained by us.",
+     "points": "From one vehicle upwards\nScheduled maintenance included\nWith or without a driver\nCredit terms agreed up front",
+     "related_classes": "sedan, suv, luxury"
+    }
+   },
+   {
+    "slug": "daily-rental",
+    "title": "Daily Rental",
+    "content": "Pick the vehicle, tell us the dates, and we deliver it or you collect it. Self-drive is available on most of the fleet against documents and a deposit; some vehicles are chauffeur-driven only.\n\nRates are published on every vehicle page, with fuel and without, so you can work out the cost before you call.",
+    "meta": {
+     "audience": "For anyone who needs a vehicle for a day or a week",
+     "summary": "Any vehicle in the fleet by the day, with or without a driver.",
+     "points": "Published rates, with and without fuel\nSelf-drive or with a driver\nDelivery to your address\nDiscounts from seven days",
+     "related_classes": "economy, sedan, suv"
+    }
+   },
+   {
+    "slug": "airport-transfer",
+    "title": "Airport Transfer",
+    "content": "The price is agreed before the journey, so a delayed landing or a slow queue at immigration costs nothing extra. The driver waits inside with a name board.\n\nFor groups, a coaster or a Hiace meets the whole party at once rather than splitting people across taxis.",
+    "meta": {
+     "audience": "For arrivals, departures and guests you are meeting",
+     "summary": "Fixed-price pick-up and drop-off, with the driver waiting on arrival.",
+     "points": "Price fixed before the journey\nDriver waits on arrival\nGroup vehicles for larger parties\nReturn transfers arranged together",
+     "related_classes": "sedan, suv, van"
+    }
+   },
+   {
+    "slug": "intercity-travel",
+    "title": "Intercity Travel",
+    "content": "Journeys between cities are quoted from the distance, the vehicle's own consumption and the fuel price in force that day, then shown to you as a breakdown rather than a single figure.\n\nA one-way drop and a return trip are priced differently, because on a one-way the vehicle still has to come back. The calculator shows which is which.",
+    "meta": {
+     "audience": "For travel between cities, one way or returning",
+     "summary": "Point-to-point journeys priced on distance and the day's fuel rate.",
+     "points": "Quoted before you commit\nOne-way drops and return journeys\nDriver allowance and night stay shown separately\nTolls included where we hold the route",
+     "related_classes": "sedan, suv, coaster"
+    }
+   },
+   {
+    "slug": "weddings-and-events",
+    "title": "Weddings and Events",
+    "content": "An event needs two things from transport: a vehicle that looks right in the photographs, and enough seats to move everyone else. We cover both from the same fleet, on the same booking.\n\nTimings are planned with you beforehand, because an event is the one job where arriving late cannot be fixed afterwards.",
+    "meta": {
+     "audience": "For weddings, functions and corporate events",
+     "summary": "Presentation vehicles and group transport for the whole occasion.",
+     "points": "Executive and presentation vehicles\nCoasters and vans for guests\nTimings planned in advance\nMultiple vehicles on one booking",
+     "related_classes": "luxury, convertible, coaster"
+    }
+   }
+  ],
+  "sts_city": [
+   {
+    "slug": "lahore",
+    "title": "Lahore",
+    "content": "",
+    "meta": {
+     "is_base": 1,
+     "intro": "Lahore is where we are based and where most of our fleet sits. Coasters and vans run staff routes across the city every morning, and cars and SUVs go out on daily hire from the same yard.",
+     "uses": "Daily staff pick and drop across the city\nAirport collection and drop-off\nWedding and event transport\nTrips north to Murree and the hill stations\nBusiness travel to Islamabad and back in a day",
+     "areas": "DHA, all phases\nGulberg\nJohar Town\nModel Town\nBahria Town\nLahore Garrison\nThokar Niaz Baig\nSaddar\nMall Road",
+     "airport": "Allama Iqbal International Airport"
+    }
+   },
+   {
+    "slug": "islamabad",
+    "title": "Islamabad",
+    "content": "",
+    "meta": {
+     "is_base": 0,
+     "intro": "We run vehicles into Islamabad daily, which is why the Lahore to Islamabad corridor is our most travelled route. Collection in the capital is arranged in advance rather than from a counter.",
+     "uses": "Meetings and corporate visits in the capital\nAirport transfers\nOnward travel to Murree, Naran and the north\nOne-way drops from Lahore",
+     "areas": "",
+     "airport": "Islamabad International Airport"
+    }
+   },
+   {
+    "slug": "rawalpindi",
+    "title": "Rawalpindi",
+    "content": "",
+    "meta": {
+     "is_base": 0,
+     "intro": "Rawalpindi is served alongside Islamabad. The same vehicles, drivers and rates apply across the twin cities, and a booking in one covers collection in the other.",
+     "uses": "Twin-city travel and daily commuting\nGroup movements to Islamabad\nTrips to Murree and the Galiyat",
+     "areas": "",
+     "airport": "Islamabad International Airport"
+    }
+   },
+   {
+    "slug": "karachi",
+    "title": "Karachi",
+    "content": "",
+    "meta": {
+     "is_base": 0,
+     "intro": "Karachi work is arranged on notice, usually for corporate movements and long intercity runs. Tell us the dates early and we position a vehicle for them.",
+     "uses": "Corporate visits and site movements\nLong-distance runs from Punjab\nGroup transport for events",
+     "areas": "",
+     "airport": "Jinnah International Airport"
+    }
+   },
+   {
+    "slug": "multan",
+    "title": "Multan",
+    "content": "",
+    "meta": {
+     "is_base": 0,
+     "intro": "Multan sits on one of our regular Punjab routes, so vehicles pass through often. Collection and one-way drops are both straightforward here.",
+     "uses": "One-way drops from Lahore\nBusiness travel across south Punjab\nFamily trips and events",
+     "areas": "",
+     "airport": "Multan International Airport"
+    }
+   }
+  ],
+  "sts_route": [
+   {
+    "slug": "lahore-islamabad",
+    "title": "Lahore to Islamabad",
+    "content": "",
+    "meta": {
+     "origin": "Lahore",
+     "destination": "Islamabad",
+     "distance_km": 375,
+     "estimated_hours": 4.5,
+     "toll_charges": 1200
+    }
+   },
+   {
+    "slug": "lahore-multan",
+    "title": "Lahore to Multan",
+    "content": "",
+    "meta": {
+     "origin": "Lahore",
+     "destination": "Multan",
+     "distance_km": 350,
+     "estimated_hours": 4,
+     "toll_charges": 1100
+    }
+   },
+   {
+    "slug": "lahore-faisalabad",
+    "title": "Lahore to Faisalabad",
+    "content": "",
+    "meta": {
+     "origin": "Lahore",
+     "destination": "Faisalabad",
+     "distance_km": 185,
+     "estimated_hours": 2.5,
+     "toll_charges": 600
+    }
+   },
+   {
+    "slug": "lahore-karachi",
+    "title": "Lahore to Karachi",
+    "content": "",
+    "meta": {
+     "origin": "Lahore",
+     "destination": "Karachi",
+     "distance_km": 1210,
+     "estimated_hours": 16,
+     "toll_charges": 3500
+    }
+   },
+   {
+    "slug": "lahore-murree",
+    "title": "Lahore to Murree",
+    "content": "",
+    "meta": {
+     "origin": "Lahore",
+     "destination": "Murree",
+     "distance_km": 410,
+     "estimated_hours": 5.5,
+     "toll_charges": 1400
+    }
+   },
+   {
+    "slug": "islamabad-murree",
+    "title": "Islamabad to Murree",
+    "content": "",
+    "meta": {
+     "origin": "Islamabad",
+     "destination": "Murree",
+     "distance_km": 60,
+     "estimated_hours": 1.5,
+     "toll_charges": 200
+    }
+   },
+   {
+    "slug": "islamabad-peshawar",
+    "title": "Islamabad to Peshawar",
+    "content": "",
+    "meta": {
+     "origin": "Islamabad",
+     "destination": "Peshawar",
+     "distance_km": 185,
+     "estimated_hours": 2,
+     "toll_charges": 500
+    }
+   },
+   {
+    "slug": "islamabad-naran",
+    "title": "Islamabad to Naran",
+    "content": "",
+    "meta": {
+     "origin": "Islamabad",
+     "destination": "Naran",
+     "distance_km": 270,
+     "estimated_hours": 7,
+     "toll_charges": 400
+    }
+   },
+   {
+    "slug": "karachi-hyderabad",
+    "title": "Karachi to Hyderabad",
+    "content": "",
+    "meta": {
+     "origin": "Karachi",
+     "destination": "Hyderabad",
+     "distance_km": 165,
+     "estimated_hours": 2,
+     "toll_charges": 400
+    }
+   }
+  ],
+  "sts_faq": [
+   {
+    "slug": "what-documents-do-i-need-to-rent-a-car",
+    "title": "What documents do I need to rent a car?",
+    "content": "A valid CNIC and a driving licence for self-drive rentals. Corporate accounts are opened against company registration documents. Exact requirements are confirmed at booking.",
+    "meta": {}
+   },
+   {
+    "slug": "what-is-the-difference-between-the-with-fuel-and-without-fue",
+    "title": "What is the difference between the with-fuel and without-fuel rate?",
+    "content": "The with-fuel rate includes the fuel for your trip, calculated from the distance, the vehicle's consumption and the day's fuel price. The without-fuel rate covers the vehicle alone and you fill it yourself.",
+    "meta": {}
+   },
+   {
+    "slug": "why-does-the-fare-estimate-change-from-day-to-day",
+    "title": "Why does the fare estimate change from day to day?",
+    "content": "Fuel prices in Pakistan are revised regularly. Every with-fuel quote is calculated against the current rate, which is published on our fuel prices page along with the date it took effect.",
+    "meta": {}
+   },
+   {
+    "slug": "can-i-rent-without-a-driver",
+    "title": "Can I rent without a driver?",
+    "content": "Yes. Self-drive is available on most of the fleet, subject to documents and a security deposit. Some premium vehicles are chauffeur-driven only.",
+    "meta": {}
+   },
+   {
+    "slug": "which-cities-do-you-operate-in",
+    "title": "Which cities do you operate in?",
+    "content": "Vehicles can be collected in our listed pick-up cities, and out-of-station travel is available nationwide.",
+    "meta": {}
+   }
+  ],
+  "sts_client": [
+   {
+    "slug": "bsp-responsible-packaging",
+    "title": "BSP Responsible Packaging",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "packages-limited",
+    "title": "Packages Limited",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "lums",
+    "title": "LUMS",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "packages-mall",
+    "title": "Packages Mall",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "parwan-e-nisa",
+    "title": "Parwan-e-Nisa",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "indus-hospital",
+    "title": "Indus Hospital and Health Network",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "popular-group",
+    "title": "Popular Group Industries",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "coca-cola",
+    "title": "Coca-Cola",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "nestle",
+    "title": "Nestle",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "tetra-pak",
+    "title": "Tetra Pak",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "ali-institute",
+    "title": "Ali Institute of Education",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "syedanwala-school",
+    "title": "Syedanwala Higher Secondary School",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "descon",
+    "title": "Descon",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "htl-hi-tech-lubricants",
+    "title": "HTL Hi-Tech Lubricants",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "fatima-group",
+    "title": "Fatima Group",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "cbre",
+    "title": "CBRE",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "brick-school",
+    "title": "Brick School",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "world-call",
+    "title": "World Call",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "askari-awt-guards",
+    "title": "Askari AWT Guards",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "mystic-car-and-van-rental",
+    "title": "Mystic Car and Van Rental",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "mcdonalds",
+    "title": "McDonald's",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "toyota",
+    "title": "Toyota",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "aitchison-college",
+    "title": "Aitchison College Lahore",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "beaconhouse",
+    "title": "Beaconhouse",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "pifd",
+    "title": "Pakistan Institute of Fashion and Design",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "sapphire-finishing-mills",
+    "title": "Sapphire Finishing Mills",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "us-apparel-textiles",
+    "title": "US Apparel and Textiles",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "lgs",
+    "title": "Lahore Grammar School",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "dnata",
+    "title": "dnata",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   },
+   {
+    "slug": "cir",
+    "title": "CIR",
+    "content": "",
+    "meta": {
+     "industry": "",
+     "show_logo": 0,
+     "permission_on_file": 0
+    }
+   }
+  ]
+ }
+}

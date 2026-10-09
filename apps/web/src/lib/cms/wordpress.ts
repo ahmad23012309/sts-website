@@ -39,10 +39,25 @@ async function get<T>(path: string, revalidate: number): Promise<T> {
     throw new CmsUnavailableError(path, 0);
   }
 
-  const response = await fetch(`${BASE}/wp-json/sts/v1${path}`, {
+  const options: RequestInit & { next: { revalidate: number; tags: string[] } } = {
     next: { revalidate, tags: ["cms"] },
     headers: { Accept: "application/json" },
-  });
+  };
+
+  let response = await fetch(`${BASE}/wp-json/sts/v1${path}`, options);
+
+  /**
+   * The pretty route only exists once WordPress is using pretty permalinks. On
+   * a fresh install it is not, and /wp-json/ returns the site's 404 page --
+   * which looks like the backend is broken when nothing is wrong but a setting.
+   * The query form works either way, so a 404 is retried through it.
+   */
+  if (response.status === 404) {
+    response = await fetch(
+      `${BASE}/?rest_route=${encodeURIComponent(`/sts/v1${path}`)}`,
+      options,
+    );
+  }
 
   if (!response.ok) {
     throw new CmsUnavailableError(path, response.status);
