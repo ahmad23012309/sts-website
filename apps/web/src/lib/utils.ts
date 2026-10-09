@@ -11,8 +11,20 @@ const currency = new Intl.NumberFormat("en-PK", {
   maximumFractionDigits: 0,
 });
 
+const preciseCurrency = new Intl.NumberFormat("en-PK", {
+  style: "currency",
+  currency: "PKR",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
 export function formatPkr(amount: number) {
   return currency.format(amount);
+}
+
+/** For per-litre fuel prices, where the paisa is the part that moves. */
+export function formatPkrPrecise(amount: number) {
+  return preciseCurrency.format(amount);
 }
 
 export function slugify(value: string) {

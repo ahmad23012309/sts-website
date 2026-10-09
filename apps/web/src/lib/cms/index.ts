@@ -1,6 +1,7 @@
 import * as fixtures from "./fixtures";
 import { models3d } from "./models3d";
 import type {
+  AvailabilityResult,
   Faq,
   FuelRates,
   PricingRules,
@@ -39,6 +40,18 @@ export async function getFeaturedVehicles(): Promise<Vehicle[]> {
 export async function getVehicle(slug: string): Promise<Vehicle | null> {
   const all = await getVehicles();
   return all.find((vehicle) => vehicle.slug === slug) ?? null;
+}
+
+/**
+ * Single read path for availability.
+ *
+ * Moving the source to the management software later is a change to this
+ * function and nothing else.
+ */
+export async function getAvailability(
+  _vehicleId: string,
+): Promise<AvailabilityResult> {
+  return { source: "none", blocks: [] };
 }
 
 export async function getFuelRates(): Promise<FuelRates> {

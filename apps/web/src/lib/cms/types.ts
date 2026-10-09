@@ -152,6 +152,25 @@ export interface Service {
   icon: string;
 }
 
+export interface AvailabilityBlock {
+  /** Inclusive ISO date. */
+  from: string;
+  /** Inclusive ISO date. */
+  to: string;
+  reason: "booked" | "maintenance" | "reserved";
+}
+
+/**
+ * Where the availability came from.
+ *
+ * "none" means no booking system is connected yet, which the calendar says
+ * plainly rather than drawing every day as free.
+ */
+export interface AvailabilityResult {
+  source: "none" | "cms" | "management-software";
+  blocks: AvailabilityBlock[];
+}
+
 export interface Faq {
   id: string;
   question: string;

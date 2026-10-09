@@ -104,6 +104,45 @@ export function faqJsonLd(faqs: { question: string; answer: string }[]) {
   };
 }
 
+/**
+ * Product and offer markup for a vehicle.
+ *
+ * priceValidUntil is deliberately short: the with-fuel rate is tied to the
+ * notified fuel price, which moves, and a stale price in search results is
+ * worse than none.
+ */
+export function vehicleJsonLd(vehicle: {
+  name: string;
+  description: string;
+  path: string;
+  make: string;
+  model: string;
+  price: number;
+  image?: string;
+}) {
+  const validUntil = new Date();
+  validUntil.setDate(validUntil.getDate() + 14);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: vehicle.name,
+    description: vehicle.description,
+    brand: { "@type": "Brand", name: vehicle.make },
+    model: vehicle.model,
+    ...(vehicle.image ? { image: vehicle.image } : {}),
+    offers: {
+      "@type": "Offer",
+      url: new URL(vehicle.path, site.url).toString(),
+      priceCurrency: "PKR",
+      price: vehicle.price,
+      priceValidUntil: validUntil.toISOString().slice(0, 10),
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${site.url}#organization` },
+    },
+  };
+}
+
 export function JsonLd({ data }: { data: object }) {
   return (
     <script

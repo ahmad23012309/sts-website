@@ -36,7 +36,7 @@ export function VehicleCard({
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <h3 className="truncate text-2xl">
+            <h3 className="text-xl leading-[1.08]">
               <Link
                 href={`/fleet/${vehicle.slug}`}
                 className="transition-colors hover:text-accent"
