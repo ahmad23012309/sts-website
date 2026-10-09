@@ -21,6 +21,7 @@ class STS_Security {
 		add_action( 'template_redirect', array( __CLASS__, 'no_public_frontend' ) );
 		add_filter( 'rest_authentication_errors', array( __CLASS__, 'require_auth_for_core_rest' ) );
 		add_action( 'init', array( __CLASS__, 'strip_head_noise' ) );
+		add_filter( 'allowed_redirect_hosts', array( __CLASS__, 'allow_website_host' ) );
 		add_filter( 'login_errors', static fn(): string => __( 'Login failed.', 'sts-core' ) );
 	}
 
@@ -38,16 +39,37 @@ class STS_Security {
 	}
 
 	/**
+	 * The website sits on its own host, and wp_safe_redirect refuses any host
+	 * but this one unless it is listed here. Without this the redirect below
+	 * falls back to wp-admin and visitors land on a login screen.
+	 */
+	public static function allow_website_host( array $hosts ): array {
+		$host = wp_parse_url( self::website_url(), PHP_URL_HOST );
+		if ( is_string( $host ) && $host !== '' ) {
+			$hosts[] = $host;
+		}
+		return $hosts;
+	}
+
+	private static function website_url(): string {
+		$site = trim( (string) STS_Settings::value( 'contact', 'public_site_url', '' ) );
+		return $site !== '' ? $site : 'https://sidhutravelservices.com';
+	}
+
+	/**
 	 * Nobody should land on the backend by accident, so the front end sends
 	 * visitors to the real website instead of rendering a theme.
+	 *
+	 * Sent as a temporary redirect on purpose. A permanent one is cached by the
+	 * browser for good, so a wrong address typed into the settings once would
+	 * keep sending the office to it long after the setting was corrected.
 	 */
 	public static function no_public_frontend(): void {
 		if ( is_admin() || wp_doing_ajax() || wp_doing_cron() ) {
 			return;
 		}
 
-		$site = (string) STS_Settings::value( 'contact', 'public_site_url', '' );
-		wp_safe_redirect( $site !== '' ? $site : 'https://sidhutravelservices.com', 301 );
+		wp_safe_redirect( self::website_url(), 302 );
 		exit;
 	}
 
