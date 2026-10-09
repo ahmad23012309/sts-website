@@ -28,8 +28,10 @@ attribute.
 | `fg-faint` | `#858C99` | `#717886` |
 | `accent` | `#CE1D17` | `#E8463F` |
 | `price` | `#123785` | `#FFC72C` |
+| `available` | `#1A9E51` | `#35D07F` |
+| `booked` | `#CF1124` | `#FF6B64` |
 
-`accent` and `price` flip for the same reason: the logo red measures 5.5:1 on
+`accent`, `price` and the two status colours flip for the same reason: the logo red measures 5.5:1 on
 white but only 3.5:1 on the dark surfaces, and yellow is unreadable as type on
 white at 1.6:1 while it is the clearest choice on dark at 12.4:1.
 

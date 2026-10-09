@@ -1,5 +1,6 @@
 import type {
   Faq,
+  FuelRateRecord,
   FuelRates,
   PricingRules,
   Route,
@@ -940,6 +941,20 @@ export const fuelRates: FuelRates = {
   effectiveFrom: "2026-10-08",
   note: "Seed values. The office updates these from the admin whenever the notified rates change.",
 };
+
+/**
+ * Published petrol prices, most recent first. Diesel and hi-octane are only
+ * recorded for the current revision; older rows show a dash rather than a
+ * number nobody checked.
+ */
+export const fuelHistory: FuelRateRecord[] = [
+  { effectiveFrom: "2026-10-08", petrol: 396.65, diesel: 395.85, hiOctane: 425.0 },
+  { effectiveFrom: "2026-10-07", petrol: 394.83, diesel: null, hiOctane: null },
+  { effectiveFrom: "2026-10-06", petrol: 393.64, diesel: null, hiOctane: null },
+  { effectiveFrom: "2026-10-03", petrol: 392.76, diesel: null, hiOctane: null },
+  { effectiveFrom: "2026-10-02", petrol: 390.66, diesel: null, hiOctane: null },
+  { effectiveFrom: "2026-10-01", petrol: 387.4, diesel: null, hiOctane: null },
+];
 
 export const pricingRules: PricingRules = {
   marginPercent: 10,

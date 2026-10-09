@@ -105,6 +105,19 @@ export interface FuelRates {
   note: string;
 }
 
+/**
+ * One published revision of the fuel rates.
+ *
+ * Diesel and hi-octane are nullable because the record we have for older dates
+ * only covers petrol, and a blank is honest where a guess is not.
+ */
+export interface FuelRateRecord {
+  effectiveFrom: string;
+  petrol: number;
+  diesel: number | null;
+  hiOctane: number | null;
+}
+
 export interface PricingRules {
   marginPercent: number;
   withoutFuelAdjustPercent: number;

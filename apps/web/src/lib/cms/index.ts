@@ -3,6 +3,7 @@ import { models3d } from "./models3d";
 import type {
   AvailabilityResult,
   Faq,
+  FuelRateRecord,
   FuelRates,
   PricingRules,
   Route,
@@ -56,6 +57,10 @@ export async function getAvailability(
 
 export async function getFuelRates(): Promise<FuelRates> {
   return fixtures.fuelRates;
+}
+
+export async function getFuelHistory(): Promise<FuelRateRecord[]> {
+  return fixtures.fuelHistory;
 }
 
 export async function getPricingRules(): Promise<PricingRules> {
