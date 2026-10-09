@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/brand/Logo";
 import { SocialLinks } from "@/components/layout/SocialLinks";
-import { QuickBookingForm } from "@/components/booking/QuickBookingForm";
+import { LocationMap } from "@/components/layout/LocationMap";
 import { footerNav } from "@/lib/navigation";
 import { site } from "@/lib/site";
 
@@ -37,28 +37,19 @@ export function Footer() {
                   {site.contact.email}
                 </a>
               </li>
-              <li className="inline-flex items-start gap-3 text-fg-muted">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-                <span>
-                  {site.contact.addressLine}, {site.contact.city}
-                </span>
-              </li>
+
             </ul>
 
             <SocialLinks className="mt-8" />
           </div>
 
-          <div
-            id="quick-booking"
-            className="scroll-mt-28 rounded-card border border-edge bg-panel p-6 sm:p-8"
-          >
-            <p className="eyebrow mb-2">Quick booking</p>
-            <h2 className="text-3xl">Tell us what you need</h2>
+          <div>
+            <p className="eyebrow mb-2">Find us</p>
+            <h2 className="text-3xl">Where we are</h2>
             <p className="mt-3 mb-6 text-fg-muted">
-              Four details and we will call you back with availability and a
-              price.
+              Collection from our yard, or we deliver the vehicle to you.
             </p>
-            <QuickBookingForm />
+            <LocationMap />
           </div>
         </div>
 

@@ -12,6 +12,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { CallbackForm } from "@/components/corporate/CallbackForm";
 import { VehicleCard } from "@/components/vehicle/VehicleCard";
+import { ClientLogos } from "@/components/home/ClientLogos";
 import { getVehicles } from "@/lib/cms";
 import { categoryLabels } from "@/lib/vehicleDisplay";
 import { site } from "@/lib/site";
@@ -211,6 +212,12 @@ export default async function CorporatePage() {
           </div>
         </Container>
       </section>
+
+      <ClientLogos
+        title="Organisations we already carry"
+        intro="Staff routes, site movements and event transport run for these organisations. We are glad to arrange a reference in your own sector."
+        className="border-b border-edge bg-page-alt"
+      />
 
       <section className="py-18 lg:py-24">
         <Container>

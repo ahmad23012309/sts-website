@@ -1,0 +1,262 @@
+/**
+ * Organisations we have carried, as supplied by the business.
+ *
+ * `showLogo` is per client on purpose. A company that would rather not be
+ * named can be switched off with one word, without touching the component or
+ * losing the record that they were a client.
+ *
+ * The marks belong to their owners and are shown to identify a past customer,
+ * not to imply endorsement. Written permission should be on file for each one;
+ * see docs/PLACEHOLDERS.md.
+ */
+export interface Client {
+  slug: string;
+  name: string;
+  logo: string;
+  width: number;
+  height: number;
+  showLogo: boolean;
+}
+
+export const clients: Client[] = [
+  {
+    slug: "bsp-responsible-packaging",
+    name: "BSP Responsible Packaging",
+    logo: "/brand/clients/bsp-responsible-packaging.png",
+    width: 261,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "packages-limited",
+    name: "Packages Limited",
+    logo: "/brand/clients/packages-limited.png",
+    width: 202,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "lums",
+    name: "LUMS",
+    logo: "/brand/clients/lums.png",
+    width: 152,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "packages-mall",
+    name: "Packages Mall",
+    logo: "/brand/clients/packages-mall.png",
+    width: 144,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "parwan-e-nisa",
+    name: "Parwan-e-Nisa",
+    logo: "/brand/clients/parwan-e-nisa.png",
+    width: 127,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "indus-hospital",
+    name: "Indus Hospital and Health Network",
+    logo: "/brand/clients/indus-hospital.png",
+    width: 137,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "popular-group",
+    name: "Popular Group Industries",
+    logo: "/brand/clients/popular-group.png",
+    width: 98,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "coca-cola",
+    name: "Coca-Cola",
+    logo: "/brand/clients/coca-cola.png",
+    width: 327,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "nestle",
+    name: "Nestle",
+    logo: "/brand/clients/nestle.png",
+    width: 112,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "tetra-pak",
+    name: "Tetra Pak",
+    logo: "/brand/clients/tetra-pak.png",
+    width: 120,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "ali-institute",
+    name: "Ali Institute of Education",
+    logo: "/brand/clients/ali-institute.png",
+    width: 121,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "syedanwala-school",
+    name: "Syedanwala Higher Secondary School",
+    logo: "/brand/clients/syedanwala-school.png",
+    width: 125,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "descon",
+    name: "Descon",
+    logo: "/brand/clients/descon.png",
+    width: 124,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "htl-hi-tech-lubricants",
+    name: "HTL Hi-Tech Lubricants",
+    logo: "/brand/clients/htl-hi-tech-lubricants.png",
+    width: 323,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "fatima-group",
+    name: "Fatima Group",
+    logo: "/brand/clients/fatima-group.png",
+    width: 151,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "cbre",
+    name: "CBRE",
+    logo: "/brand/clients/cbre.png",
+    width: 407,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "brick-school",
+    name: "Brick School",
+    logo: "/brand/clients/brick-school.png",
+    width: 301,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "world-call",
+    name: "World Call",
+    logo: "/brand/clients/world-call.png",
+    width: 119,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "askari-awt-guards",
+    name: "Askari AWT Guards",
+    logo: "/brand/clients/askari-awt-guards.png",
+    width: 121,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "mystic-car-and-van-rental",
+    name: "Mystic Car and Van Rental",
+    logo: "/brand/clients/mystic-car-and-van-rental.png",
+    width: 310,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "mcdonalds",
+    name: "McDonald's",
+    logo: "/brand/clients/mcdonalds.png",
+    width: 134,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "toyota",
+    name: "Toyota",
+    logo: "/brand/clients/toyota.png",
+    width: 163,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "aitchison-college",
+    name: "Aitchison College Lahore",
+    logo: "/brand/clients/aitchison-college.png",
+    width: 91,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "beaconhouse",
+    name: "Beaconhouse",
+    logo: "/brand/clients/beaconhouse.png",
+    width: 137,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "pifd",
+    name: "Pakistan Institute of Fashion and Design",
+    logo: "/brand/clients/pifd.png",
+    width: 148,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "sapphire-finishing-mills",
+    name: "Sapphire Finishing Mills",
+    logo: "/brand/clients/sapphire-finishing-mills.png",
+    width: 239,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "us-apparel-textiles",
+    name: "US Apparel and Textiles",
+    logo: "/brand/clients/us-apparel-textiles.png",
+    width: 140,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "lgs",
+    name: "Lahore Grammar School",
+    logo: "/brand/clients/lgs.png",
+    width: 98,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "dnata",
+    name: "dnata",
+    logo: "/brand/clients/dnata.png",
+    width: 369,
+    height: 120,
+    showLogo: true,
+  },
+  {
+    slug: "cir",
+    name: "CIR",
+    logo: "/brand/clients/cir.png",
+    width: 179,
+    height: 120,
+    showLogo: true,
+  },
+];

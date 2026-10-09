@@ -364,8 +364,17 @@
   animation: ticker-scroll 46s linear infinite;
 }
 
+/* The client strip holds far more, so it runs slower. */
+@utility logo-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 70s linear infinite;
+}
+
 .ticker:hover .ticker-track,
-.ticker:focus-within .ticker-track {
+.ticker:focus-within .ticker-track,
+.ticker:hover .logo-track,
+.ticker:focus-within .logo-track {
   animation-play-state: paused;
 }
 
@@ -375,7 +384,8 @@
     overflow-x: auto;
   }
 
-  .ticker-track {
+  .ticker-track,
+  .logo-track {
     animation: none;
   }
 }

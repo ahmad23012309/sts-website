@@ -10,7 +10,7 @@ export function PreviewDataNotice() {
   if (!isPreviewData) return null;
 
   return (
-    <div className="bg-yellow px-4 py-1.5 text-center font-ui text-[0.6875rem] font-semibold tracking-wide text-ink">
+    <div className="bg-ink px-4 py-1.5 text-center font-ui text-[0.6875rem] font-semibold tracking-wide text-yellow">
       Preview build — vehicle rates and fuel prices are placeholders, not real
       quotations.
     </div>

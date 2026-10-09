@@ -31,8 +31,17 @@ export const site = {
     whatsappCorporate: "",
     email: "sidhutravel44@gmail.com",
     emailCorporate: "sidhupvtltd44@gmail.com",
-    // PLACEHOLDER
+    // PLACEHOLDER — the exact street address
     addressLine: "Office address to be confirmed",
+    /**
+     * What the footer map searches for. Replace with the exact address, or with
+     * the coordinates from the Google Business listing, and the map moves with
+     * it. No API key is needed for this kind of embed.
+     */
+    // PLACEHOLDER
+    mapQuery: "Sidhu Travel Services, Lahore, Pakistan",
+    /** PLACEHOLDER — the Google Business Profile link, for reviews and directions. */
+    googleBusinessUrl: "",
     // PLACEHOLDER
     city: "Lahore",
     country: "Pakistan",

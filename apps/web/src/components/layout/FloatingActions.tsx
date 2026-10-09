@@ -65,7 +65,7 @@ export function FloatingActions() {
     {
       key: "enquiry",
       label: "Request a call back",
-      href: "#quick-booking",
+      href: "/contact",
       icon: <SquarePen className="h-5 w-5" aria-hidden />,
       secondary: true,
     },
