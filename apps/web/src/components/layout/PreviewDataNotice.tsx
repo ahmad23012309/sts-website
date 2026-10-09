@@ -2,15 +2,17 @@ import { isPreviewData } from "@/lib/cms";
 
 /**
  * Makes it unmistakable that the figures on screen are stand-ins. Disappears on
- * its own once NEXT_PUBLIC_DATA_SOURCE is set to "cms".
+ * its own once NEXT_PUBLIC_DATA_SOURCE is set to "cms", which is why it is a
+ * strip of its own rather than an item inside the announcement ticker: a
+ * warning that scrolls past is a warning people miss.
  */
 export function PreviewDataNotice() {
   if (!isPreviewData) return null;
 
   return (
-    <div className="bg-yellow px-4 py-2 text-center font-ui text-xs font-semibold tracking-wide text-ink">
-      Preview build — vehicles, rates and fuel prices on this site are
-      placeholders and are not real quotations.
+    <div className="bg-yellow px-4 py-1.5 text-center font-ui text-[0.6875rem] font-semibold tracking-wide text-ink">
+      Preview build — vehicle rates and fuel prices are placeholders, not real
+      quotations.
     </div>
   );
 }

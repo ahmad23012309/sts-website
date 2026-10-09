@@ -5,17 +5,20 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { WhatsappIcon } from "@/components/icons/BrandIcons";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { navLeft, navRight, primaryNav, type NavItem } from "@/lib/navigation";
 import { site } from "@/lib/site";
-import { cn } from "@/lib/utils";
+import { cn, whatsappLink } from "@/lib/utils";
 
 /**
  * The logo sits in the centre with the menu split around it.
  *
- * The outer grid is 1fr / auto / 1fr, so the mark stays optically centred no
- * matter how wide either half of the menu grows.
+ * The grid always has exactly three children, so the mark stays in the middle
+ * column at every width. On a phone the left column is an empty spacer and the
+ * right column carries WhatsApp and the menu button, which keeps the logo
+ * optically centred rather than pushed aside.
  */
 export function Header() {
   const pathname = usePathname();
@@ -42,6 +45,8 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  const tel = `tel:${site.contact.phone.replace(/\s/g, "")}`;
+
   return (
     <header
       data-surface="dark"
@@ -52,30 +57,28 @@ export function Header() {
       onMouseLeave={() => setOpenMenu(null)}
     >
       <Container>
-        <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-6">
-          <nav aria-label="Primary" className="hidden justify-self-start xl:block">
-            <ul className="flex items-center gap-1">
-              {navLeft.map((item) => (
-                <NavEntry
-                  key={item.label}
-                  item={item}
-                  isOpen={openMenu === item.label}
-                  isActive={pathname.startsWith(item.href)}
-                  onOpen={() => setOpenMenu(item.children ? item.label : null)}
-                />
-              ))}
-            </ul>
-          </nav>
-
-          {/* On narrow screens the logo takes the left-hand slot. */}
-          <div className="justify-self-start xl:hidden">
-            <Logo />
+        <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4">
+          <div className="justify-self-start">
+            <nav aria-label="Primary" className="hidden xl:block">
+              <ul className="flex items-center gap-1">
+                {navLeft.map((item) => (
+                  <NavEntry
+                    key={item.label}
+                    item={item}
+                    isOpen={openMenu === item.label}
+                    isActive={pathname.startsWith(item.href)}
+                    onOpen={() => setOpenMenu(item.children ? item.label : null)}
+                  />
+                ))}
+              </ul>
+            </nav>
           </div>
-          <div className="hidden justify-self-center xl:block">
+
+          <div className="justify-self-center">
             <Logo />
           </div>
 
-          <div className="flex items-center justify-self-end gap-1 xl:gap-2">
+          <div className="flex items-center justify-self-end gap-2">
             <nav aria-label="Secondary" className="hidden xl:block">
               <ul className="flex items-center gap-1">
                 {navRight.map((item) => (
@@ -94,20 +97,33 @@ export function Header() {
             <span aria-hidden className="mx-2 hidden h-6 w-px bg-edge xl:block" />
 
             <a
-              href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
+              href={tel}
               aria-label={`Call ${site.contact.phone}`}
-              className="hidden h-10 w-10 place-items-center rounded-full border border-edge text-fg-muted transition-colors hover:border-red hover:text-accent lg:grid"
+              className="hidden h-10 w-10 place-items-center rounded-full border border-edge text-fg-muted transition-colors hover:border-red hover:text-accent xl:grid"
             >
               <Phone className="h-4 w-4" aria-hidden />
             </a>
 
-            <ButtonLink href="/book" size="md" className="hidden sm:inline-flex">
+            <a
+              href={whatsappLink(
+                site.contact.whatsapp,
+                `Hello ${site.name}, I would like to enquire about a vehicle.`,
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="grid h-10 w-10 place-items-center rounded-full bg-whatsapp text-ink transition-[filter] hover:brightness-110 xl:hidden"
+            >
+              <WhatsappIcon className="h-5 w-5" />
+            </a>
+
+            <ButtonLink href="/book" size="md" className="hidden xl:inline-flex">
               Book Now
             </ButtonLink>
 
             <button
               type="button"
-              className="grid h-11 w-11 place-items-center rounded-full border border-edge text-fg xl:hidden"
+              className="grid h-10 w-10 place-items-center rounded-full border border-edge text-fg xl:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}

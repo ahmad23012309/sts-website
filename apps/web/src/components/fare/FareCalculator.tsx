@@ -219,6 +219,14 @@ export function FareCalculator({
               onChange={(event) => setDays(Number(event.target.value))}
               className={fieldClass}
             />
+            {rules.longStayDiscounts.length > 0 ? (
+              <span className="mt-1.5 block font-ui text-xs text-fg-faint">
+                {[...rules.longStayDiscounts]
+                  .sort((a, b) => a.minDays - b.minDays)
+                  .map((band) => `${band.minDays}+ days ${band.percent}% off`)
+                  .join(" · ")}
+              </span>
+            ) : null}
           </label>
         </div>
 

@@ -7,6 +7,7 @@ import { VehicleCard } from "@/components/vehicle/VehicleCard";
 import { SketchfabViewer } from "@/components/vehicle/SketchfabViewer";
 import { AvailabilityCalendar } from "@/components/vehicle/AvailabilityCalendar";
 import { BookingPanel } from "@/components/vehicle/BookingPanel";
+import { RentalTerms } from "@/components/vehicle/RentalTerms";
 import { getAvailability, getFuelRates, getVehicle, getVehicles } from "@/lib/cms";
 import { hasModel } from "@/lib/cms/model3d";
 import {
@@ -293,6 +294,13 @@ export default async function VehiclePage({
                 Rates exclude tolls and parking unless agreed. The with-fuel rate
                 moves with the notified fuel price.
               </p>
+            </section>
+
+            <section className="mt-12">
+              <h2 className="text-2xl">What the rate covers</h2>
+              <div className="mt-5">
+                <RentalTerms />
+              </div>
             </section>
 
             <section className="mt-12">

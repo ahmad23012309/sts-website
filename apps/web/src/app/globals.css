@@ -272,3 +272,42 @@
   opacity: 1;
   transform: none;
 }
+
+/* ---------------------------------------------------------------------------
+   Announcement ticker
+
+   The track holds the items twice, so when the first copy has scrolled exactly
+   its own width out of view the second copy is in the identical position and
+   the reset is invisible.
+--------------------------------------------------------------------------- */
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 46s linear infinite;
+}
+
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Without motion the ticker becomes an ordinary scrollable strip. */
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    overflow-x: auto;
+  }
+
+  .ticker-track {
+    animation: none;
+  }
+}

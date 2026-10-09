@@ -13,10 +13,10 @@ on its own once the backend is connected, so it cannot be left on by accident.
 |---|---|---|
 | Tagline | "Rent a car in Pakistan, on your terms" | Data intake §1 |
 | Description | Generic summary | Data intake §1 |
-| Primary phone | `+92 300 0000000` | Data intake §2 |
-| WhatsApp number | `+92 300 0000000` | Data intake §2 |
-| Corporate WhatsApp | empty | Data intake §2 |
-| Email addresses | `info@` / `corporate@` | Data intake §2 |
+| Primary phone | **Supplied** — `+92 306 4441944` | — |
+| WhatsApp number | **Supplied** — `+92 306 4441944` | — |
+| Corporate WhatsApp | empty, if there is a separate line | Data intake §2 |
+| Email addresses | **Supplied** — `sidhutravel44@gmail.com`, `sidhupvtltd44@gmail.com` | — |
 | Office address | "Office address to be confirmed" | Data intake §2 |
 | Opening hours | "Open 24 hours" | Data intake §2 |
 | Social links | all empty — icons hide themselves | Data intake §3 |
@@ -60,6 +60,26 @@ Models are mounted only when the visitor presses "View in 3D", because the
 Sketchfab player costs several megabytes. Licences that require crediting the
 author are honoured by the credit line beneath every viewer and on the
 attributions page.
+
+## Claims that need confirming
+
+These are published as fact and a customer may test any of them.
+
+| Claim | Where |
+|---|---|
+| 20+ years in service | Announcement ticker |
+| 8,200+ clients served | Announcement ticker |
+| 99.8% on-time record | Announcement ticker |
+| What a rental includes and excludes | Every vehicle page |
+| Long-stay discounts: 10% from 7 days, 15% from 14, 20% from 30 | Fare calculator |
+
+All live in `apps/web/src/lib/site.ts` and the pricing rules, so each is a
+one-line change.
+
+**Insurance is deliberately absent** from the "included" list. Until the cover
+actually in force is known, an insurance claim is the worst kind to publish: it
+is the first thing a corporate client checks and the first thing disputed after
+an accident. Confirm the cover and it goes on the page.
 
 ## Deliberately empty, not placeholders
 

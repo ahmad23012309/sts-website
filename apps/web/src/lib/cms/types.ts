@@ -118,8 +118,16 @@ export interface FuelRateRecord {
   hiOctane: number | null;
 }
 
+/** A discount band on the daily rate for longer rentals. */
+export interface LongStayDiscount {
+  minDays: number;
+  percent: number;
+}
+
 export interface PricingRules {
   marginPercent: number;
+  /** Highest matching band applies. */
+  longStayDiscounts: LongStayDiscount[];
   withoutFuelAdjustPercent: number;
   defaultDriverAllowance: number;
   nightStayCharge: number;

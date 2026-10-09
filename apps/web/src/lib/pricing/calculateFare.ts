@@ -22,6 +22,7 @@ export interface FareLine {
 
 export interface FareResult {
   lines: FareLine[];
+  discountPercent: number;
   subtotal: number;
   margin: number;
   total: number;
@@ -91,6 +92,20 @@ export function calculateFare(input: FareInput): FareResult {
     amount: base,
   });
 
+  // The discount applies to the daily rate only, not to fuel or allowances,
+  // because those costs do not fall when the rental runs longer.
+  const band = [...rules.longStayDiscounts]
+    .sort((a, b) => b.minDays - a.minDays)
+    .find((item) => safeDays >= item.minDays);
+
+  if (band) {
+    lines.push({
+      label: "Long-stay discount",
+      detail: `${band.percent}% off the daily rate from ${band.minDays} days`,
+      amount: -(base * band.percent) / 100,
+    });
+  }
+
   const chargeReturnLeg = tripType !== "one-way" || rules.chargeReturnLegFuel;
   const billableDistanceKm =
     tripType === "within-city"
@@ -149,6 +164,7 @@ export function calculateFare(input: FareInput): FareResult {
 
   return {
     lines,
+    discountPercent: band?.percent ?? 0,
     subtotal,
     margin,
     total,

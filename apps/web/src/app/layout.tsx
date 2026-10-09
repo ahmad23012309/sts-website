@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TopBar } from "@/components/layout/TopBar";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 import { PreviewDataNotice } from "@/components/layout/PreviewDataNotice";
+import { AnnouncementTicker } from "@/components/layout/AnnouncementTicker";
 import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({
         </a>
 
         <PreviewDataNotice />
+        <AnnouncementTicker />
         <TopBar />
         <Header />
         <main id="main">{children}</main>

@@ -62,6 +62,26 @@ export function Footer() {
           </div>
         </div>
 
+        <div className="border-t border-edge py-10">
+          <h2 className="font-ui text-[0.6875rem] font-semibold tracking-[0.18em] text-accent uppercase">
+            Collection and delivery in Lahore
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-2">
+            {site.serviceAreas.map((area) => (
+              <li
+                key={area}
+                className="rounded-pill border border-edge px-3.5 py-1.5 font-ui text-xs text-fg-muted"
+              >
+                {area}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 font-ui text-xs text-fg-faint">
+            Travelling further? We run intercity journeys and one-way drops
+            nationwide.
+          </p>
+        </div>
+
         <div className="grid gap-10 border-t border-edge py-14 sm:grid-cols-2 lg:grid-cols-4">
           <FooterColumn title="Fleet" links={footerNav.fleet} />
           <FooterColumn title="Services" links={footerNav.services} />

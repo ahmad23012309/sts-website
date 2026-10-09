@@ -958,6 +958,11 @@ export const fuelHistory: FuelRateRecord[] = [
 
 export const pricingRules: PricingRules = {
   marginPercent: 10,
+  longStayDiscounts: [
+    { minDays: 30, percent: 20 },
+    { minDays: 14, percent: 15 },
+    { minDays: 7, percent: 10 },
+  ],
   withoutFuelAdjustPercent: 0,
   defaultDriverAllowance: 1500,
   nightStayCharge: 1500,
